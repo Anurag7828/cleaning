@@ -10,7 +10,5 @@ $route['contact'] = 'Home/contact';
 $route['index'] = 'Home/index';
 
 
-$route['lms'] = 'Lms/lms';
-
 
 

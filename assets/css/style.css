@@ -483,7 +483,7 @@ img {
 }
 
 .sec-pad{
-  padding: 110px 0px 120px 0px;
+  padding: 50px 0px 50px 0px;
 }
 
 .mr-0{
@@ -671,7 +671,7 @@ img {
 .search-popup .popup-inner{
   width: 100%;
   background: #fff;
-  height: 100%;
+  height: 150%;
 }
 
 .search-popup .upper-box{
@@ -2217,7 +2217,7 @@ div#mCSB_1_container{
 
 .funfact-section{
   position: relative;
-  padding: 140px 0px;
+  padding: 50px 0px;
 }
 
 .funfact-section .big-text{
@@ -3280,7 +3280,7 @@ div#mCSB_1_container{
 
 .case-section{
   position: relative;
-  padding-top: 114px;
+  padding-top: 80px;
 }
 
 .case-section .outer-container{
@@ -3893,6 +3893,12 @@ div#mCSB_1_container{
   display: block;
   padding-bottom: 20px;
   margin-bottom: 60px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.news-section .upper-box2{
+  position: relative;
+  display: block;
+ 
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -8903,7 +8909,7 @@ div#mCSB_1_container{
 
 .footer-style-three .widget-section{
   position: relative;
-  padding: 232px 0px 112px 0px;
+  padding: 50px 0px 50px 0px;
   border-bottom: 1px solid #373737;
 }
 
@@ -9646,9 +9652,19 @@ div#mCSB_1_container{
   content: '';
   background: #e2e2e2;
   width: 1px;
-  height: calc(100% + 192px);
-  top: -114px;
+  height: calc(100% + 56px);
+  top: -28px;
   right: 25px;
+}
+.team-section .cate-box{
+  background: white;
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 
@@ -12131,7 +12147,8 @@ div#mCSB_1_container{
 
 .myaccount-section{
   position: relative;
-  padding: 111px 0px 120px 0px;
+  padding: 50px 0px -50px 0px;
+  margin-bottom: 20px;
 }
 
 .myaccount-section h2{
@@ -12169,7 +12186,9 @@ div#mCSB_1_container{
 
 .myaccount-section .form-inner input[type='text'],
 .myaccount-section .form-inner input[type='email'],
-.myaccount-section .form-inner input[type='password']{
+.myaccount-section .form-inner input[type='password'],
+.myaccount-section .form-inner textarea,
+.myaccount-section .form-inner  .selectmenu{
   position: relative;
   display: block;
   width: 100%;
@@ -12182,6 +12201,30 @@ div#mCSB_1_container{
   transition: all 500ms ease;
 }
 
+.myaccount-section .form-inner textarea{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 54px;
+  background: #f3f1f1;
+  border: 1px solid #e2e2e2;
+  font-size: 18px;
+  color: #75706d;
+  padding: 10px 25px;
+  transition: all 500ms ease;
+}
+
+
+.myaccount-section .form-inner .form-group .selectmenu{
+  transition: all 500ms ease;
+  font-size: 18px;
+  background:#f3f1f1;
+  color: #75706d;
+  border-radius: 0px;
+}
+
+
+
 .myaccount-section .form-inner input:focus{
 
 }
@@ -12192,7 +12235,7 @@ div#mCSB_1_container{
 }
 
 .myaccount-section .form-inner .form-group.message-btn{
-  margin-bottom: 17px;
+  margin-top: 27px;
 }
 
 .myaccount-section .login-content .form-inner .form-group:last-child{
@@ -12615,7 +12658,7 @@ div#mCSB_1_container{
 
 .service-details{
   position: relative;
-  padding: 120px 0px;
+  padding: 50px 0px;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -13157,7 +13200,7 @@ div#mCSB_1_container{
   color: #1c1c1c;
   font-weight: 700;
   padding: 19px 30px;
-  background: #f3f1f1;
+  background: #fff;
   border: 1px solid #e2e2e2;
   cursor: pointer;
   border-bottom: none;
@@ -13196,6 +13239,7 @@ div#mCSB_1_container{
   border: 1px solid #e2e2e2;
   padding-left: 50px;
   border-left: none;
+  height: 475px;
 }
 
 .service-details-content .content-three .tabs-content .inner-box .title-box{

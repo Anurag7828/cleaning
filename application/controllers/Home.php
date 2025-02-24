@@ -6,29 +6,8 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		if (count($_POST) > 0) {
-
-            $post = $this->input->post();
-            $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
-
-            if ($savedata) {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
-
-            } else {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
-
-            }
-
-            redirect(base_url('Home/index'));
-            exit();
-
-        } 
-		$data['testimonials'] = $this->CommonModal->getAllRows('bc_testimonial');
-		$data['banner'] = $this->CommonModal->getAllRows('bc_home_gallery');
-		
-		$this->load->view('home', $data);
+		$data['title']='Home';
+		$this->load->view('index', $data);
 
 	}
 	public function about()
