@@ -12,125 +12,112 @@ class Home extends CI_Controller {
 	}
 	public function about()
 	{
-        $data['team'] = $this->CommonModal->getAllRowsInOrder('bc_team',  'mid', 'DESC');
+		$data['title']='About Us';
 		
 		$this->load->view('about',$data);
 
 	}
-	public function donate()
-	{
-		
-		$this->load->view('donate');
-
-	}
-	public function gallery()
-	{
-		
-
-		$data['banner'] = $this->CommonModal->getAllRows('bc_home_gallery');
-		
-		$this->load->view('gallery', $data);
-	}
-	public function services()
-	{
-		if (count($_POST) > 0) {
-
-            $post = $this->input->post();
-            $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
-
-            if ($savedata) {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
-
-            } else {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
-
-            }
-
-            redirect(base_url('Home/services'));
-            exit();
-
-        } 
-		$data['services'] = $this->CommonModal->getAllRows('bc_services');
-		
-		$this->load->view('services', $data);
-
-	}
+	
 	public function blog()
 	{
-		$data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
-		
+		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
+		$data['title']='Blog';
 		$this->load->view('blog' , $data);
 
 	}
-	public function contact()
+	public function blogdetail()
 	{
-		if (count($_POST) > 0) {
+		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
+		$data['title']='Blog';
+		$this->load->view('blogdetail' , $data);
 
-            $post = $this->input->post();
-            $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
+	}
+	// public function blogdetail($id)
+	// {
+	// 	$tid = decryptId($id);
 
-            if ($savedata) {
+    //     $data['blog'] = $this->CommonModal->getRowById('bc_blog', 'id', $tid);
 
-                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
+	// 	$this->load->view('blog-details' , $data);
 
-            } else {
+	// }
+	public function news()
+	{
+		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
+		$data['title']='news';
+		$this->load->view('news' , $data);
 
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
-
-            }
-
-            redirect(base_url('Home/contact'));
-            exit();
-
-        } 
-
-            $this->load->view('contact-us');
-
+	}
+	public function newsdetail()
+	{
+		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
+		$data['title']='news';
+		$this->load->view('newsdetail' , $data);
 
 	}
 	public function career()
 	{
-		if (count($_POST) > 0) {
-
-            $post = $this->input->post();
-            $savedata = $this->CommonModal->insertRowReturnId('career', $post);
-
-            if ($savedata) {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
-
-            } else {
-
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
-
-            }
-
-            redirect(base_url('Home/career'));
-            exit();
-
-        } 
-
-
-		$this->load->view('career');
+		// $data['careers'] = $this->CommonModal->getAllRows('bc_career');
+		$data['title']='career';
+		$this->load->view('career' , $data);
 
 	}
-	public function service_details($id)
+	public function apply()
 	{
-		$tid = decryptId($id);
-
-        $data['service'] = $this->CommonModal->getRowById('bc_services', 'blog_id', $tid);
-		$this->load->view('service-details', $data);
+		// $data['applys'] = $this->CommonModal->getAllRows('bc_apply');
+		$data['title']='apply';
+		$this->load->view('apply' , $data);
 
 	}
-	public function blog_details($id)
+	public function category()
 	{
-		$tid = decryptId($id);
-
-        $data['blog'] = $this->CommonModal->getRowById('bc_blog', 'id', $tid);
-
-		$this->load->view('blog-details' , $data);
+		// $data['categorys'] = $this->CommonModal->getAllRows('bc_category');
+		$data['title']='category';
+		$this->load->view('category' , $data);
 
 	}
+	public function product()
+	{
+		// $data['products'] = $this->CommonModal->getAllRows('bc_product');
+		$data['title']='product';
+		$this->load->view('product' , $data);
+
+	}
+	public function delarship()
+	{
+		// $data['delarships'] = $this->CommonModal->getAllRows('bc_delarship');
+		$data['title']='delarship';
+		$this->load->view('delarship' , $data);
+
+	}
+	public function contact()
+	{
+		$data['title']='Contact Us';
+		// if (count($_POST) > 0) {
+
+        //     $post = $this->input->post();
+        //     $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
+
+        //     if ($savedata) {
+
+        //         $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
+
+        //     } else {
+
+        //         $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
+
+        //     }
+
+        //     redirect(base_url('Home/contact'));
+        //     exit();
+
+        // } 
+
+            $this->load->view('contact',$data);
+
+
+	}
+	
+	
+
 }

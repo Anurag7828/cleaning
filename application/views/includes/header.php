@@ -172,10 +172,10 @@
                         <h5> CIN - U36999TZ1992PLC0036782</h5>
                     </div>
                     <ul class="links-list clearfix">
-                        <li><a href="<?= base_url() ?>">News & Media</a></li>
-                        <li><a href="<?= base_url() ?>">Dealership Registration</a></li>
+                        <li><a href="<?= base_url() ?>news">News & Media</a></li>
+                        <li><a href="<?= base_url() ?>delarship">Dealership Registration</a></li>
                        
-                        <li><a href="<?= base_url() ?>">Career</a></li>
+                        <li><a href="<?= base_url() ?>career">Career</a></li>
                     </ul>
                 </div>
             </div>
@@ -197,24 +197,28 @@
                             <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li class="current"><a href="<?= base_url() ?>">Home</a>  </li>  
-                                        <li class=""><a href="<?= base_url() ?>">About</a>  </li>  
+                                        <li class=""><a href="<?= base_url() ?>">Home</a>  </li>  
+                                        <li class=""><a href="<?= base_url() ?>about">About</a>  </li>  
 
                                         <li class="dropdown"><a href="<?= base_url() ?>">Products</a>
                                             <ul>
                                                
-                                                <li class="dropdown"><a href="<?= base_url() ?>">Team</a>
+                                                <li class="dropdown"><a href="<?= base_url() ?>category">Ride On Scrubber Dryer</a>
                                                     <ul>
-                                                        <li><a href="<?= base_url()?>">Our Leaders 01</a></li>
-                                                        <li><a href="<?= base_url()?>">Our Leaders 02</a></li>
+                                                        <li><a href="<?= base_url()?>product">Charnock Twintec Cable Scrubber Drier</a></li>
+                                                        <li><a href="<?= base_url()?>product">Charnock Twintec Cable Scrubber Drier</a></li>
+
+                                                      
                                                     </ul>
                                                 </li>
                                                
                                             </ul>
                                         </li>
-                                        <li><a href="<?= base_url()?>">Blog</a></li>
+                                        <li><a href="<?= base_url()?>">Video Gallery</a></li>
+
+                                        <li><a href="<?= base_url()?>blog">Blog</a></li>
                                         
-                                        <li><a href="<?= base_url()?>">Contact</a></li>
+                                        <li><a href="<?= base_url()?>contact">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>

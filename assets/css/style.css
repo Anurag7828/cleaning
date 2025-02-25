@@ -485,6 +485,9 @@ img {
 .sec-pad{
   padding: 50px 0px 50px 0px;
 }
+.sec-padd{
+  padding: 165px 0px 50px 0px;
+}
 
 .mr-0{
   margin: 0px !important;
@@ -1085,7 +1088,7 @@ img {
   position:absolute;
   left: inherit;
   top:100%;
-  width:240px;
+  width:280px;
   margin-top: 20px;
   z-index:100;
   background: #fff;
@@ -1154,7 +1157,7 @@ img {
 }
 
 .main-menu .navigation > li > ul > li:last-child a{
-  border-bottom: none;
+  border-bottom: block;
 }
 
 .main-menu .navigation > li > ul > li > a:hover:before{
@@ -1210,7 +1213,7 @@ img {
   top:0%;
   margin-top: 15px;
   margin-left: 10px;
-  width:240px;
+  width:350px;
   z-index:100;
   display:none;
   border-radius: 0px;
@@ -2504,6 +2507,8 @@ div#mCSB_1_container{
 
 .chooseus-section{
   position: relative;
+  border-top: 1px solid #e2e2e2;
+  margin-top: -12px;
 }
 
 .chooseus-section .sec-title{
@@ -5630,7 +5635,9 @@ div#mCSB_1_container{
 
 .case-style-two{
   position: relative;
-  padding-top: 114px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
 }
 
 .case-style-two .owl-carousel{
@@ -6515,7 +6522,7 @@ div#mCSB_1_container{
 
 .downloads-section{
   position: relative;
-  padding: 110px 0px 108px 0px;
+  padding: 0px 0px 5px 0px;
 }
 
 .downloads-section .sec-title{
@@ -7428,7 +7435,7 @@ div#mCSB_1_container{
 
 .chooseus-style-three{
   position: relative;
-  padding: 120px 0px;
+  padding: 0px 0px;
 }
 
 .chooseus-style-three .image-box{
@@ -9125,7 +9132,7 @@ div#mCSB_1_container{
 
 .page-title{
   position: relative;
-  padding: 186px 0px 193px 0px;
+  padding: 50px 0px 165px 0px;
 }
 
 .page-title .bg-layer{
@@ -9133,7 +9140,7 @@ div#mCSB_1_container{
   left: 0px;
   top: 0px;
   width: 100%;
-  height: 100%;
+  height: 70%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10090,7 +10097,7 @@ div#mCSB_1_container{
 
 .project-details{
   position: relative;
-  padding: 114px 0px 77px 0px;
+  padding: 0px 0px 77px 0px;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -10508,7 +10515,7 @@ div#mCSB_1_container{
 
 .contact-style-two{
   position: relative;
-  padding: 120px 0px;
+  padding: 61px 0px;
 }
 
 .contact-style-two .sec-title{
@@ -11068,7 +11075,7 @@ div#mCSB_1_container{
 
 .shop-details{
   position: relative;
-  padding: 120px 0px;
+  padding: 0px 0px;
 }
 
 .shop-details-content{
@@ -11898,7 +11905,7 @@ div#mCSB_1_container{
 
 .checkout-page-section{
   position: relative;
-  padding: 120px 0px;
+  padding: 0px 0px;
 }
 
 .checkout-page-section .information-inner{
@@ -13488,7 +13495,7 @@ div#mCSB_1_container{
 
 .blog-grid{
   position: relative;
-  padding: 120px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 .blog-grid .news-block-one .inner-box{
@@ -14576,7 +14583,7 @@ div#mCSB_1_container{
 
 .contact-info-section{
   position: relative;
-  padding: 120px 0px;
+  padding: 0px 0px;
 }
 
 .contact-info-section .title-box{

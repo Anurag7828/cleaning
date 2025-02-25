@@ -48,12 +48,14 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="<?= base_url()?>">Industries</a></li>
-                                        <li><a href="<?= base_url()?>">Features</a></li>
-                                        <li><a href="<?= base_url()?>">Process</a></li>
-                                        <li><a href="<?= base_url()?>">Feedback</a></li>
-                                        <li><a href="<?= base_url()?>">News & Updates</a></li>
-                                        <li><a href="<?= base_url()?>">Get In Touch</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <li><a href="<?= base_url()?>">product name</a></li>
+
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -79,7 +81,7 @@
                                     </div>
                                     <ul class="social-links clearfix">
                                         <li><a href="<?= base_url()?>"><i class="fa-brands fa-facebook"></i></a></li>
-                                        <li><a href="<?= base_url()?>"><i class="fa-brands fa-square-twitter"></i></a></li>
+                                        <li><a href="<?= base_url()?>"><i class="fa-brands fa-instagram"></i></a></li>
                                         <li><a href="<?= base_url()?>"><i class="fa-solid fa-basketball"></i></a></li>
                                         <li><a href="<?= base_url()?>"><i class="fa-brands fa-youtube"></i></a></li>
                                     </ul>
