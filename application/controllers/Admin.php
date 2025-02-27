@@ -8,8 +8,6 @@ class Admin extends CI_Controller
 
 {
 
-
-
     public function index()
 
     {
@@ -54,7 +52,7 @@ class Admin extends CI_Controller
 
             $password = $_POST['password'];
 
-            $data =  $this->CommonModal->getRowById('tbl_admin', 'username', $username);
+            $data =  $this->CommonModal->getRowById('admin', 'username', $username);
 
             
 
@@ -70,7 +68,7 @@ class Admin extends CI_Controller
 
 
 
-                $id = $data[0]['admin_id'];
+                $id = $data[0]['id'];
 
                 $f_username = $data[0]['username'];
 
@@ -84,7 +82,7 @@ class Admin extends CI_Controller
 
                 } else {
 
-                  $asl =   $this->session->set_userdata(array('admin_id' => $id, 'username' => $username));
+                  $asl =   $this->session->set_userdata(array('id' => $id, 'username' => $username));
 
                   
 
@@ -118,7 +116,7 @@ class Admin extends CI_Controller
 
         $this->load->library('session');
 
-        $this->session->unset_userdata('admin_id');
+        $this->session->unset_userdata('id');
 
         redirect(base_url('admin'));
 

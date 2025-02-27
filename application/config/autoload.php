@@ -8,7 +8,7 @@ $autoload['packages'] = array();
 
 
 
-$autoload['libraries'] = array('email', 'session', 'table', 'upload', 'user_agent', 'form_validation', 'cart', 'encrypt');
+$autoload['libraries'] = array('email','database', 'session', 'table', 'upload', 'user_agent', 'form_validation', 'cart', 'encrypt');
 
 
 
