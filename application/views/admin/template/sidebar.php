@@ -1,0 +1,118 @@
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">			
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<!-- <li class="clinicdropdown">
+							<a href="profile.html">
+								<img src="assets/img/profiles/avatar-14.jpg" class="img-fluid" alt="Profile">
+								<div class="user-names">
+									<h5><?= $admin['0']['name']?></h5>
+									<h6><?= $admin['0']['company_name']?></h6>
+								</div>
+							</a>
+						</li> -->
+					</ul>
+					<ul>
+						<li>
+							<h6 class="submenu-hdr">Main Menu </h6>
+							<ul>
+							
+							<li>
+									<a href="<?= base_url('Admin_Dashboard') ?>">
+										<i class="ti ti-layout-navbar"></i><span>Dashboard</span>
+									</a>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Category</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										
+										<li><a href="<?= base_url('Admin_Dashboard/add_category') ?>">Add Category</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/view_category')?>">View Category</a></li>
+										
+									
+									</ul>
+								</li>
+								
+									<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Sub Category</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    	<li><a href="<?= base_url('Admin_Dashboard/add_sub_category')?>">Add Sub Category</a></li>
+									<li><a href="<?= base_url('Admin_Dashboard/view_sub_category')?>">View Sub Category</a></li>
+								
+									
+							
+									</ul>
+								</li>
+								
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>product</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										
+										<li><a href="<?= base_url('Admin_Dashboard/add_product')?>">Add Product</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/view_product')?>">View Product</a></li>
+																
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Blogs</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    <li><a href="<?= base_url('Admin_Dashboard/view_blog')?>">View Blogs</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/add_blog')?>">Add Blogs</a></li>
+							
+									</ul>
+								</li>
+								
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Quotation</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										
+										<li><a href="<?= base_url('Admin_Dashboard/add_quotes')?>">Add Quotation</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/view_quotes')?>">View Quotation</a></li>
+									
+
+									</ul>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin_Dashboard/contact')?>">
+										<i class="ti ti-layout-navbar"></i><span>Contact Query</span>
+									</a>
+								</li>
+						
+						<li>
+							<h6 class="submenu-hdr">Settings</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-settings-cog"></i><span>General Settings</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="<?= base_url('Admin_Dashboard/profile')?>">Profile</a></li>
+										<li><a href="<?= base_url('admin/logout') ?>">logout</a></li>
+									
+									</ul>
+								</li>
+								
+							</ul>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
