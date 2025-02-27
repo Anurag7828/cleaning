@@ -23,7 +23,7 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>About Uss</h1>
+                    <h1>About Us</h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html">Home</a></li>
                         <li>About</li>
