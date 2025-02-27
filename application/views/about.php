@@ -39,7 +39,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box">
-                            <figure class="image"><img src="assets/images/resource/chooseus-1.jpg" alt=""></figure>
+                            <figure class="image"><img src="assets/img/about.png" alt=""></figure>
                             <!-- <div class="text-box">
                                 <div class="curve-text">
                                     <div class="icon-box"><img src="assets/images/icons/icon-8.png" alt=""></div>
