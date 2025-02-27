@@ -69,6 +69,90 @@ class Home extends CI_Controller {
 		$this->load->view('apply' , $data);
 
 	}
+	public function add_apply()
+    {
+    
+    
+		$data['title']='apply';
+        
+        if ($this->input->post()) {
+            $post = $this->input->post();
+
+            // Extract item-related data separately
+            $edus = [];
+        if (isset($post['i_name']) && is_array($post['i_name'])) {
+            foreach ($post['i_name'] as $key => $edu) {
+                $edus[] = [
+                    'i_name' => $edu,
+                    'department' => $post['department'][$key],
+                    'degree' => $post['degree'][$key],
+                    'from' => $post['from'][$key],
+                 'to' =>$post['to'][$key],
+                 'currently' =>$post['currently'][$key],
+
+                   
+                ];
+            }
+        }
+		$exps = [];
+        if (isset($post['job_title']) && is_array($post['job_title'])) {
+            foreach ($post['job_title'] as $key => $exp) {
+                $exps[] = [
+                    'job_title' => $exp,
+                    'company' => $post['company'][$key],
+                    'summary' => $post['summary'][$key],
+                    'w_from' => $post['w_from'][$key],
+                 'w_to' =>$post['w_to'][$key],
+                 'currently_working' =>$post['currently_working'][$key],
+
+                   
+                ];
+            }
+        }
+		$skills = [];
+        if (isset($post['skill']) && is_array($post['skill'])) {
+            foreach ($post['skill'] as $key => $skill) {
+                $skills[] = [
+                    'skill' => $skill,
+                   
+                ];
+            }
+        }
+            // Remove array-based item fields from main insert
+            unset($post['i_name'],$post['department'], $post['degree'], $post['from'], $post['to'], $post['w_from'], $post['w_to'], $post['job_title'], $post['company'], $post['summary'], $post['skills'], $post['skill'],$post['currently'],$post['currently_working']);
+			$post['image'] = imageUpload('image', 'uploads/application/');
+			$post['resume'] = pdfUpload('resume', 'uploads/application/');
+            // Insert main quotation (Quotes Table)
+            $application_id = $this->CommonModal->insertRowReturnId('application', $post);
+    
+            // Insert items into quotation_items table
+            if ($application_id && !empty($edus)) {
+                foreach ($edus as &$edu) {
+                    $edu['application_id'] = $application_id; // Link items to main quote
+                }
+                $this->CommonModal->insertBatch('education', $edus);
+            }
+			if ($application_id && !empty($exps)) {
+                foreach ($exps as &$exp) {
+                    $exp['application_id'] = $application_id; // Link items to main quote
+                }
+                $this->CommonModal->insertBatch('experince', $exps);
+            }
+			if ($application_id && !empty($skills)) {
+                foreach ($skills as &$skill) {
+                    $skill['application_id'] = $application_id; // Link items to main quote
+                }
+                $this->CommonModal->insertBatch('skill_set', $skills);
+            }
+            if ($application_id) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-success">Quotation Added Successfully</div>');
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Error while saving data</div>');
+            }
+    
+            redirect(base_url('apply'));
+        } 
+    }
 	public function category()
 	{
 		// $data['categorys'] = $this->CommonModal->getAllRows('bc_category');
@@ -81,6 +165,13 @@ class Home extends CI_Controller {
 		// $data['products'] = $this->CommonModal->getAllRows('bc_product');
 		$data['title']='product';
 		$this->load->view('product' , $data);
+
+	}
+	public function sub_category()
+	{
+		// $data['sub_categorys'] = $this->CommonModal->getAllRows('bc_sub_category');
+		$data['title']='sub_category';
+		$this->load->view('sub_category' , $data);
 
 	}
 	public function delarship()

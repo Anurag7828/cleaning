@@ -13,19 +13,14 @@ $route['contact'] = 'Home/contact';
 $route['blog'] = 'Home/blog';
 $route['blogdetail'] = 'Home/blogdetail';
 $route['newsdetail'] = 'Home/newsdetail';
-
-
 // $route['blogdetail/(:any)'] = 'Home/blogdetail/$1';
 $route['news'] = 'Home/news';
 // $route['newsdetail/(:any)'] = 'Home/newsdetail/$1';
-
 $route['career'] = 'Home/career';
 $route['apply'] = 'Home/apply';
 $route['product'] = 'Home/product';
 $route['category'] = 'Home/category';
-
-
-
+$route['sub_category'] = 'Home/sub_category';
 $route['delarship'] = 'Home/delarship';
 
 

@@ -205,7 +205,7 @@
                                                
                                                 <li class="dropdown"><a href="<?= base_url() ?>category">Ride On Scrubber Dryer</a>
                                                     <ul>
-                                                        <li><a href="<?= base_url()?>product">Charnock Twintec Cable Scrubber Drier</a></li>
+                                                        <li ><a href="<?= base_url()?>sub_category">Charnock Twintec Cable Scrubber Drier</a></li>
                                                         <li><a href="<?= base_url()?>product">Charnock Twintec Cable Scrubber Drier</a></li>
 
                                                       
