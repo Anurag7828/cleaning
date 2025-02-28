@@ -6,11 +6,11 @@
 			<!-- Logo -->
 			<div class="header-left active">
 				<a href="index-2.html" class="logo logo-normal">
-                    <img src="<?= base_url()?>assets/admin/img/logo.png" alt="Logo">
-                    <img src="<?= base_url()?>assets/admin/img/logo.png" class="white-logo" alt="Logo">
+                    <img src="<?= base_url()?>assets/admin/img/logo.jpg" alt="Logo">
+                    <img src="<?= base_url()?>assets/admin/img/logo.jpg" class="white-logo" alt="Logo">
                 </a>
 				<a href="index-2.html" class="logo-small">
-					<img src="<?= base_url()?>assets/admin/img/logo.png" alt="Logo">
+					<img src="<?= base_url()?>assets/admin/img/logo.jpg" alt="Logo">
 				</a>
 				<a id="toggle_btn" href="javascript:void(0);">
 					<i class="ti ti-arrow-bar-to-left"></i>
@@ -186,7 +186,7 @@
 						<a href="javascript:void(0);" class="nav-link userset" data-bs-toggle="dropdown">
 							<span class="user-info">
 								<span class="user-letter">
-									<img src="	<?= base_url()?>assets/admin/img/logo.png" alt="Profile">
+									<img src="	<?= base_url()?>assets/admin/img/logo.jpg" alt="Profile" width="150px">
 								</span>
 								<span class="badge badge-success rounded-pill"></span>
 							</span>

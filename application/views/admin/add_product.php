@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-
     <?php include('template/header-links.php') ?>
-
 </head>
 
 <body>
@@ -55,7 +52,7 @@
 
                                                 <?php if ($tag == 'edit' && !empty($row[0]['image'])): ?>
                                                     <div class="mt-2">
-                                                        <img src="<?= base_url('uploads/blog/' . $row[0]['image']) ?>" alt="Uploaded Image" width="50">
+                                                        <img src="<?= base_url('uploads/product/' . $row[0]['image']) ?>" alt="Uploaded Image" width="50">
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
@@ -67,7 +64,7 @@
 
                                                 <?php if ($tag == 'edit' && !empty($row[0]['image1'])): ?>
                                                     <div class="mt-2">
-                                                        <img src="<?= base_url('uploads/blog/' . $row[0]['image1']) ?>" alt="Uploaded Image" width="50">
+                                                        <img src="<?= base_url('uploads/product/' . $row[0]['image1']) ?>" alt="Uploaded Image" width="50">
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
@@ -79,7 +76,7 @@
 
                                                 <?php if ($tag == 'edit' && !empty($row[0]['image2'])): ?>
                                                     <div class="mt-2">
-                                                        <img src="<?= base_url('uploads/blog/' . $row[0]['image2']) ?>" alt="Uploaded Image" width="50">
+                                                        <img src="<?= base_url('uploads/product/' . $row[0]['image2']) ?>" alt="Uploaded Image" width="50">
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
@@ -126,7 +123,7 @@
                                                                 <?php if (!empty($sub_category)) : ?>
                                                                     <?php foreach ($sub_category as $item) : ?>
                                                                         <option value="<?= htmlspecialchars($item['id']) ?>"
-                                                                            <?= ($tag == 'edit' && isset($row[0]['category']) && $row[0]['category'] == $item['id']) ? 'selected' : '' ?>>
+                                                                            <?= ($tag == 'edit' && isset($row[0]['sub_category']) && $row[0]['sub_category'] == $item['id']) ? 'selected' : '' ?>>
                                                                             <?= htmlspecialchars($item['sub_category']) ?>
                                                                         </option>
                                                                     <?php endforeach; ?>
