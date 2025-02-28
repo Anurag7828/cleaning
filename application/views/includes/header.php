@@ -57,13 +57,13 @@
                    
                     <div class="col-lg-12 col-md-12 col-sm-12 register-column">
                         <div class="register-content">
-                            <h2>Register as New Customer</h2>
+                            <h2>Request a Quote</h2>
                             <div class="form-inner">
-                                <form action="" method="post">
+                                <form action="<?= base_url('Home/contact')?>" method="post">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Full Name</label>
-                                            <input type="text" name="fname" required="">
+                                            <input type="text" name="name" required="">
                                         </div>
                                        
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
@@ -72,36 +72,36 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Phone Num</label>
-                                            <input type="text" name="phone" required="">
+                                            <input type="text" name="contact" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>City</label>
-                                            <input type="text" name="lname" required="">
+                                            <input type="text" name="city" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Pincode</label>
-                                            <input type="text" name="lname" required="">
+                                            <input type="text" name="pincode" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
     <label>Select Country</label>
     <div class="select-box">
-        <select class="selectmenu" id="countryDropdown">
-            <option value="" disabled selected>Select Country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="GB">United Kingdom</option>
-            <option value="AU">Australia</option>
-            <option value="IN" selected>India</option>
-            <option value="DE">Germany</option>
-            <option value="FR">France</option>
-            <option value="IT">Italy</option>
-            <option value="ES">Spain</option>
-            <option value="JP">Japan</option>
-            <option value="CN">China</option>
-            <option value="BR">Brazil</option>
-            <option value="ZA">South Africa</option>
-            <option value="MX">Mexico</option>
-            <option value="RU">Russia</option>
+        <select class="selectmenu" id="countryDropdown" name="country">
+        <option value="" disabled selected>Select Country</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Australia">Australia</option>
+            <option value="India" selected>India</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Italy">Italy</option>
+            <option value="Spain">Spain</option>
+            <option value="Japan">Japan</option>
+            <option value="China">China</option>
+            <option value="Brazil">Brazil</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Russia">Russia</option>
         </select>
     </div>
 </div>
@@ -114,10 +114,10 @@
 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
     <label>Select Customer Type</label>
     <div class="select-box">
-        <select class="selectmenu" id="countryDropdown">
-            <option value="" disabled selected>Select Customer Type</option>
-            <option value="US">Existing Customer</option>
-            <option value="CA">New Customer</option>
+        <select class="selectmenu" id="countryDropdown" name="customer_type">
+        <option value="" disabled selected>Select Customer Type</option>
+            <option value="Existing Customer">Existing Customer</option>
+            <option value="New Customer">New Customer</option>
             
         </select>
     </div>
@@ -125,10 +125,10 @@
 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
     <label>Select Customer Segment</label>
     <div class="select-box">
-        <select class="selectmenu" id="countryDropdown">
-            <option value="" disabled selected>Select Customer Segment</option>
-            <option value="US">Residential</option>
-            <option value="CA">Corporate</option>
+        <select class="selectmenu" id="countryDropdown" name="customer_segment">
+        <option value="" disabled selected>Select Customer Segment</option>
+            <option value="Residential">Residential</option>
+            <option value="Corporate">Corporate</option>
             
         </select>
     </div>
@@ -138,7 +138,7 @@
                                             <textarea name="message" ></textarea>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-two">Register</button>
+                                            <button type="submit" class="theme-btn btn-two">Submit</button>
                                         </div>
                                        
                                     </div>
@@ -214,7 +214,7 @@
                                                
                                             </ul>
                                         </li>
-                                        <li><a href="<?= base_url()?>">Video Gallery</a></li>
+                                        <li><a href="<?= base_url()?>video">Video Gallery</a></li>
 
                                         <li><a href="<?= base_url()?>blog">Blog</a></li>
                                         

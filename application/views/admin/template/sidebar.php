@@ -65,12 +65,38 @@
 								</li>
 								<li class="submenu">
 									<a href="#">
+										<i class="ti ti-user-star"></i><span>Jobs</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    	<li><a href="<?= base_url('Admin_Dashboard/add_job')?>">Add Jobs</a></li>
+									<li><a href="<?= base_url('Admin_Dashboard/view_job')?>">View Jobs</a></li>
+									<li><a href="<?= base_url('Admin_Dashboard/view_application')?>">View Jobs Application</a></li>
+
+								
+									
+							
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
 										<i class="ti ti-user-star"></i><span>Blogs</span>
 										<span class="menu-arrow"></span>
 									</a>
 									<ul>
 									    <li><a href="<?= base_url('Admin_Dashboard/view_blog')?>">View Blogs</a></li>
 										<li><a href="<?= base_url('Admin_Dashboard/add_blog')?>">Add Blogs</a></li>
+							
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Video Gallery</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    <li><a href="<?= base_url('Admin_Dashboard/view_video')?>">View Videos</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/add_video')?>">Add Video</a></li>
 							
 									</ul>
 								</li>
@@ -87,7 +113,7 @@
 								</li>
 								<li>
 									<a href="<?= base_url('Admin_Dashboard/contact')?>">
-										<i class="ti ti-layout-navbar"></i><span>Contact Query</span>
+										<i class="ti ti-layout-navbar"></i><span>Customer Query</span>
 									</a>
 								</li>
 						

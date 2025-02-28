@@ -20,27 +20,24 @@ class Home extends CI_Controller {
 	
 	public function blog()
 	{
-		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
+		
 		$data['title']='Blog';
+		$data['blog'] = $this->CommonModal->getAllRowsInOrder('blog', 'id', 'DESC');
+
 		$this->load->view('blog' , $data);
 
 	}
-	public function blogdetail()
+	
+	public function blogdetail($id)
 	{
-		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
-		$data['title']='Blog';
+		$tid = decryptId($id);
+		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
+
+        $data['blog'] = $this->CommonModal->getRowById('blog', 'id', $tid);
+
 		$this->load->view('blogdetail' , $data);
 
 	}
-	// public function blogdetail($id)
-	// {
-	// 	$tid = decryptId($id);
-
-    //     $data['blog'] = $this->CommonModal->getRowById('bc_blog', 'id', $tid);
-
-	// 	$this->load->view('blog-details' , $data);
-
-	// }
 	public function news()
 	{
 		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
@@ -59,13 +56,29 @@ class Home extends CI_Controller {
 	{
 		// $data['careers'] = $this->CommonModal->getAllRows('bc_career');
 		$data['title']='career';
+		$data['career'] = $this->CommonModal->getAllRowsInOrder('career', 'id', 'DESC');
 		$this->load->view('career' , $data);
 
 	}
-	public function apply()
+	public function video()
 	{
-		// $data['applys'] = $this->CommonModal->getAllRows('bc_apply');
-		$data['title']='apply';
+	
+		$data['title']='Video Gallery';
+		$data['video'] = $this->CommonModal->getAllRowsInOrder('video', 'id', 'DESC');
+		$this->load->view('video' , $data);
+
+	}
+	public function thankyou(){
+		$data['title'] = "Thankyou";
+		$this->load->view('thankyou');
+	}
+	public function apply($id)
+	{
+		$tid = decryptId($id);
+
+		$data['title']='Apply';
+		$data['job_id'] =$tid;
+
 		$this->load->view('apply' , $data);
 
 	}
@@ -150,7 +163,7 @@ class Home extends CI_Controller {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger">Error while saving data</div>');
             }
     
-            redirect(base_url('apply'));
+            redirect(base_url('thankyou'));
         } 
     }
 	public function category()
@@ -184,25 +197,25 @@ class Home extends CI_Controller {
 	public function contact()
 	{
 		$data['title']='Contact Us';
-		// if (count($_POST) > 0) {
+		if (count($_POST) > 0) {
 
-        //     $post = $this->input->post();
-        //     $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
+            $post = $this->input->post();
+            $savedata = $this->CommonModal->insertRowReturnId('contact', $post);
 
-        //     if ($savedata) {
+            if ($savedata) {
 
-        //         $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
 
-        //     } else {
+            } else {
 
-        //         $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
 
-        //     }
+            }
 
-        //     redirect(base_url('Home/contact'));
-        //     exit();
+            redirect(base_url('thankyou'));
+            exit();
 
-        // } 
+        } 
 
             $this->load->view('contact',$data);
 

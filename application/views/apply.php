@@ -17,7 +17,7 @@
     <?php include('includes/header.php') ?>
    
     <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+            <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/background/page-title.jpg);"></div>
             <div class="line-box">
                 <div class="line-1"></div>
                 <div class="line-2"></div>
@@ -259,6 +259,8 @@
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Facebook</label>
                                             <input type="url" name="facebook" required="">
+                                            <input type="hidden" name="job_id" value="<?= $job_id ?>" required="">
+
                                         </div>
                                         
                                     </div>

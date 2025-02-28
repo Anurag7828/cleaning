@@ -90,7 +90,7 @@
 
         <!-- contact-style-two -->
         <section class="contact-style-two">
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-13.png);"></div>
+           
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -100,11 +100,13 @@
                                 <h2>Feel Free to Say Hello or Send Your Questions</h2>
                                 <p>Complete the enquiry form & we will be in touch as soon as possible.</p>
                             </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58676.86962497054!2d77.37071240361756!3d23.195576494555763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c432374fbdc99%3A0x82aa62269e3f077f!2sContinental%20Cleaning%20%26%20Safety%20Solutions!5e0!3m2!1sen!2sin!4v1740462755830!5m2!1sen!2sin" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
+                      
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 form-column">
                         <div class="form-inner">
-                            <form method="post" action="http://st.ourhtmldemo.com/new/Machion/pricing-2.html">
+                            <form method="post" action="">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Your Name" required>
                                 </div>
@@ -112,12 +114,51 @@
                                     <input type="email" name="email" placeholder="Email Address" required>
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" name="contact" placeholder="Contact" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="city" placeholder="City" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="pincode" placeholder="Pin Code" required>
+                                </div>
+                                <div class="form-group">
                                     <div class="select-box">
-                                        <select class="selectmenu">
-                                            <option>Massachusetts</option>
-                                            <option>Los Angeles</option>
-                                            <option>Chicago</option>
-                                            <option>Houston</option>
+                                        <select class="selectmenu" name="country">
+                                        <option value="" disabled selected>Select Country</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Australia">Australia</option>
+            <option value="India" selected>India</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Italy">Italy</option>
+            <option value="Spain">Spain</option>
+            <option value="Japan">Japan</option>
+            <option value="China">China</option>
+            <option value="Brazil">Brazil</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Russia">Russia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="select-box">
+                                        <select class="selectmenu" name="customer_type">
+                                        <option value="" disabled selected>Select Customer Type</option>
+            <option value="Existing Customer">Existing Customer</option>
+            <option value="New Customer">New Customer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="select-box">
+                                        <select class="selectmenu" name="customer_segment">
+                                        <option value="" disabled selected>Select Customer Segment</option>
+            <option value="Residential">Residential</option>
+            <option value="Corporate">Corporate</option>
                                         </select>
                                     </div>
                                 </div>
@@ -134,7 +175,7 @@
             </div>
         </section>
         <!-- contact-style-two end -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58676.86962497054!2d77.37071240361756!3d23.195576494555763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c432374fbdc99%3A0x82aa62269e3f077f!2sContinental%20Cleaning%20%26%20Safety%20Solutions!5e0!3m2!1sen!2sin!4v1740462755830!5m2!1sen!2sin" width="100%" height="310" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       
         <?php include('includes/footer.php') ?>
 
 

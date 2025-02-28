@@ -44,42 +44,59 @@
         <div class="payment-method">
                     <h3>Openings</h3>
                     <ul class="accordion-box">
+                    <?php
+
+$i = 1;
+
+if ($career) {
+
+    foreach ($career as $row) {
+?>
                         <li class="accordion block active-block">
                             <div class="acc-btn active">
                                 <div class="icon-outer"><i class="fa-solid fa-angle-down"></i></div>
-                                <h4>Direct Bank Transfer</h4>
+                                <h4><?= $i ?>. <?= $row['title']?></h4>
                             </div>
                             <div class="acc-content current">
                                 <div class="payment-info">
                                     <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Company Name :-</h5><p>Mp Nagar Bhopal</p>
+                                        <h5>Company Name :-</h5><p><?= $row['company_name']?></p>
 
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                            <h5>Location :-</h5><p>Mp Nagar Bhopal</p>
+                                            <h5>Location :-</h5><p><?= $row['location']?></p>
                                         </div>
                                     
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Date Opened :-</h5><p>Mp Nagar Bhopal</p>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 column">
+                                        <h5>Date Opened :-</h5><p><?= $row['opened_date']?></p>
 
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                        <h5>Required Experince :-</h5><p>Mp Nagar Bhopal</p>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 column">
+                                        <h5>Last Date  :-</h5><p><?= $row['last_date']?></p>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 column mb-4">
+                                        <h5>Required Experince :-</h5><p><?= $row['experience']?></p>
 
                                         </div>
                                        
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Job Description :-</h5><p>Mp Nagar Bhopal</p>
+                                        <div class="col-lg-12 col-md-6 col-sm-12 column mb-4">
+                                        <h5>Job Description :-</h5><p><?= $row['desc']?></p>
+
+                                        </div>
+                                        
+                                        <div class="col-lg-12 col-md-6 col-sm-12 column mb-4">
+                                        <h5>Requirement :-</h5><p><?= $row['requirement']?></p>
 
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                        <h5>Requirement :-</h5><p>Mp Nagar Bhopal</p>
+                                        <h5>Send Resume :-</h5><p><?= $row['company_email']?></p>
 
                                         </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="col-lg-6 col-md-12 col-sm-12 column">
                                             <div class="field-input message-btn">
-                                                <a href="<?= base_url()?>apply" class="theme-btn btn-two">Apply</a>
+                                                <a href="<?= base_url('apply/' . encryptId($row['id'])); ?>" class="theme-btn btn-two">Apply</a>
                                             </div>
                                         </div>
                                        
@@ -87,49 +104,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="accordion block">
-                            <div class="acc-btn ">
-                                <div class="icon-outer"><i class="fa-solid fa-angle-down"></i></div>
-                                <h4>Direct Bank Transfer</h4>
-                            </div>
-                            <div class="acc-content ">
-                                <div class="payment-info">
-                                    <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Company Name :-</h5><p>Mp Nagar Bhopal</p>
-
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                            <h5>Location :-</h5><p>Mp Nagar Bhopal</p>
-                                        </div>
-                                    
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Date Opened :-</h5><p>Mp Nagar Bhopal</p>
-
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                        <h5>Required Experince :-</h5><p>Mp Nagar Bhopal</p>
-
-                                        </div>
-                                       
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                        <h5>Job Description :-</h5><p>Mp Nagar Bhopal</p>
-
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column mb-4">
-                                        <h5>Requirement :-</h5><p>Mp Nagar Bhopal</p>
-
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                            <div class="field-input message-btn">
-                                                <a href="<?= base_url()?>apply" class="theme-btn btn-two">Apply</a>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                       <?php } } ?>
                     </ul>
                 </div>
             </div>
