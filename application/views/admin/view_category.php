@@ -20,8 +20,6 @@
 
                 <div class="row">
                     <div class="col-md-12">
-
-                        <!-- Page Header -->
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
@@ -86,10 +84,10 @@
                                     <table class="table datatable">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th class="no-sort">S No.</th>
-                                              
+                                                <th class="no-sort">S No.</th>                            
                                                 <th>Name</th>
                                                 <th>Heading</th>
+                                              
                                                 <th>Description</th>
                                                 <th>Delete</th>
                                                 <th>Update</th>
@@ -104,8 +102,8 @@
                                                       
                                                         <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                      
                                                         <td><a href="#" class="title-name"><?= $row['description']; ?></a></td>
-
                                                         <td>
 
                                                             <a class="dropdown-item" href="<?= base_url('admin_Dashboard/view_category?BdID=' . $row['id']); ?>"

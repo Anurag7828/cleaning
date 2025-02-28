@@ -25,7 +25,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">Category</h4>
+                                    <h4 class="page-title">View Sub Category</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -88,6 +88,7 @@
                                                 <th>Sub Category</th>
 
                                                 <th>Heading</th>
+                                                <th>image</th>
                                                 <th>Description</th>
                                                 <th>Delete</th>
                                                 <th>Update</th>
@@ -113,25 +114,24 @@
                                                         </td>
                                                         <td><a href="#" class="title-name"><?= $row['sub_category']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                        <td><img src="<?= base_url() ?>uploads/sub_cat/<?= $row['image'] ?>" width="60"></td>
+
                                                         <td><a href="#" class="title-name"><?= $row['description']; ?></a></td>
                                                         <td>
-                                                            <a class="dropdown-item" href="<?= base_url('admin_Dashboard/view_category?BdID=' . $row['id']); ?>"
-                                                                onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                <i class="ti ti-trash text-danger"></i> Delete
-                                                            </a>
 
-                                                            <!-- <a class="dropdown-item" href="<?= base_url('view_category?BdID=' . $row['id'] . '&img=' . $row['image']); ?>"
-                                                                    onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                    <i class="ti ti-trash text-danger"></i> Delete
-                                                                </a> -->
 
-                                                        </td>
+<a class="dropdown-item" href="<?php echo base_url() . 'Admin_Dashboard/view_sub_category?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
+            onclick="return confirm('Are you sure you want to delete this lead?');">
+            <i class="ti ti-trash text-danger"></i> Delete
+        </a>
 
-                                                        <td>
+</td>
 
-                                                            <a class="dropdown-item" href="<?= base_url('admin_Dashboard/update_sub_category/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+<td>
 
-                                                        </td>
+<a class="dropdown-item" href="<?= base_url('Admin_Dashboard/update_sub_category/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+
+</td>
                                                     </tr>
                                                 <?php endforeach; ?>
 

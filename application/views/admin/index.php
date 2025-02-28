@@ -31,7 +31,7 @@
 										<div class="daterange-picker d-flex align-items-center justify-content-center">
 
 											<div class="head-icons mb-0">
-												<a href="leads-dashboard.html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Refresh">
+												<a href="<?= base_url('admin_Dashboard') ?>" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Refresh">
 													<i class="ti ti-refresh-dot"></i>
 												</a>
 												<a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse" id="collapse-header">

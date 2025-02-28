@@ -77,15 +77,12 @@
 								
 								<li class="submenu">
 									<a href="#">
-										<i class="ti ti-user-star"></i><span>Quotation</span>
+										<i class="ti ti-user-star"></i><span>Services</span>
 										<span class="menu-arrow"></span>
 									</a>
-									<ul>
-										
-										<li><a href="<?= base_url('Admin_Dashboard/add_quotes')?>">Add Quotation</a></li>
-										<li><a href="<?= base_url('Admin_Dashboard/view_quotes')?>">View Quotation</a></li>
-									
-
+									<ul>		
+										<li><a href="<?= base_url('Admin_Dashboard/add_service')?>">Add Service</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/view_service')?>">View Service</a></li>
 									</ul>
 								</li>
 								<li>

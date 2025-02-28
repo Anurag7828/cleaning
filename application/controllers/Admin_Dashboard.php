@@ -62,44 +62,7 @@ class Admin_Dashboard extends CI_Controller
         if (count($_POST) > 0) {
 
             $post = $this->input->post();
-            // $image_url = $post['image'];
-       
-            // if ($_FILES['image']['name'] != '') {
-             
-            //     $img = imageUpload('image', 'uploads/users/');
-
-            //     $post['image'] = $img;
-
-            //     if ($image_url != "") {
-
-            //         unlink('uploads/users/' . $image_url);
-            //     }
-            // }
-            // $image_url1 = $post['sign'];
-            // if ($_FILES['sign']['name'] != '') {
-
-            //     $img1 = imageUpload('sign', 'uploads/users/');
-
-            //     $post['sign'] = $img1;
-
-            //     if ($image_url1 != "") {
-
-            //         unlink('uploads/users/' . $image_url1);
-            //     }
-            // }
-            // $image_url2 = $post['seal'];
-            // if ($_FILES['seal']['name'] != '') {
-
-            //     $img2 = imageUpload('seal', 'uploads/users/');
-
-            //     $post['seal'] = $img2;
-
-            //     if ($image_url2 != "") {
-
-            //         unlink('uploads/users/' . $image_url2);
-            //     }
-            // }
-
+        
             $category_id = $this->CommonModal->updateRowById('admin', 'id', $tid, $post);
 
             if ($category_id) {
@@ -164,9 +127,9 @@ class Admin_Dashboard extends CI_Controller
             $category_id = $this->CommonModal->updateRowById('category', 'id', $tid, $post);
 
             if ($category_id) {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Source of Lead Updated successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Category Updated successfully</div>');
             } else {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Source of Lead Updated successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Category Updated successfully</div>');
             }
             redirect(base_url('admin_Dashboard/view_category'));
         } else {
@@ -181,50 +144,49 @@ class Admin_Dashboard extends CI_Controller
         $data['title'] = "Our Sub Categories";
         $BdID = $this->input->get('BdID');
         $img = $this->input->get('img');
-
+        $data['category'] = $this->CommonModal->getAllRows('category');
         if ($BdID) {
             $this->CommonModal->deleteRowById('sub_category', array('id' => $BdID));
             if ($img) {
-                unlink('./uploads/sub_cat/' . $img);
+                unlink('uploads/sub_cat/' . $img);
             }
             redirect('admin_Dashboard/view_sub_category');
         }
         $data['sub_category'] = $this->CommonModal->getAllRowsInOrder('sub_category', 'id', 'DESC');
-        $data['category'] = $this->CommonModal->getAllRows('category');
+     
         $this->load->view('admin/view_sub_category', $data);
     }
+
+
   public function add_sub_category()
-{
+  {
     $data['title'] = "Add Sub Category";
     $data['tag'] = "add";
     $data['category'] = $this->CommonModal->getAllRows('category');
     $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
+   if (count($_POST) > 0) {
+       
+       $post = $this->input->post();
+       $post['image'] = imageUpload('image', 'uploads/sub_cat/');
+  
+      $savedata = $this->CommonModal->insertRowReturnId('sub_category', $post);
+           if ($savedata) {
 
-    if ($this->input->post()) {
-        $post = $this->input->post();
+           $this->session->set_userdata('msg', '<div class="alert alert-success">Sub Category Add Successfully</div>');
+       } else {
 
-        // Image Upload
-        if (!empty($_FILES['image']['name'])) {
-            $post['image'] = $this->imageUpload('image', 'uploads/sub_cat/');
-        }
+           $this->session->set_userdata('msg', '<div class="alert alert-success">Sub Category Add Successfully</div>');
+       }
 
-        $savedata = $this->CommonModal->insertRowReturnId('sub_category', $post);
-
-        if ($savedata) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-success">Added Successfully</div>');
-        } else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger">Error while saving data</div>');
-        }
-
-        redirect(base_url('admin_Dashboard/view_sub_category'));
-    } else {
-        $this->load->view('admin/add_sub_category', $data);
-    }
+       redirect(base_url('admin_Dashboard/view_sub_category'));
+      } else {
+      
+       $this->load->view('admin/add_sub_category', $data);
+   }
 }
 
     public function update_sub_category($id)
     {
-
         $data['title'] = 'Update Sub Category';
         $data['tag'] = 'edit';
         $tid = $id;
@@ -250,9 +212,9 @@ class Admin_Dashboard extends CI_Controller
             $category_id = $this->CommonModal->updateRowById('sub_category', 'id', $tid, $post);
 
             if ($category_id) {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Source of Lead Updated successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Sub Category Updated successfully</div>');
             } else {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Source of Lead Updated successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Sub Category Updated successfully</div>');
             }
             redirect(base_url('admin_Dashboard/view_sub_category'));
         } else {
@@ -277,128 +239,242 @@ class Admin_Dashboard extends CI_Controller
         $this->load->view('admin/contact', $data);
     }
  
-
-
-
-
-    public function blog()
-
+    public function view_blog()
     {
-
-        $data['title'] = "Blogs";
-
-        $data['tag'] = "blog";
+        $data['title'] = "Our Blogs";
 
         $BdID = $this->input->get('BdID');
-
         $img = $this->input->get('img');
-
-        if (decryptId($BdID) != '') {
-
-            $delete = $this->CommonModal->deleteRowById('bc_blog', array('id' => decryptId($BdID)));
-
-            unlink('./uploads/blog/' . $img);
-
-            redirect('admin_Dashboard/blog');
-
-            exit;
-
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('blog', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/blog/' . $img);
+            }
+            redirect('admin_Dashboard/view_blog');
         }
-
-        $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
-
-        $this->load->view('admin/blog', $data);
-
+        $data['blog'] = $this->CommonModal->getAllRowsInOrder('blog', 'id', 'DESC');
+     
+        $this->load->view('admin/view_blog', $data);
     }
 
+
     public function add_blog()
-
     {
-
-        $data['title'] = "Add Blogs";
-
-        $data['tag'] = "blog";
-
-
-
+         $data['title'] = "Add Blogs";
+         $data['tag'] = "add";
         if (count($_POST) > 0) {
-
+            
             $post = $this->input->post();
-
-
-
-
-            $post['image'] = imageUpload('img', 'uploads/blog/');
-
-
-
-            $savedata = $this->CommonModal->insertRowReturnId('blog', $post);
-
-            if ($savedata) {
+            $post['image'] = imageUpload('image', 'uploads/blog/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('blog', $post);
+                if ($savedata) {
 
                 $this->session->set_userdata('msg', '<div class="alert alert-success">Blog Add Successfully</div>');
-
             } else {
 
                 $this->session->set_userdata('msg', '<div class="alert alert-success">Blog Add Successfully</div>');
-
             }
 
-            redirect(base_url('admin_Dashboard/blog'));
-
-        } else {
-
+            redirect(base_url('admin_Dashboard/view_blog'));
+           } else {
+           
             $this->load->view('admin/add_blog', $data);
-
         }
-
     }
 
     public function edit_blog($id)
-
     {
-
-        $data['title'] = 'Update Blogs';
-        $data['tag'] = "blog";
-        $tid = decryptId($id);
-        $data['blog'] = $this->CommonModal->getRowById('bc_blog', 'id', $tid);
-
+        $data['title'] = 'Update blogs';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('blog', 'id', $tid);
+    
         if (count($_POST) > 0) {
             $post = $this->input->post();
-            $image_url = $post['image'];
-
-            if ($_FILES['img']['name'] != '') {
-
-                $img = imageUpload('img', 'uploads/blog/');
-                $post['image'] = $img;
-                if ($image_url != "") {
-
-                    unlink('uploads/blog/' . $image_url);
-
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/blog/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/blog/' . $existing_image1);
                 }
-
             }
+    
+            
+            // Update the product with the new data
+            $update_result = $this->CommonModal->updateRowById('blog', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Blogs updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update Blogs.</div>');
+            } 
+          
+            // Redirect after the update
+            redirect(base_url('admin_Dashboard/view_blog'));
+        } else {
+            
+    
+            // Load the edit product view if no POST data
+            $this->load->view('admin/add_blog', $data);
+        }
+    }
 
-            $category_id = $this->CommonModal->updateRowById('blog', 'id', $tid, $post);
+    public function view_service()
+    {
+        $data['title'] = "Our Services";
 
-            if ($category_id) {
+        $BdID = $this->input->get('BdID');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('service', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/services/' . $img);
+            }
+            redirect('admin_Dashboard/view_service');
+        }
+        $data['service'] = $this->CommonModal->getAllRowsInOrder('service', 'id', 'DESC');
+     
+        $this->load->view('admin/view_service', $data);
+    }
 
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Blog Updated successfully</div>');
 
+    public function add_service()
+    {
+         $data['title'] = "Add Services";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/services/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('service', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Service Add Successfully</div>');
             } else {
 
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Blog Updated successfully</div>');
-
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Service Add Successfully</div>');
             }
 
-            redirect(base_url('admin_Dashboard/blog'));
+            redirect(base_url('admin_Dashboard/view_service'));
+           } else {
+           
+            $this->load->view('admin/add_service', $data);
+        }
+    }
 
+    public function edit_service($id)
+    {
+        $data['title'] = 'Update Services';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('service', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/services/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/services/' . $existing_image1);
+                }
+            }
+    
+            
+            // Update the product with the new data
+            $update_result = $this->CommonModal->updateRowById('service', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">service updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update Service.</div>');
+            } 
+          
+            // Redirect after the update
+            redirect(base_url('admin_Dashboard/view_service'));
         } else {
+            
+    
+            // Load the edit product view if no POST data
+            $this->load->view('admin/add_service', $data);
+        }
+    }
+    public function view_product()
+    {
+        $data['title'] = "Our Products";
+        $BdID = $this->input->get('BdID');
+         $completeID = $this->input->get('completeID');
+         $stock = $this->input->get('stock');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('product', array('id' => $BdID));
+            if ($img) {
+                unlink('./uploads/product/' . $img);
+            }
+            redirect('admin_Dashboard/product');
+        }
+         if ($completeID) {
+        $updateData = array('stock' =>  $stock); 
+        $update = $this->CommonModal->updateRowById('product', 'id', $completeID, $updateData);
 
-            $this->load->view('admin/edit_blog', $data);
-
+        if ($update) {
+            $this->session->set_flashdata('msg', 'complete.');
+            $this->session->set_flashdata('msg_class', 'alert-success');
+        } else {
+            $this->session->set_flashdata('msg', 'Failed ');
+            $this->session->set_flashdata('msg_class', 'alert-danger');
         }
 
+        redirect(base_url('admin_Dashboard/view_product'));
+    }
+        $data['product'] = $this->CommonModal->getAllRowsInOrder('product', 'id', 'DESC');
+        $data['products'] = $this->CommonModal->getAllRows('category');
+        $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
+        $this->load->view('admin/view_product', $data);
+    }
+
+    public function add_product()
+    {
+
+         $data['title'] = "Add Products";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/product/');
+            $post['image1'] = imageUpload('image1', 'uploads/product/');
+            $post['image2'] = imageUpload('image2', 'uploads/product/');
+
+            $post['brochure_pdf'] = imageUpload('brochure_pdf', 'uploads/brochures/');
+
+           $savedata = $this->CommonModal->insertRowReturnId('product', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">product Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">product Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_product'));
+           } else {
+            $data['category'] = $this->CommonModal->getAllRows('category');
+            $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
+            $this->load->view('admin/add_product', $data);
+        }
     }
   public function logout()
 
