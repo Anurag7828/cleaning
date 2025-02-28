@@ -648,6 +648,75 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_product', $data);
         }
     }
+
+    public function edit_product($id)
+    {
+        $data['title'] = 'Update Products';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('product', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+            $existing_image2 = $post['image1'];
+            $existing_image3 = $post['image2'];
+            $existing_pdf = $post['brochure_pdf'];
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/product/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/product/' . $existing_image1);
+                }
+            }
+    
+            
+            if ($_FILES['image1']['name'] != '') {
+                $img2 = imageUpload('image1', 'uploads/product/');
+                $post['image1'] = $img2;
+                if ($existing_image2 != "") {
+                    unlink('uploads/product/' . $existing_image2);
+                }
+            }
+    
+           
+            if ($_FILES['image2']['name'] != '') {
+                $img3 = imageUpload('image2', 'uploads/product/');
+                $post['image2'] = $img3;
+                if ($existing_image3 != "") {
+                    unlink('uploads/product/' . $existing_image3);
+                }
+            }
+            if ($_FILES['brochure_pdf']['name'] != '') {
+                $img3 = imageUpload('image2', 'uploads/brochure_pdf/');
+                $post['brochure_pdf'] = $pdf;
+                if ($existing_pdf != "") {
+                    unlink('uploads/brochure_pdf/' . $existing_pdf);
+                }
+            }
+    
+            $update_result = $this->CommonModal->updateRowById('product', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Product updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update product.</div>');
+            }
+          
+       
+            redirect(base_url('admin_Dashboard/view_product'));
+        } else {
+            $data['category'] = $this->CommonModal->getAllRows('category');
+            $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
+   
+            $this->load->view('admin/add_product', $data);
+        }
+    }
   public function logout()
 
     {

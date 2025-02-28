@@ -91,12 +91,13 @@
                                                 <th>1st Image</th>
                                                 <th>2nd Image</th>
                                                 <th>3rd Image</th>
+                                                <th>brochure_pdf</th>
                                                 <th>Description</th>
                                                 <th>Specification</th>
                                                 <th>Category</th>
                                                 <th>Sub Category</th>
-                                                <th>Price</th>
-                                                <th>Stock</th>
+                                              
+                                               
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -125,23 +126,29 @@
                                             ?>
                                                     <tr>
                                                         <td><?= $i; ?></td>
-                                                        <td><?= htmlspecialchars($row['name']); ?></td>
+                                                        <td><?= $row['name']; ?></td>
                                                         <td><img src="<?= setImage($row['image'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image1'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image2'], 'uploads/product/') ?>" width="50" height="50"></td>
+                                                        <td>
+    <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
+        <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i> 
+    </a>
+</td>
+
                                                         <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</td>
                                                         <td><?= strip_tags(substr($row['specification'], 0, 100)); ?>...</td>
-                                                        <td><?= htmlspecialchars($category_name); ?></td>
-                                                        <td><?= htmlspecialchars($sub_category_name); ?></td>
-                                                        <td><?= htmlspecialchars($row['price']); ?></td>
+                                                        <td><?= $category_name; ?></td>
+                                                        <td><?= $sub_category_name; ?></td>
+                                            
 
-                                                        <td>
+                                                        <!-- <td>
                                                             <?php if ($row['stock'] == 0) { ?>
                                                                 <a href="<?= base_url('admin_Dashboard/product?completeID=' . $row['id'] . '&stock=1'); ?>" class="btn btn-success">In Stock</a>
                                                             <?php } else { ?>
                                                                 <a href="<?= base_url('admin_Dashboard/product?completeID=' . $row['id'] . '&stock=0'); ?>" class="btn btn-danger">Out of Stock</a>
                                                             <?php } ?>
-                                                        </td>
+                                                        </td> -->
 
                                                         <td>
                                                             <a href="<?= base_url('admin_Dashboard/edit_product/' . $row['id']); ?>" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
