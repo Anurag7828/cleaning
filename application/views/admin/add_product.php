@@ -82,14 +82,14 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-    <div class="mb-3">
-        <label class="col-form-label">Pdf Brochure</label>
-        <input type="file" id="brochure_pdf" class="form-control" name="brochure_pdf" accept="application/pdf">
+                                    <div class="mb-3">
+                                       <label class="col-form-label">Pdf Brochure</label>
+                                          <input type="file" id="brochure_pdf" class="form-control" name="brochure_pdf" accept="application/pdf">
 
-        <?php if ($tag == 'edit' && !empty($row[0]['brochure_pdf'])): ?>
-            <div class="mt-2">
-                <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
-                    View PDF
+                                           <?php if ($tag == 'edit' && !empty($row[0]['brochure_pdf'])): ?>
+                                            <div class="mt-2">
+                                             <a href=" <?= base_url('uploads/brochures/' .$row[0]['brochure_pdf']) ?>" target="_blank">
+                                             <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i>View PDF  
                 </a>
             </div>
         <?php endif; ?>

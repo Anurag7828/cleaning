@@ -91,6 +91,7 @@
                                                 <th>1st Image</th>
                                                 <th>2nd Image</th>
                                                 <th>3rd Image</th>
+                                                <th>brochure_pdf</th>
                                                 <th>Description</th>
                                                 <th>Specification</th>
                                                 <th>Category</th>
@@ -129,6 +130,12 @@
                                                         <td><img src="<?= setImage($row['image'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image1'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image2'], 'uploads/product/') ?>" width="50" height="50"></td>
+                                                        <td>
+    <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
+        <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i> 
+    </a>
+</td>
+
                                                         <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</td>
                                                         <td><?= strip_tags(substr($row['specification'], 0, 100)); ?>...</td>
                                                         <td><?= $category_name; ?></td>
