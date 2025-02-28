@@ -23,38 +23,28 @@
             </div>
             <div class="banner-carousel owl-theme owl-carousel">
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
+                    <div class="image-layer" style="background-image:url(assets/img/banner-1.png)"></div>
                     <div class="auto-container">
                         <div class="content-box">
                           
-                            <h2><span>Build a Stronger</span> <br /><span>Product...</span></h2>
-                            <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p>
+                            <h2><span>Welcome To</span> <br /><span>Continental Cleaning</span> <br /><span>And Safety Solutions</span></h2>
+                            <!-- <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p> -->
                            
                         </div> 
                     </div>
                 </div>
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-2.jpg)"></div>
+                    <div class="image-layer" style="background-image:url(assets/img/banner-2.png)"></div>
                     <div class="auto-container">
                         <div class="content-box">
                         
-                            <h2><span>Experts in</span> <br /><span>manufacturing</span></h2>
-                            <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p>
+                            <h2><span>Delivering </span> <br /><span>Complete Range</span> <br /><span> OF Cleaning Solution...</span></h2>
+                            <!-- <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p> -->
                            
                         </div> 
                     </div>
                 </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-3.jpg)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                        
-                            <h2><span>Made for</span> <br /><span>Raw Material...</span></h2>
-                            <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p>
-                           
-                        </div> 
-                    </div>
-                </div>
+                
             </div>
        
         </section>
@@ -110,11 +100,11 @@
                             <div class="inner-box">
                                 <div class="icon-box"><i class="flaticon-factory"></i></div>
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="45">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="3500">0</span><span>+</span>
                                 </div>
                                 <div class="text">
-                                    <h3>Branches</h3>
-                                    <p>Branches Across The World</p>
+                                    <h3>Satisfied customers</h3>
+                                    <p>across India and Global markets</p>
                                 </div>
                             </div>
                         </div>
@@ -124,11 +114,11 @@
                             <div class="inner-box">
                                 <div class="icon-box"><i class="flaticon-gas"></i></div>
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="32">0</span><span>k</span>
+                                    <span class="count-text" data-speed="1500" data-stop="32">0</span><span>+</span>
                                 </div>
                                 <div class="text">
-                                    <h3>Projects</h3>
-                                    <p>Projects with 100% Satisfaction</p>
+                                    <h3>Serving countries</h3>
+                                    <p>across 6 continents</p>
                                 </div>
                             </div>
                         </div>
@@ -138,11 +128,11 @@
                             <div class="inner-box">
                                 <div class="icon-box"><i class="flaticon-engineer"></i></div>
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="867">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="10">0</span><span>+</span>
                                 </div>
                                 <div class="text">
-                                    <h3>Engineers</h3>
-                                    <p>Top Engineers around the World</p>
+                                    <h3>Experienced employees</h3>
+                                 
                                 </div>
                             </div>
                         </div>
@@ -152,11 +142,11 @@
                             <div class="inner-box">
                                 <div class="icon-box"><i class="flaticon-engineer"></i></div>
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="867">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="20">0</span><span>+</span>
                                 </div>
                                 <div class="text">
-                                    <h3>Engineers</h3>
-                                    <p>Top Engineers around the World</p>
+                                    <h3>Years of Supporting a cleaner nation</h3>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -173,11 +163,11 @@
                         <div class="col-lg-3 col-md-12 col-sm-12 btn-column">
                             <div class="tab-btn-box">
                                 <ul class="tab-btns tab-buttons clearfix">
-                                    <li class="tab-btn active-btn" data-tab="#tab-1">Leadership Team</li>
-                                    <li class="tab-btn" data-tab="#tab-2">Project Team</li>
-                                    <li class="tab-btn" data-tab="#tab-3">Self Managed Team</li>
-                                    <li class="tab-btn" data-tab="#tab-4">Task Force Team</li>
-                                    <li class="tab-btn" data-tab="#tab-5">Quality Control Team</li>
+                                    <li class="tab-btn active-btn" data-tab="#tab-1">Ride On Scrubber Dryer</li>
+                                    <li class="tab-btn" data-tab="#tab-2">Vacuum Cleaner</li>
+                                    <li class="tab-btn" data-tab="#tab-3">Scrubber Drier</li>
+                                    <li class="tab-btn" data-tab="#tab-4">Vacuum Cleaner</li>
+                                    <li class="tab-btn" data-tab="#tab-5">Scrubber Drier</li>
                                 </ul>
                             </div>
                         </div>
@@ -191,9 +181,9 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/images/service/service-11.jpg" alt="" style="height: 400px;"></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/images/service/service-11.jpg" alt="" style="height: 400px;"></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/images/service/service-11.jpg" alt="" style="height: 400px;"></figure>
+                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
+                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier 2</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
+                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier 3</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
                                         
                                     </div>
                                 </div>
@@ -211,9 +201,9 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
                                         
                                     </div>
                                 </div>
@@ -230,9 +220,9 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
                                         
                                     </div>
                                 </div>
@@ -249,9 +239,9 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
                                         
                                     </div>
                                 </div>
@@ -268,9 +258,9 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/images/service/service-11.jpg" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
+                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
                                         
                                     </div>
                                 </div>
@@ -301,8 +291,8 @@
                                 <h5>Construction & Engineering</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Pipeline System</a></h3>
@@ -315,8 +305,8 @@
                                 <h5>Technology</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=" "></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=" "></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Sheet Metal Bending</a></h3>
@@ -329,8 +319,8 @@
                                 <h5>Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Van Drilling Service</a></h3>
@@ -343,8 +333,8 @@
                                 <h5>Material, Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Steel Springs</a></h3>
@@ -357,8 +347,8 @@
                                 <h5>Construction & Engineering</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Pipeline System</a></h3>
@@ -371,8 +361,8 @@
                                 <h5>Technology</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Sheet Metal Bending</a></h3>
@@ -385,8 +375,8 @@
                                 <h5>Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Van Drilling Service</a></h3>
@@ -399,8 +389,8 @@
                                 <h5>Material, Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Steel Springs</a></h3>
@@ -413,8 +403,8 @@
                                 <h5>Construction & Engineering</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Pipeline System</a></h3>
@@ -427,8 +417,8 @@
                                 <h5>Technology</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Sheet Metal Bending</a></h3>
@@ -441,8 +431,8 @@
                                 <h5>Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Van Drilling Service</a></h3>
@@ -455,8 +445,8 @@
                                 <h5>Material, Mechanical</h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
+                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
                                 <h3><a href="#">Steel Springs</a></h3>
@@ -612,19 +602,14 @@
                                                         <li>Movable Scaffolding Systems</li>
                                                     </ul>
                                                     <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
-                                                    <div class="link-box">
-                                                        <h6><a href="#">Make your Appointment</a></h6>
-                                                    </div>
-                                                    <div class="email"><a href="mailto:appointment@example.com">appointment@example.com</a></div>
-                                                    <div class="btn-box">
-                                                        <a href="#" class="theme-btn btn-two"><span>More Details</span></a>
-                                                    </div>
+                                                   
+                                                   
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/resource/industry-2.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/ind-1.png" alt=""></figure>
                                             </div>
                                         </div>
                                     </div>
@@ -643,19 +628,14 @@
                                                         <li>Movable Scaffolding Systems</li>
                                                     </ul>
                                                     <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
-                                                    <div class="link-box">
-                                                        <h6><a href="#">Make your Appointment</a></h6>
-                                                    </div>
-                                                    <div class="email"><a href="mailto:appointment@example.com">appointment@example.com</a></div>
-                                                    <div class="btn-box">
-                                                        <a href="#" class="theme-btn btn-two"><span>More Details</span></a>
-                                                    </div>
+                                                   
+                                                   
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/resource/industry-2.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/ind-2.png" alt=""></figure>
                                             </div>
                                         </div>
                                     </div>
@@ -674,19 +654,14 @@
                                                         <li>Movable Scaffolding Systems</li>
                                                     </ul>
                                                     <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
-                                                    <div class="link-box">
-                                                        <h6><a href="#">Make your Appointment</a></h6>
-                                                    </div>
-                                                    <div class="email"><a href="mailto:appointment@example.com">appointment@example.com</a></div>
-                                                    <div class="btn-box">
-                                                        <a href="#" class="theme-btn btn-two"><span>More Details</span></a>
-                                                    </div>
+                                                   
+                                                   
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/resource/industry-2.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/ind-1.png" alt=""></figure>
                                             </div>
                                         </div>
                                     </div>
@@ -740,9 +715,9 @@
                                     <div class="news-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/news/news-1.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
                                                 <div class="category"><a href="#">Manufacturing</a></div>
-                                                <div class="view-btn"><a href="assets/images/news/news-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
@@ -758,9 +733,9 @@
                                     <div class="news-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/news/news-2.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
                                                 <div class="category"><a href="#">Smart Factory</a></div>
-                                                <div class="view-btn"><a href="assets/images/news/news-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
@@ -776,9 +751,9 @@
                                     <div class="news-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/images/news/news-3.jpg" alt=""></figure>
+                                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
                                                 <div class="category"><a href="#">Innovation</a></div>
-                                                <div class="view-btn"><a href="assets/images/news/news-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">

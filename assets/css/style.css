@@ -12194,6 +12194,11 @@ div#mCSB_1_container{
 .myaccount-section .form-inner input[type='text'],
 .myaccount-section .form-inner input[type='email'],
 .myaccount-section .form-inner input[type='password'],
+.myaccount-section .form-inner input[type='file'],
+.myaccount-section .form-inner input[type='url'],
+.myaccount-section .form-inner input[type='date'],
+
+
 .myaccount-section .form-inner textarea,
 .myaccount-section .form-inner  .selectmenu{
   position: relative;
