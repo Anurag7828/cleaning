@@ -63,7 +63,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Add By</label>
-                                                <input type="text" id="title" class="form-control" name="add_by" value="admin" readonly value="<?= ($tag == 'edit' && isset($row[0]['add_by'])) ? htmlspecialchars($row[0]['add_by']) : '' ?>" required>
+                                                <input type="text" id="title" class="form-control" name="add_by" value="admin" readonly>
                                             </div>
                                         </div>
                                     </div>
