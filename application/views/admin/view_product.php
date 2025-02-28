@@ -63,8 +63,8 @@
                                                 </div>
                                             </div>
 
-                                            <a href="<?= base_url('admin_Dashboard/add_category') ?>" class="btn btn-primary">
-                                                <i class="ti ti-square-rounded-plus me-2"></i>Add Category
+                                            <a href="<?= base_url('admin_Dashboard/add_product') ?>" class="btn btn-primary">
+                                                <i class="ti ti-square-rounded-plus me-2"></i>Add Product
                                             </a>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                                         <td><img src="<?= setImage($row['image1'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image2'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td>
-    <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
+    <a href="<?= base_url()?>uploads/brochures/<?=$row['brochure_pdf'] ?>" target="_blank">
         <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i> 
     </a>
 </td>
