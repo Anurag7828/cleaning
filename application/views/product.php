@@ -134,7 +134,7 @@
         <section class="service-style-three service-page-2 bg-color-2 border-bottom sec-pad">
             <div class="auto-container">
             <div class="sec-title centred">
-                    <!-- <span class="sub-title">S</span> -->
+                    
                     <h2>Specification</h2>
                 </div>
                 <div class="row clearfix">
