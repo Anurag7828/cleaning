@@ -659,9 +659,7 @@ class Admin_Dashboard extends CI_Controller
         $data['row'] = $this->CommonModal->getRowById('product', 'id', $tid);
     
         if (count($_POST) > 0) {
-            $post = $this->input->post();
-            
-          
+            $post = $this->input->post();      
             $existing_image1 = $post['image']; 
             $existing_image2 = $post['image1'];
             $existing_image3 = $post['image2'];
@@ -715,6 +713,166 @@ class Admin_Dashboard extends CI_Controller
             $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
    
             $this->load->view('admin/add_product', $data);
+        }
+    }
+
+    public function specification()
+    {
+        $data['title'] = "Our Product specification";
+        $BdID = $this->input->get('BdID');
+        $BID = $this->input->get('BID');
+
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('specification', array('id' => decryptId($BdID)));
+           
+            redirect('admin_Dashboard/specification?BID=' . decryptId($BID));
+        }
+        $data['specification'] = $this->CommonModal->getRowById('specification', 'product_id',  decryptId($BID) );
+        $this->load->view('admin/specification', $data);
+    }
+
+    public function add_specification()
+    {
+
+        $data['title'] = "Add specification";
+
+
+
+        $data['tag'] = "add";
+        $BdID = $this->input->get('BdID');
+
+        $data['product'] = $this->CommonModal->getRowById('product', 'id',  decryptId($BdID) );
+
+
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+
+
+            $savedata = $this->CommonModal->insertRowReturnId('specification', $post);
+
+            if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Add Successfully</div>');
+
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Add Successfully</div>');
+
+            }
+
+            redirect(base_url('admin_Dashboard/specification?BID=' . $BdID)); // Remove decryptId call within redirect
+
+
+        } else {
+
+            $this->load->view('admin/add_specification', $data);
+
+        }
+
+    }
+    public function update_specification($id)
+    {
+
+        $data['title'] = 'Update specification';
+
+        $data['tag'] = 'edit';
+
+        $tid =  decryptId($id);
+
+        $data['specification'] = $this->CommonModal->getRowById('specification', 'id', $tid);
+
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+
+
+            $category_id = $this->CommonModal->updateRowById('specification', 'id', $tid, $post);
+
+            if ($category_id) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Updated successfully</div>');
+
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Updated successfully</div>');
+
+            }
+
+            redirect(base_url('admin_Dashboard/specification'));
+
+        } else {
+
+            $this->load->view('admin/add_specification', $data);
+
+        }
+
+    }
+
+    public function testimonials()
+
+    {
+        $data['title'] = "Our Client Testimonials";
+        $BdID = $this->input->get('BdID');
+        
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('testimonial', array('id' => $BdID));
+          
+            redirect('admin_Dashboard/testimonials');
+        }
+       $data['test'] = $this->CommonModal->getAllRows('testimonial');
+        $this->load->view('admin/testimonials', $data);
+    }
+
+    public function add_testimonials()
+    {
+
+        $data['title'] = "Add testimonials";
+        $data['tag'] = "add";
+        $data['testimonials'] = $this->CommonModal->getAllRows('testimonial');
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+
+            $savedata = $this->CommonModal->insertRowReturnId('testimonial', $post);
+
+            if ($savedata) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-success">Added Successfully</div>');
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Error while saving data</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/testimonials'));
+        } else {
+
+            $this->load->view('admin/add_testimonials', $data);
+        }
+    }
+    public function update_testimonials($id)
+    {
+
+        $data['title'] = 'Update testimonials';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        $data['testimonials'] = $this->CommonModal->getRowById('testimonial', 'id', $tid);
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+            $category_id = $this->CommonModal->updateRowById('testimonial', 'id', $tid, $post);
+
+            if ($category_id) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">testimonials Updated successfully</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">testimonials Updated successfully</div>');
+            }
+            redirect(base_url('admin_Dashboard/testimonials'));
+        } else {
+
+            $this->load->view('admin/add_testimonials', $data);
         }
     }
   public function logout()

@@ -93,13 +93,13 @@
                                                 <th>3rd Image</th>
                                                 <th>brochure_pdf</th>
                                                 <th>Description</th>
-                                                <th>Specification</th>
+
                                                 <th>Category</th>
                                                 <th>Sub Category</th>
-                                              
-                                               
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+
+                                                <th>Add Specification</th>
+                                                <th>Action</th>
+
                                             </tr>
                                         </thead>
                                         <tbody id="customerTable">
@@ -131,33 +131,38 @@
                                                         <td><img src="<?= setImage($row['image1'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image2'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td>
-    <a href="<?= base_url()?>uploads/brochures/<?=$row['brochure_pdf'] ?>" target="_blank">
-        <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i> 
-    </a>
-</td>
+
+                                                            <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
+                                                                <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i>
+                                                            </a>
+                                                        </td>
+
+
 
                                                         <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</td>
-                                                        <td><?= strip_tags(substr($row['specification'], 0, 100)); ?>...</td>
                                                         <td><?= $category_name; ?></td>
                                                         <td><?= $sub_category_name; ?></td>
-                                            
 
-                                                        <!-- <td>
-                                                            <?php if ($row['stock'] == 0) { ?>
-                                                                <a href="<?= base_url('admin_Dashboard/product?completeID=' . $row['id'] . '&stock=1'); ?>" class="btn btn-success">In Stock</a>
-                                                            <?php } else { ?>
-                                                                <a href="<?= base_url('admin_Dashboard/product?completeID=' . $row['id'] . '&stock=0'); ?>" class="btn btn-danger">Out of Stock</a>
-                                                            <?php } ?>
-                                                        </td> -->
+                                                        <td>
+                                                        <a href="<?php echo base_url() . 'admin_Dashboard/add_specification?BdID=' . encryptId($row['id']); ?>"
+                                                            class="btn btn-success">Add Specification</a>
+                                                        <br>
+                                                        <br>
+                                                        <a href="<?php echo base_url() . 'admin_Dashboard/specification?BID=' . encryptId($row['id']); ?>"
+                                                            class="btn btn-success">View Specification</a>
+
+                                                        </td>
+
+                                                     
 
                                                         <td>
                                                             <a href="<?= base_url('admin_Dashboard/edit_product/' . $row['id']); ?>" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
-                                                        </td>
-                                                        <td>
-                                                            <a href="<?= base_url('admin_Dashboard/product?BdID=' . $row['id'] . '&img1=' . $row['image'] . '&img2=' . $row['image1'] . '&img3=' . $row['image2']); ?>" class="btn btn-danger" onclick="return confirm('Continue to delete?')">
+                                                            <br><br> <a href="<?= base_url('admin_Dashboard/product?BdID=' . $row['id'] . '&img1=' . $row['image'] . '&img2=' . $row['image1'] . '&img3=' . $row['image2']); ?>" class="btn btn-danger" onclick="return confirm('Continue to delete?')">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </a>
                                                         </td>
+
+
                                                     </tr>
                                             <?php
                                                     $i++;
@@ -179,4 +184,5 @@
 
     <?php include('template/footer.php'); ?>
 </body>
+
 </html>
