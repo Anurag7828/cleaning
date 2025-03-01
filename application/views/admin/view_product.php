@@ -137,10 +137,6 @@
                                                             </a>
                                                         </td>
 
-    <a href="<?= base_url()?>uploads/brochures/<?=$row['brochure_pdf'] ?>" target="_blank">
-        <i class="fas fa-file-pdf text-danger" style="font-size: 30px;"></i> 
-    </a>
-</td>
 
 
                                                         <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</td>

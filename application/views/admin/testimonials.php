@@ -118,7 +118,7 @@
                                                         </td>
                                                         <td>
 
-<a class="dropdown-item" href="<?= base_url('admin_Dashboard/update_testimonials/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+<a class="dropdown-item" href=" <?= base_url('admin_Dashboard/update_testimonials/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
 
 </td>
                                                     </tr>
