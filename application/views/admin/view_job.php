@@ -20,12 +20,10 @@
 
                 <div class="row">
                     <div class="col-md-12">
-
-                        <!-- Page Header -->
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">Contact Query</h4>
+                                    <h4 class="page-title">View Jobs</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -38,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                     
+
                         <div class="card ">
                             <div class="card-header">
                                 <div class="row align-items-center">
@@ -71,14 +69,33 @@
                                                 </div>
                                             </div>
 
-                                          
+                                            <a href="<?= base_url('admin_Dashboard/add_job') ?>" class="btn btn-primary"><i
+                                                    class="ti ti-square-rounded-plus me-2"></i>Add Job</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /Search -->
                             </div>
                             <div class="card-body">
+                                <?php if ($msg = sessionId('msg')) :
 
+                                    $msg_class = sessionId('msg_class') ?>
+
+                                    <div class="row">
+
+                                        <div class="col-lg-12">
+
+                                            <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php
+
+                                    $this->session->unset_userdata('msg');
+
+                                endif; ?>
 
                                 <!-- Contact List -->
                                 <div class="table-responsive custom-table" id="dataList">
@@ -86,48 +103,58 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th class="no-sort">S No.</th>
+                                                
+                                                <th>Title</th>
+                                                <th>Company Name</th>
                                               
-                                                <th>Name</th>
-                                                <th>Contact</th>
-                                                <th>Email</th>
-                                                <th>Address</th>
-                                                <th>Customer Type</th>
-                                                <th>Customer Segment</th>
+                                                <th>Location</th>
+                                                <th>Last Date</th>
 
-
-                                                <th>message</th>
-                                                <th>Delete</th>
-                                            
+                                                <th>Description</th>
+                                                <th>Requirement</th>
+                                                <th>Action</th>
+                                             
                                             </tr>
                                         </thead>
                                         <tbody id="customerTable">
-                                            <?php if (!empty($contact)) : ?>
-                                                <?php $i = 1;
-                                                foreach ($contact as $row) : ?>
-                                                    <tr>
-                                                        <td><?= $i++; ?></td>
-                                                      
-                                                        <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['contact']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['email']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['city']; ?>,<?= $row['pincode']; ?><br><?= $row['country']; ?>
-                                                    </a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['customer_type']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['customer_segment']; ?></a></td>
+                                            <?php
 
-                                                        <td><a href="#" class="title-name"><?= $row['message']; ?></a></td>
+                                            $i = 1;
 
-                                                        <td>
-                                                            <a class="dropdown-item" href="<?= base_url('admin_Dashboard/contact?BdID=' . $row['id']); ?>"
-                                                                onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                <i class="ti ti-trash text-danger"></i> Delete
-                                                            </a>
-                                                        </td>
-   
+                                            if ($career) {
+
+                                                foreach ($career as $row) {
+
+                                            ?>
+                                                    <td><?= $i++; ?></td>
+                                                    <td><?= $row['title']; ?></td>
+                                                    <td><?= $row['company_name']; ?></td>
+                                                  
+                                                    <td><?= $row['location']; ?></td>
+                                                    <td><?= $row['last_date']; ?></td>
+                                                    <td><?= substr($row['desc'], 0, 30) . (strlen($row['desc']) > 30 ? '...' : ''); ?></td>
+<td><?= substr($row['requirement'], 0, 30) . (strlen($row['requirement']) > 30 ? '...' : ''); ?></td>
+
+                                                    <td>
+
+
+                                                    <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_job/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i></a>
+
+                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_job?BdID=' . $row['id']?>"
+                                                                    onclick="return confirm('Are you sure you want to delete this Job?');">
+                                                                    <i class="ti ti-trash text-danger"></i>
+                                                                </a>
+
+
+                                                    </td>
                                                     </tr>
-                                                <?php endforeach; ?>
+                                            <?php
 
-                                            <?php endif; ?>
+                                                    $i++;
+                                                }
+                                            }
+
+                                            ?>
                                         </tbody>
                                     </table>
 

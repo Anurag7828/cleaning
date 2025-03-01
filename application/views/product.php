@@ -16,14 +16,14 @@
     <?php include('includes/header.php') ?>
    
     <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+            <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/background/page-title.jpg);"></div>
             <div class="line-box">
                 <div class="line-1"></div>
                 <div class="line-2"></div>
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Product name</h1>
+                    <h1><?= $product[0]['name']?></h1>
                     
                 </div>
             </div>
@@ -34,50 +34,50 @@
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 carousel-column">
                             <div class="bxslider">
-                                <div class="slider-content">
-                                    <figure class="image-box"><a href="assets/images/shop/shop-7.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/shop/shop-7.png" alt=""></a></figure>
+                            <div class="slider-content">
+                                    <figure class="image-box"><a href="<?= base_url() ?>uploads/product/<?= $product[0]['image'] ?>" class="lightbox-image" data-fancybox="gallery"><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image'] ?>" alt=""></a></figure>
                                     <div class="slider-pager">
                                         <ul class="thumb-box">
                                             <li>
-                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/thumb-1.png" alt=""></figure></a>
+                                                <a class="active" data-slide-index="0" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/thumb-2.png" alt=""></figure></a>
+                                                <a data-slide-index="1" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image1'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/thumb-3.png" alt=""></figure></a>
+                                                <a data-slide-index="2" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image2'] ?>" alt=""></figure></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="slider-content">
-                                    <figure class="image-box"><a href="assets/images/shop/shop-7.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/shop/shop-7.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="<?= base_url() ?>uploads/product/<?= $produc[0]['image1'] ?>" class="lightbox-image" data-fancybox="gallery"><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image1'] ?>" alt=""></a></figure>
                                     <div class="slider-pager">
                                         <ul class="thumb-box">
-                                            <li>
-                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/thumb-1.png" alt=""></figure></a>
+                                        <li>
+                                                <a class="active" data-slide-index="0" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/thumb-2.png" alt=""></figure></a>
+                                                <a data-slide-index="1" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image1'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/thumb-3.png" alt=""></figure></a>
+                                                <a data-slide-index="2" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image2'] ?>" alt=""></figure></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="slider-content">
-                                    <figure class="image-box"><a href="assets/images/shop/shop-7.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/shop/shop-7.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="<?= base_url() ?>uploads/product/<?= $produc[0]['image2'] ?>" class="lightbox-image" data-fancybox="gallery"><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image2'] ?>" alt=""></a></figure>
                                     <div class="slider-pager">
                                         <ul class="thumb-box">
-                                            <li>
-                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/thumb-1.png" alt=""></figure></a>
+                                        <li>
+                                                <a class="active" data-slide-index="0" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/thumb-2.png" alt=""></figure></a>
+                                                <a data-slide-index="1" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image1'] ?>" alt=""></figure></a>
                                             </li>
                                             <li>
-                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/thumb-3.png" alt=""></figure></a>
+                                                <a data-slide-index="2" href="#"><figure><img src="<?= base_url() ?>uploads/product/<?= $product[0]['image2'] ?>" alt=""></figure></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -86,10 +86,10 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h3>RS 20.00 </h3>
-                                <h2>Mastech 6" 150W Bench Grinder MT BG150</h2>
-                            
-                                <p>Beguiled and demoralized by the charms of pleasure of the moment blinded by desire that they cannot foresee the pain and trouble that to those who fail in their duty.</p>
+                            <h3>RS <?= $product[0]['price']?></h3>
+                                <h6>Category :- <?= $product[0]['category']?></h6>
+                                <h6>Sub Category :- <?= $product[0]['sub_category']?></h6>
+                                <p><?= $product[0]['description']?></p>
                                 <section class="downloads-section">
             <div class="auto-container">
                 <div class="row align-items-center">
@@ -98,12 +98,12 @@
                         <div class="download-inner">
                             <ul class="download-list clearfix">
                                 <li>
-                                    <div class="icon-box"><i class="flaticon-pdf"></i></div>
-                                    <button type="button">Brochure</button>
+                                   <a href="<?= base_url()?>uploads/brochures/<?=$product[0]['brochure_pdf'] ?>"><div class="icon-box"><i class="flaticon-pdf"></i></div>
+                                    <button type="button">Brochure</button></a> 
                                 </li>
                                 <li>
-                                    <div class="icon-box"><i class="flaticon-play-button"></i></div>
-                                    <button type="button">Watch Video</button>
+                                <a href="<?=$product[0]['video_url'] ?>"> <div class="icon-box"><i class="flaticon-play-button"></i></div>
+                                    <button type="button">Watch Video</button></a>
                                 </li>
                             </ul>
                         </div>

@@ -32,26 +32,26 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Name</label>
-                                                <input class="form-control" name="name" type="text" value="<?= ($tag == 'edit' && isset($Testimonials[0]['name'])) ? htmlspecialchars($Testimonials[0]['name']) : '' ?>" required>
+                                                <input class="form-control" name="name" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['name'])) ? htmlspecialchars($testimonials[0]['name']) : '' ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Contact</label>
-                                                <input class="form-control" name="contact" type="text" value="<?= ($tag == 'edit' && isset($Testimonials[0]['contact'])) ? htmlspecialchars($Testimonials[0]['contact']) : '' ?>" required>
+                                                <input class="form-control" name="contact" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['contact'])) ? htmlspecialchars($testimonials[0]['contact']) : '' ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Email</label>
-                                                <input class="form-control" name="email" type="text" value="<?= ($tag == 'edit' && isset($Testimonials[0]['email'])) ? htmlspecialchars($Testimonials[0]['email']) : '' ?>" required>
+                                                <input class="form-control" name="email" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['email'])) ? htmlspecialchars($testimonials[0]['email']) : '' ?>" required>
                                             </div>
                                         </div>
                                     </div>
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Feedback<span class="text-danger"> *</span></label>
-                                                <textarea class="form-control" name="feedback" rows="5"><?= ($tag == 'edit' && isset($Testimonials[0]['feedback'])) ? htmlspecialchars($Testimonials[0]['feedback']) : '' ?></textarea>
+                                                <textarea class="form-control" name="feedback" rows="5"><?= ($tag == 'edit' && isset($testimonials[0]['feedback'])) ? htmlspecialchars($testimonials[0]['feedback']) : '' ?></textarea>
                                             </div>
                                         </div>
 

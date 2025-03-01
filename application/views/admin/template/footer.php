@@ -43,6 +43,14 @@
 	<!--- Custom Js -->
 	<script src="<?= base_url()?>assets/admin/js/theme-colorpicker.js" ></script>
 	<script src="<?= base_url()?>assets/admin/js/script.js" ></script>
-
+	<!-- Include CKEditor -->
+<script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".editor").forEach((textarea) => {
+            CKEDITOR.replace(textarea);
+        });
+    });
+</script>
 </body>
 </html>

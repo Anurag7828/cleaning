@@ -325,6 +325,178 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_blog', $data);
         }
     }
+    public function view_application()
+    {
+        $data['title'] = "Our Applications";
+
+        $BdID = $this->input->get('BdID');
+    
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('application', array('id' => $BdID));
+        
+            redirect('admin_Dashboard/view_application');
+        }
+        $data['application'] = $this->CommonModal->getAllRowsInOrder('application', 'id', 'DESC');
+     
+        $this->load->view('admin/view_application', $data);
+    }
+    public function application($id)
+    {
+        $data['title'] = "Our Applications";
+
+        $tid = decryptId($id);
+        $data['application'] = $this->CommonModal->getRowById('application', 'id', $tid);
+
+     
+        $this->load->view('admin/application', $data);
+    }
+    public function view_job()
+    {
+        $data['title'] = "Our jobs";
+
+        $BdID = $this->input->get('BdID');
+    
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('career', array('id' => $BdID));
+        
+            redirect('admin_Dashboard/view_job');
+        }
+        $data['career'] = $this->CommonModal->getAllRowsInOrder('career', 'id', 'DESC');
+     
+        $this->load->view('admin/view_job', $data);
+    }
+
+
+    public function add_job()
+    {
+         $data['title'] = "Add jobs";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+       
+           $savedata = $this->CommonModal->insertRowReturnId('career', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">job Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">job Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_job'));
+           } else {
+           
+            $this->load->view('admin/add_job', $data);
+        }
+    }
+
+    public function edit_job($id)
+    {
+        $data['title'] = 'Update jobs';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('career', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+    
+            
+            // Update the product with the new data
+            $update_result = $this->CommonModal->updateRowById('career', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">jobs updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update jobs.</div>');
+            } 
+          
+            // Redirect after the update
+            redirect(base_url('admin_Dashboard/view_job'));
+        } else {
+            
+    
+            // Load the edit product view if no POST data
+            $this->load->view('admin/add_job', $data);
+        }
+    }
+
+    public function view_video()
+    {
+        $data['title'] = "Our videos";
+
+        $BdID = $this->input->get('BdID');
+    
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('video', array('id' => $BdID));
+        
+            redirect('admin_Dashboard/view_video');
+        }
+        $data['video'] = $this->CommonModal->getAllRowsInOrder('video', 'id', 'DESC');
+     
+        $this->load->view('admin/view_video', $data);
+    }
+
+
+    public function add_video()
+    {
+         $data['title'] = "Add videos";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+       
+           $savedata = $this->CommonModal->insertRowReturnId('video', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">video Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">video Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_video'));
+           } else {
+           
+            $this->load->view('admin/add_video', $data);
+        }
+    }
+
+    public function edit_video($id)
+    {
+        $data['title'] = 'Update videos';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['video'] = $this->CommonModal->getRowById('video', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+    
+            
+            // Update the product with the new data
+            $update_result = $this->CommonModal->updateRowById('video', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">videos updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update videos.</div>');
+            } 
+          
+            // Redirect after the update
+            redirect(base_url('admin_Dashboard/view_video'));
+        } else {
+            
+    
+            // Load the edit product view if no POST data
+            $this->load->view('admin/add_video', $data);
+        }
+    }
 
     public function view_service()
     {
@@ -600,7 +772,7 @@ class Admin_Dashboard extends CI_Controller
         }
 
     }
-    public function edit_specification($id)
+    public function update_specification($id)
     {
 
         $data['title'] = 'Update specification';
@@ -633,7 +805,7 @@ class Admin_Dashboard extends CI_Controller
 
         } else {
 
-            $this->load->view('admin/edit_specification', $data);
+            $this->load->view('admin/add_specification', $data);
 
         }
 

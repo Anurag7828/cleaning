@@ -7,44 +7,52 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['title']='Home';
+        $data['category'] = $this->CommonModal->getAllRows('category');
+    
+
+
 		$this->load->view('index', $data);
 
 	}
 	public function about()
 	{
 		$data['title']='About Us';
-		
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
 		$this->load->view('about',$data);
 
 	}
 	
 	public function blog()
 	{
-		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
+		
 		$data['title']='Blog';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$data['blog'] = $this->CommonModal->getAllRowsInOrder('blog', 'id', 'DESC');
+
 		$this->load->view('blog' , $data);
 
 	}
-	public function blogdetail()
+	
+	public function blogdetail($id)
 	{
-		// $data['blogs'] = $this->CommonModal->getAllRows('bc_blog');
-		$data['title']='Blog';
+		$tid = decryptId($id);
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
+
+        $data['blog'] = $this->CommonModal->getRowById('blog', 'id', $tid);
+
 		$this->load->view('blogdetail' , $data);
 
 	}
-	// public function blogdetail($id)
-	// {
-	// 	$tid = decryptId($id);
-
-    //     $data['blog'] = $this->CommonModal->getRowById('bc_blog', 'id', $tid);
-
-	// 	$this->load->view('blog-details' , $data);
-
-	// }
 	public function news()
 	{
 		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
 		$data['title']='news';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
 		$this->load->view('news' , $data);
 
 	}
@@ -52,6 +60,8 @@ class Home extends CI_Controller {
 	{
 		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
 		$data['title']='news';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
 		$this->load->view('newsdetail' , $data);
 
 	}
@@ -59,13 +69,36 @@ class Home extends CI_Controller {
 	{
 		// $data['careers'] = $this->CommonModal->getAllRows('bc_career');
 		$data['title']='career';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$data['career'] = $this->CommonModal->getAllRowsInOrder('career', 'id', 'DESC');
 		$this->load->view('career' , $data);
 
 	}
-	public function apply()
+	public function video()
 	{
-		// $data['applys'] = $this->CommonModal->getAllRows('bc_apply');
-		$data['title']='apply';
+	
+		$data['title']='Video Gallery';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$data['video'] = $this->CommonModal->getAllRowsInOrder('video', 'id', 'DESC');
+		$this->load->view('video' , $data);
+
+	}
+	public function thankyou(){
+		$data['title'] = "Thankyou";
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$this->load->view('thankyou');
+	}
+	public function apply($id)
+	{
+		$tid = decryptId($id);
+
+		$data['title']='Apply';
+		$data['job_id'] =$tid;
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
 		$this->load->view('apply' , $data);
 
 	}
@@ -150,27 +183,43 @@ class Home extends CI_Controller {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger">Error while saving data</div>');
             }
     
-            redirect(base_url('apply'));
+            redirect(base_url('thankyou'));
         } 
     }
-	public function category()
+	public function category($id)
 	{
-		// $data['categorys'] = $this->CommonModal->getAllRows('bc_category');
+		$tid = decryptId($id);
+
 		$data['title']='category';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+        $data['categoryById'] = $this->CommonModal->getRowById('category','id', $tid);
+		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','5', 'id', 'DESC');
+		$data['sub_category'] = $this->CommonModal->getAllRowsInOrder('sub_category', 'id', 'DESC');
+    
 		$this->load->view('category' , $data);
 
 	}
-	public function product()
+	public function product($id)
 	{
-		// $data['products'] = $this->CommonModal->getAllRows('bc_product');
+		$tid = decryptId($id);
+
 		$data['title']='product';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+        $data['product'] = $this->CommonModal->getRowById('product','id', $tid);
+   
+	
 		$this->load->view('product' , $data);
 
 	}
-	public function sub_category()
+	public function sub_category($id)
 	{
-		// $data['sub_categorys'] = $this->CommonModal->getAllRows('bc_sub_category');
+		$tid = decryptId($id);
+
 		$data['title']='sub_category';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+		$data['sub_categoryy'] = $this->CommonModal->getRowById('sub_category','id', $tid);
+		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('sub_category','5', 'id', 'DESC');
+		$data['product'] = $this->CommonModal->getAllRowsInOrder('product', 'id', 'DESC');
 		$this->load->view('sub_category' , $data);
 
 	}
@@ -178,31 +227,35 @@ class Home extends CI_Controller {
 	{
 		// $data['delarships'] = $this->CommonModal->getAllRows('bc_delarship');
 		$data['title']='delarship';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
 		$this->load->view('delarship' , $data);
 
 	}
 	public function contact()
 	{
 		$data['title']='Contact Us';
-		// if (count($_POST) > 0) {
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		if (count($_POST) > 0) {
 
-        //     $post = $this->input->post();
-        //     $savedata = $this->CommonModal->insertRowReturnId('contact_query', $post);
+            $post = $this->input->post();
+            $savedata = $this->CommonModal->insertRowReturnId('contact', $post);
 
-        //     if ($savedata) {
+            if ($savedata) {
 
-        //         $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
 
-        //     } else {
+            } else {
 
-        //         $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
 
-        //     }
+            }
 
-        //     redirect(base_url('Home/contact'));
-        //     exit();
+            redirect(base_url('thankyou'));
+            exit();
 
-        // } 
+        } 
 
             $this->load->view('contact',$data);
 

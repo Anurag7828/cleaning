@@ -26,32 +26,23 @@
                                     <div class="title-box">
                                       
                                       
-                                        <h2>Digital Manufacturing Week 2020 Leading the Way</h2>
+                                        <h2><?= $blog[0]['heading']?></h2>
                                     </div>
                                     <ul class="post-info clearfix">
-                                        <li><i class="fa-regular fa-calendar"></i>28.09.2022</li>
-                                        <li><i class="fa-regular fa-user"></i><a href="#">Oliver Jack</a></li>
+                                        <li><i class="fa-regular fa-calendar"></i><?= date("d M Y", strtotime($blog[0]['date'])) ?></li>
+                                        <li><i class="fa-regular fa-user"></i><a href="#"><?= $blog[0]['add_by']?></a></li>
                                      
                                     </ul>
                                 </div>
-                                <figure class="image-box"><img src="assets/images/news/news-22.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="<?= base_url() ?>uploads/blog/<?= $blog[0]['image'] ?>" alt="" style="height: 425px;"></figure>
                                 <div class="text">
-                                    <p>Right to find fault with a man who chooses to enjoy pleasure that has consequences or one avoids a pain that produces on the other hand we denounce with all righteous indignation and dislike men who are so beguiled demoralized by the charms pleasure of the moment so through shrinking from toil and pain cases are perfectly simple.</p>
-                                    <p>Undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying avoids a pain that produces no resultant pleasure.</p>
+                                    <p><?= $blog[0]['description']?></p>
+                                    
                                 </div>
                             </div>
                            
                             <div class="post-nav">
-                                <div class="post-nav-btn">
-                                    <div class="single-btn">
-                                        <h6>Prev Post</h6>
-                                        <h4><a href="#">Best for any Indutrial and <br />Business Solution.</a></h4>
-                                    </div>
-                                    <div class="single-btn text-end">
-                                        <h6>Next Post</h6>
-                                        <h4><a href="#">Building Back a Sustainable <br />Manufacturing Sector</a></h4>
-                                    </div>
-                                </div>
+                               
                                 <div class="btn-box">
                                     <a href="<?= base_url()?>blog"><span>Back to Blog Post</span></a>
                                 </div>
@@ -66,21 +57,17 @@
                                     <h3>Other Blog Post</h3>
                                 </div>
                                 <div class="post-inner">
+                                    <?php
+                                foreach ($other as $row) {
+
+?>
                                     <div class="post">
-                                        <h6>Industries</h6>
-                                        <h4><a href="#">Best for any Indutrial and Business Solution.</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>06.09.2022</h5>
+                                       
+                                        <h4><a href="#"><?= $row['heading']?></a></h4>
+                                        <h5><i class="fa-regular fa-calendar"></i><?= date("d M Y", strtotime($row['date'])) ?></h5>
                                     </div>
-                                    <div class="post">
-                                        <h6>Technology</h6>
-                                        <h4><a href="#">Won Best Factory Award of the Year 2016 & 17.</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>05.09.2022</h5>
-                                    </div>
-                                    <div class="post">
-                                        <h6>Innovation</h6>
-                                        <h4><a href="#">Building Back a Sustainable Manufacturing Sector</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>26.08.2022</h5>
-                                    </div>
+                                    <?php } ?>
+                                    
                                 </div>
                             </div>
                             <div class="sidebar-widget category-widget">
