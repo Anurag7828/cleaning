@@ -243,6 +243,7 @@
                                 </div>
                                 <div class="slider-content">
                                     <div class="three-item-carousel owl-carousel owl-theme owl-dots-none">
+                                   <?php foreach ($testimonial as $testimonial_info) { ?>
                                         <div class="testimonial-block-one">
                                             <div class="inner-box">
                                                 <div class="quote-box"><i class="flaticon-quote"></i></div>
@@ -254,43 +255,13 @@
                                                     <li><i class="flaticon-star"></i></li>
                                                     <li><i class="flaticon-star"></i></li>
                                                 </ul>
-                                                <p>Like to express our appreciation of all efforts by Machino for the successful steel for our Project.</p>
-                                                <h3>Rhys Damian</h3>
-                                                <span class="designation">CEO, High Rise Construction</span>
+                                                <p style="text-align: justify;"><?= $testimonial_info['feedback'] ?></p>
+                                                <h3><?= $testimonial_info['name'] ?></h3>
+                                                <span class="designation"><?= $testimonial_info['designation'] ?></span>
                                             </div>
                                         </div>
-                                        <div class="testimonial-block-one">
-                                            <div class="inner-box">
-                                                <div class="quote-box"><i class="flaticon-quote"></i></div>
-                                                <figure class="thumb-box"><img src="assets/images/resource/testimonial-4.jpg" alt=""></figure>
-                                                <ul class="rating clearfix">
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                </ul>
-                                                <p>Machino manufacturing has been a great supplier to our company. Their quick turn around is fantastic.</p>
-                                                <h3>Kyle George</h3>
-                                                <span class="designation">Manager, Sustain Power</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-block-one">
-                                            <div class="inner-box">
-                                                <div class="quote-box"><i class="flaticon-quote"></i></div>
-                                                <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.jpg" alt=""></figure>
-                                                <ul class="rating clearfix">
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                    <li><i class="flaticon-star"></i></li>
-                                                </ul>
-                                                <p>I also was given great feedback on the quality, the product manager was excited about how good they.</p>
-                                                <h3>Tracy Margaret</h3>
-                                                <span class="designation">San Fransisco</span>
-                                            </div>
-                                        </div>
+                                        <?php }?>
+                                     
                                     </div>
                                 </div>
                             </div>

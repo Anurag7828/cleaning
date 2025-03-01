@@ -782,6 +782,8 @@ class Admin_Dashboard extends CI_Controller
         $tid =  decryptId($id);
 
         $data['specification'] = $this->CommonModal->getRowById('specification', 'id', $tid);
+        $spe = $this->CommonModal->getRowById('specification', 'id', $tid);
+
 
 
         if (count($_POST) > 0) {
@@ -801,7 +803,7 @@ class Admin_Dashboard extends CI_Controller
 
             }
 
-            redirect(base_url('admin_Dashboard/specification'));
+            redirect(base_url('admin_Dashboard/specification?BID=' . encryptId($spe[0]['product_id'])));
 
         } else {
 

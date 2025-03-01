@@ -67,13 +67,18 @@
                                             </div>
                                         </div>
                                        
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Video Url</label>
                                                 <input type="text" id="video_url" class="form-control" name="video_url"  value="<?= ($tag == 'edit' && isset($row[0]['video_url'])) ? htmlspecialchars($row[0]['video_url']) : '' ?>" required >
                                             </div>
                                         </div>
-
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="col-form-label">Price</label>
+                                                <input type="text"  class="form-control" name="price"  value="<?= ($tag == 'edit' && isset($row[0]['price'])) ? htmlspecialchars($row[0]['price']) : '' ?>" required >
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">
 
@@ -133,52 +138,12 @@
                                         
                                     </div>
                                     
-                                    <div class="row">
-<<<<<<< HEAD
-                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="col-form-label">category <span class="text-danger">*</span></label>
-                                                            <select class="select2 form-control" name="category" required>
-                                                                <option value="" data-display="Please select">Please select</option>
-                                                                <?php if (!empty($category)) : ?>
-                                                                    <?php foreach ($category as $item) : ?>
-                                                                        <option value="<?= htmlspecialchars($item['id']) ?>"
-                                                                            <?= ($tag == 'edit' && isset($row[0]['category']) && $row[0]['category'] == $item['id']) ? 'selected' : '' ?>>
-                                                                            <?= htmlspecialchars($item['name']) ?>
-                                                                        </option>
-                                                                    <?php endforeach; ?>
-                                                                <?php endif; ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="col-form-label">Sub category <span class="text-danger">*</span></label>
-                                                            <select class="select2 form-control" name="sub_category" required>
-                                                                <option value="" data-display="Please select">Please select</option>
-                                                                <?php if (!empty($sub_category)) : ?>
-                                                                    <?php foreach ($sub_category as $item) : ?>
-                                                                        <option value="<?= htmlspecialchars($item['id']) ?>"
-                                                                            <?= ($tag == 'edit' && isset($row[0]['sub_category']) && $row[0]['sub_category'] == $item['id']) ? 'selected' : '' ?>>
-                                                                            <?= htmlspecialchars($item['sub_category']) ?>
-                                                                        </option>
-                                                                    <?php endforeach; ?>
-                                                                <?php endif; ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                    </div>
+                                    
                                     <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="col-form-label">Description<span class="text-danger"> *</span></label>
-                                            <textarea class="form-control" name="description" rows="5"><?= ($tag == 'edit' && isset($row[0]['description'])) ? htmlspecialchars($row[0]['description']) : '' ?></textarea>
-=======
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="col-form-label">Description<span class="text-danger"> *</span></label>
-                                            <textarea  class="form-control editor" name="description" rows="5"><?= ($tag == 'edit' && isset($row[0]['description'])) ? htmlspecialchars($row[0]['description']) : '' ?></textarea>
->>>>>>> 6ebb7feaa3d2aa1381e53725da80e4fa034c11aa
+                                            <textarea class="form-control editor" name="description" rows="5"><?= ($tag == 'edit' && isset($row[0]['description'])) ? htmlspecialchars($row[0]['description']) : '' ?></textarea>
                                         </div>
                                     </div>
                                     

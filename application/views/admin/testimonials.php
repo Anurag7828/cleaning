@@ -90,7 +90,7 @@
                                                 <th class="no-sort">S No.</th>
                                               
                                                 <th>Name</th>
-                                                <th>Contact</th>
+                                                <th>Designation</th>
                                                 <th>Email</th>
                                                 <th>Feedback</th>
                                                 <th>Delete</th>
@@ -106,9 +106,9 @@
                                                         <td><?= $i++; ?></td>
                                                       
                                                         <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['contact']; ?></a></td>
+                                                        <td><a href="#" class="title-name"><?= $row['designation']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['email']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['feedback'];  ?></a></td>
+                                                        <td><a href="#" class="title-name"><?= substr($row['feedback'], 0, 30) . (strlen($row['feedback']) > 30 ? '...' : ''); ?></a></td>
 
                                                         <td>
                                                             <a class="dropdown-item" href="<?= base_url('admin_Dashboard/testimonials?BdID=' . $row['id']); ?>"
