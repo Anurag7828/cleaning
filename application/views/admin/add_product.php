@@ -133,16 +133,10 @@
                                                     </div>
                                     </div>
                                     <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="col-form-label">Description<span class="text-danger"> *</span></label>
                                             <textarea class="form-control" name="description" rows="5"><?= ($tag == 'edit' && isset($row[0]['description'])) ? htmlspecialchars($row[0]['description']) : '' ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="col-form-label">specification<span class="text-danger"> *</span></label>
-                                            <textarea class="form-control" name="specification" rows="5"><?= ($tag == 'edit' && isset($row[0]['specification'])) ? htmlspecialchars($row[0]['specification']) : '' ?></textarea>
                                         </div>
                                     </div>
                                     

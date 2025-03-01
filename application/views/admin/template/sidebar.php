@@ -90,7 +90,16 @@
 										<i class="ti ti-layout-navbar"></i><span>Contact Query</span>
 									</a>
 								</li>
-						
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Testimonials</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>		
+										<li><a href="<?= base_url('Admin_Dashboard/add_testimonials')?>">Add Testimonials</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/testimonials')?>">View Testimonials</a></li>
+									</ul>
+								</li>
 						<li>
 							<h6 class="submenu-hdr">Settings</h6>
 							<ul>
