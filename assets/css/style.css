@@ -1399,7 +1399,9 @@ img {
   z-index: 999999;
   transition: all 900ms ease;
 }
-
+.about-style-two .owl-nav{
+  display: none;
+}
 .mobile-menu .navbar-collapse{
   display:block !important; 
 }
@@ -5100,8 +5102,8 @@ div#mCSB_1_container{
   position: relative;
 }
 .about-style-two .image-column{
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .about-style-two .image-box{

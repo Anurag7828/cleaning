@@ -57,13 +57,13 @@
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box">
-                            <figure class="image image-1"><img src="assets/images/resource/about-2.jpg" alt=""></figure>
+                            <figure class="image image-1"><img src="assets/img/about-1.png" alt=""></figure>
                      
                            
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="slider-content sec-pad">
+                        <div class=" sec-pad">
                             <div class="about-carousel owl-carousel owl-theme owl-dots-none">
                                 <div class="content-box">
                                     <div class="sec-title">
@@ -74,7 +74,7 @@
                                     
                                     <div class="text">
                                         <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
-                                        <p>Righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, trouble that are bound to ensue  obligations of business it will frequently occur that pleasures.</p>
+                                  
                                         <a href="<?= base_url()?>about" class="theme-btn btn-two"><span>More Details</span></a>
                                     </div>
                                 </div>
@@ -342,7 +342,7 @@ $i++;
                                        
                                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                             <div class="image-box">
-                                                <figure class="image"><img src="<?= base_url() ?>uploads/blog/<?= $industry_info['image'] ?>" alt=""></figure>
+                                                <figure class="image"><img src="<?= base_url() ?>uploads/blog/<?= $industry_info['image'] ?>" alt="" style="height:400px"></figure>
                                             </div>
                                         </div>
                                     </div>

@@ -10,7 +10,7 @@
 	<meta name="robots" content="index, follow">
 
 	<!-- Title -->
-	<title> Admin Dashboard </title>
+	<title><?= $title?> | Admin Dashboard </title>
 
 
 
@@ -19,7 +19,7 @@
 
 	<!-- Favicon -->
 	<link rel="icon" href="<?= base_url()?>assets/admin/img/favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets/admin/img/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets/admin/img/favicon.ng">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url()?>assets/admin/css/bootstrap.min.css">

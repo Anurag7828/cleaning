@@ -44,21 +44,21 @@
         <section class="myaccount-section">
             <div class="auto-container">
                 <div class="row clearfix">
-                   
+
                     <div class="col-lg-12 col-md-12 col-sm-12 register-column">
                         <div class="register-content">
-                            <h2>Register as New Delarship Regestration</h2>
+                            <h2>Request a Quote</h2>
                             <div class="form-inner">
-                                <form action="http://st.ourhtmldemo.com/new/Machion/my-account.html" method="post">
+                                <form action="<?= base_url('Home/delarship') ?>" method="post">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>First Name</label>
-                                            <input type="text" name="fname" required="">
+                                            <label>Company Name</label>
+                                            <input type="text" name="company_name" required="">
+                                        </div> <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <label>Owner Name</label>
+                                            <input type="text" name="owner_name" required="">
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" name="lname" required="">
-                                        </div>
+
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Email</label>
                                             <input type="email" name="email" required="">
@@ -68,25 +68,64 @@
                                             <input type="text" name="phone" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="password" required="">
+                                            <label>City</label>
+                                            <input type="text" name="city" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Confirm Password</label>
-                                            <input type="password" name="cpassword" required="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-two">Register</button>
+                                            <label>Pincode</label>
+                                            <input type="text" name="pincode" required="">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <div class="custom-controls-stacked">
-                                                <label class="custom-control material-checkbox">
-                                                    <input type="checkbox" class="material-control-input">
-                                                    <span class="material-control-indicator"></span>
-                                                    <span class="description">I agree to all the privacy policy, terms &amp; conditions.</span>
-                                                </label>
+                                            <label>Select Country</label>
+                                            <div class="select-box">
+                                                <select class="selectmenu" id="countryDropdown" name="country">
+                                                    <option value="" disabled selected>Select Country</option>
+                                                    <option value="United States">United States</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="India" selected>India</option>
+                                                    <option value="Germany">Germany</option>
+                                                    <option value="France">France</option>
+                                                    <option value="Italy">Italy</option>
+                                                    <option value="Spain">Spain</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="China">China</option>
+                                                    <option value="Brazil">Brazil</option>
+                                                    <option value="South Africa">South Africa</option>
+                                                    <option value="Mexico">Mexico</option>
+                                                    <option value="Russia">Russia</option>
+                                                </select>
                                             </div>
                                         </div>
+
+
+
+
+
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <label>Select Business Type</label>
+                                            <div class="select-box">
+                                                <select class="selectmenu" id="countryDropdown" name="bussiness_type">
+                                                    <option value="" disabled selected>Select Business Type</option>
+                                                    <option value="Retailer">Retailer</option>
+                                                    <option value="Distributor">Distributor</option>
+                                                    <option value="Service Provider">Service Provider</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <label>Message</label>
+                                            <textarea name="message"></textarea>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group message-btn">
+                                            <button type="submit" class="theme-btn btn-two">Submit</button>
+                                        </div>
+
                                     </div>
                                 </form>
                             </div>

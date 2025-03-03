@@ -2,10 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title><?= $title ?></title>
+<title><?= $title ?> || Continental Cleaning And Safety Solutions</title>
 
 <!-- Fav Icon -->
-<link rel="icon" href="<?= base_url()?>assets/images/favico.ico" type="image/x-icon">
+<link rel="icon" href="<?= base_url()?>assets/img/logo.png" type="image/x-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&amp;display=swap" rel="stylesheet">

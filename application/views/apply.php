@@ -24,7 +24,7 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Job Name</h1>
+                    <h1><?= $job[0]['title']?></h1>
                    
                 </div>
             </div>
@@ -36,7 +36,7 @@
                    
                     <div class="col-lg-12 col-md-12 col-sm-12 register-column">
                         <div class="register-content">
-                            <h2>Apply For Job Name</h2>
+                            <h2>Apply For <?= $job[0]['title']?></h2>
                             <div class="form-inner">
                                 <form action="<?= base_url('Home/add_apply')?>" method="post" enctype="multipart/form-data">
                             <h4>Basic Information</h4>
@@ -278,7 +278,7 @@
                                         </div>
                                       
                                     
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group message-btn">
+                                        <div class="col-lg-12 col-md-6 col-sm-12 form-group message-btn">
                                             <button type="submit" class="theme-btn btn-two">Submit</button>
                                         </div>
                                        

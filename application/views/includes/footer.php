@@ -4,7 +4,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="logo-widget footer-widget">
-                                <figure class="footer-logo back-logo"><a href="<?= base_url()?>"><img src="assets/img/logo.png" alt=""></a></figure>
+                                <figure class="footer-logo back-logo"><a href="<?= base_url()?>"><img src="<?= base_url()?>assets/img/logo.png" alt=""></a></figure>
                                 <ul class="info-list clearfix">
                                     <li>
                                         <div class="icon-box"><i class="flaticon-pin"></i></div>
@@ -70,7 +70,7 @@
                                     <ul class="links-list clearfix">
                                         <li><a href="<?= base_url()?>">Term & Condition</a></li>
                                         <li><a href="<?= base_url()?>">Privacy policy</a></li>
-                                        <li><a href="<?= base_url()?>">Get A Quote</a></li>
+                                        <li><a href="javascript:void(0);" class="search-box-outer search-toggler">Get A Quote</a></li>
                                       
                                     </ul>
                                 </div>
@@ -92,8 +92,8 @@
                 <div class="footer-bottom">
                     <div class="bottom-inner">
                         <ul class="footer-nav clearfix"> 
-                            <li><a href="<?= base_url()?>">© <?= date('Y') ?> - Continental Cleaning & Safety Solutions - All Rights Reserved</a></li>
-                            <li><a href="<?= base_url()?>">Developed By - Namami Software</a></li>
+                            <li><a href="<?= base_url()?>admin" target="_blank">© <?= date('Y') ?> - Continental Cleaning & Safety Solutions - All Rights Reserved</a></li>
+                            <li><a href="https://namami.co.in/" target="_blank">Developed By - Namami Software</a></li>
                         </ul>
                         <button class="scroll-top-two scroll-to-target" data-target="html">Back to Top <img src="assets/images/icons/icon-9.png" alt=""></button>
                     </div>

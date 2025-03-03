@@ -411,6 +411,21 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_industry', $data);
         }
     }
+    public function view_delarship()
+    {
+        $data['title'] = "Our Delarships";
+
+        $BdID = $this->input->get('BdID');
+    
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('delarship', array('id' => $BdID));
+        
+            redirect('admin_Dashboard/view_delarship');
+        }
+        $data['delarship'] = $this->CommonModal->getAllRowsInOrder('delarship', 'id', 'DESC');
+     
+        $this->load->view('admin/view_delarship', $data);
+    }
     public function view_application()
     {
         $data['title'] = "Our Applications";

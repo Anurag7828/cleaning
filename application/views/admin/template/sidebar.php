@@ -157,6 +157,11 @@
 										<i class="ti ti-layout-navbar"></i><span>Customer Query</span>
 									</a>
 								</li>
+								<li>
+									<a href="<?= base_url('Admin_Dashboard/view_delarship')?>">
+										<i class="ti ti-layout-navbar"></i><span>Delarship Query</span>
+									</a>
+								</li>
 						<li>
 							<h6 class="submenu-hdr">Settings</h6>
 							<ul>

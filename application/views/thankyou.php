@@ -25,7 +25,7 @@
             width: 90%;
         }
         .thank-you-container h1 {
-            color: #4caf50;
+            color: #021b55;
             margin: 0 0 15px;
         }
         .thank-you-container p {
@@ -38,7 +38,7 @@
             margin-top: 15px;
             padding: 10px 20px;
             color: #fff;
-            background-color: #4caf50;
+            background-color: #021b55;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;

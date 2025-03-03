@@ -64,7 +64,7 @@ class Home extends CI_Controller {
 	public function news()
 	{
 	
-		$data['title']='news';
+		$data['title']='News';
 		$data['category'] = $this->CommonModal->getAllRows('category');
 		$data['news'] = $this->CommonModal->getAllRowsInOrder('news', 'id', 'DESC');
     
@@ -75,7 +75,7 @@ class Home extends CI_Controller {
 	{
 		$tid = decryptId($id);
 
-		$data['title']='news';
+		$data['title']='News';
 		$data['category'] = $this->CommonModal->getAllRows('category');
     	$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('news','5', 'id', 'DESC');
     	$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
@@ -89,7 +89,7 @@ class Home extends CI_Controller {
 	public function career()
 	{
 		// $data['careers'] = $this->CommonModal->getAllRows('bc_career');
-		$data['title']='career';
+		$data['title']='Career';
 		$data['category'] = $this->CommonModal->getAllRows('category');
     
 		$data['career'] = $this->CommonModal->getAllRowsInOrder('career', 'id', 'DESC');
@@ -119,6 +119,7 @@ class Home extends CI_Controller {
 		$data['title']='Apply';
 		$data['job_id'] =$tid;
 		$data['category'] = $this->CommonModal->getAllRows('category');
+		$data['job'] = $this->CommonModal->getRowById('career', 'id',  $tid);
     
 		$this->load->view('apply' , $data);
 
@@ -127,7 +128,7 @@ class Home extends CI_Controller {
     {
     
     
-		$data['title']='apply';
+		$data['title']='Apply';
         
         if ($this->input->post()) {
             $post = $this->input->post();
@@ -210,7 +211,7 @@ class Home extends CI_Controller {
 	public function service($id)
 	{
 		$tid = decryptId($id);
-		$data['title']='service';
+		$data['title']='Service';
 		$data['category'] = $this->CommonModal->getAllRows('category');
     
 		$data['service'] = $this->CommonModal->getRowById('service', 'id',  $tid);
@@ -223,7 +224,7 @@ class Home extends CI_Controller {
 	{
 		$tid = decryptId($id);
 
-		$data['title']='category';
+		$data['title']='Category';
 		$data['category'] = $this->CommonModal->getAllRows('category');
         $data['categoryById'] = $this->CommonModal->getRowById('category','id', $tid);
 		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','5', 'id', 'DESC');
@@ -236,7 +237,7 @@ class Home extends CI_Controller {
 	{
 		$tid = decryptId($id);
 
-		$data['title']='product';
+		$data['title']='Product';
 		$data['category'] = $this->CommonModal->getAllRows('category');
         $data['product'] = $this->CommonModal->getRowById('product','id', $tid);
    
@@ -248,7 +249,7 @@ class Home extends CI_Controller {
 	{
 		$tid = decryptId($id);
 
-		$data['title']='sub_category';
+		$data['title']='Sub_category';
 		$data['category'] = $this->CommonModal->getAllRows('category');
 		$data['sub_categoryy'] = $this->CommonModal->getRowById('sub_category','id', $tid);
 		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('sub_category','5', 'id', 'DESC');
@@ -259,9 +260,27 @@ class Home extends CI_Controller {
 	public function delarship()
 	{
 		// $data['delarships'] = $this->CommonModal->getAllRows('bc_delarship');
-		$data['title']='delarship';
+		$data['title']='Delarship';
 		$data['category'] = $this->CommonModal->getAllRows('category');
-    
+		if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+            $savedata = $this->CommonModal->insertRowReturnId('delarship', $post);
+
+            if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Successfully</div>');
+
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Not Successfully</div>');
+
+            }
+
+            redirect(base_url('thankyou'));
+            exit();
+
+        } 
 		$this->load->view('delarship' , $data);
 
 	}
