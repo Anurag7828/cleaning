@@ -110,12 +110,10 @@
                                                         <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['contact']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['email']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['city']; ?>,<?= $row['pincode']; ?><br><?= $row['country']; ?>
-                                                    </a></td>
+                                                        <td><a href="#" class="title-name"><?= $row['city']; ?>,<?= $row['pincode']; ?><br><?= $row['country']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['customer_type']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['customer_segment']; ?></a></td>
-
-                                                        <td><a href="#" class="title-name"> <td><?php echo strip_tags(substr($row['message'] , 0 , 250)); ?>...</a></td>
+                                                        <td><a href="#" class="title-name"> <?php echo strip_tags(substr($row['message'] , 0 , 250)); ?>...</a></td>
 
                                                         <td>
                                                             <a class="dropdown-item" href="<?= base_url('admin_Dashboard/contact?BdID=' . $row['id']); ?>"

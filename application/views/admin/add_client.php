@@ -41,7 +41,7 @@
 
                                                 <?php if ($tag == 'edit' && !empty($row[0]['image'])): ?>
                                                     <div class="mt-2">
-                                                        <img src="<?= base_url('uploads/news/' . $row[0]['image']) ?>" alt="Uploaded Image" width="50">
+                                                        <img src="<?= base_url('uploads/client/' . $row[0]['image']) ?>" alt="Uploaded Image" width="50">
                                                     </div>
                                                 <?php endif; ?>
                                             </div>

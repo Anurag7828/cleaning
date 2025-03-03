@@ -49,7 +49,7 @@
                                     <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="image">Image</label>
-                                                <input type="file" class="form-control" name="image" accept="image/png, image/gif, image/jpeg, image/jpg">
+                                                <input type="file" class="form-control" name="image" accept="image/png, image/gif, image/jpeg, image/jpg,image/Webp">
                                                 <?php if ($tag == 'edit' && !empty($sub_category[0]['image'])): ?>
                                                     <div class="mt-2">
                                                         <img src="<?= base_url('uploads/sub_cat/' . $sub_category[0]['image']) ?>" alt="Uploaded Image" width="50">

@@ -69,8 +69,8 @@
                                                 </div>
                                             </div>
 
-                                            <a href="<?= base_url('admin_Dashboard/add_category') ?>" class="btn btn-primary"><i
-                                                    class="ti ti-square-rounded-plus me-2"></i>Add Category</a>
+                                            <a href="<?= base_url('admin_Dashboard/add_blog') ?>" class="btn btn-primary"><i
+                                                    class="ti ti-square-rounded-plus me-2"></i>Add Blog</a>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@
                                             <tr>
                                                 <th class="no-sort">S No.</th>
                                                 
-                                                <th>title</th>
+                                              
                                                 <th>image</th>
                                                 <th>Heading</th>
                                                 <th>Description</th>
@@ -124,12 +124,11 @@
 
                                             ?>
                                                     <td><?= $i++; ?></td>
-                                                    <td><?= $row['title']; ?></td>
-
+                                                   
                                                     <td><img src="<?= base_url() ?>uploads/blog/<?= $row['image'] ?>" width="60"></td>
 
                                                     <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
-                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 250)); ?>...</a></td>
+                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>
                                                     <td>
 
 

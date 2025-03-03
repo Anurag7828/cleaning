@@ -137,7 +137,7 @@
 
 
 
-                                                        <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</td>
+                                                        <td><?= strip_tags(substr($row['description'], 0, 50)); ?>...</td>
                                                         <td><?= $category_name; ?></td>
                                                         <td><?= $sub_category_name; ?></td>
 

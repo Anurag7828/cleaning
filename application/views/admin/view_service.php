@@ -126,6 +126,7 @@
                                                  
 
                                                     <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+<<<<<<< HEAD
                                                     <td><?= strip_tags(substr($row['description'], 0, 50)); ?>...</a></td>
                                                     <td>
                                                         <a href="<?php echo base_url() . 'admin_Dashboard/add_service_category?BdID=' . encryptId($row['id']); ?>"
@@ -136,6 +137,9 @@
                                                             class="btn btn-success">View category</a>
 
                                                         </td>
+=======
+                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>
+>>>>>>> megha
                                                     <td>
 
 
