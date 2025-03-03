@@ -101,7 +101,7 @@
 									</ul>
 								</li>
 								
-								<li class="submenu">
+								<!-- <li class="submenu">
 									<a href="#">
 										<i class="ti ti-user-star"></i><span>Services</span>
 										<span class="menu-arrow"></span>
@@ -110,12 +110,8 @@
 										<li><a href="<?= base_url('Admin_Dashboard/add_service')?>">Add Service</a></li>
 										<li><a href="<?= base_url('Admin_Dashboard/view_service')?>">View Service</a></li>
 									</ul>
-								</li>
-								<li>
-									<a href="<?= base_url('Admin_Dashboard/contact')?>">
-										<i class="ti ti-layout-navbar"></i><span>Customer Query</span>
-									</a>
-								</li>
+								</li> -->
+								
 								<li class="submenu">
 									<a href="#">
 										<i class="ti ti-user-star"></i><span>Testimonials</span>
@@ -125,6 +121,11 @@
 										<li><a href="<?= base_url('Admin_Dashboard/add_testimonials')?>">Add Testimonials</a></li>
 										<li><a href="<?= base_url('Admin_Dashboard/testimonials')?>">View Testimonials</a></li>
 									</ul>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin_Dashboard/contact')?>">
+										<i class="ti ti-layout-navbar"></i><span>Customer Query</span>
+									</a>
 								</li>
 						<li>
 							<h6 class="submenu-hdr">Settings</h6>
