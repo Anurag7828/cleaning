@@ -58,12 +58,8 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box">
                             <figure class="image image-1"><img src="assets/images/resource/about-2.jpg" alt=""></figure>
-                            <figure class="image image-2"><img src="assets/images/resource/about-3.jpg" alt=""></figure>
-                            <div class="text-box">
-                                <h5>Years Experienced</h5>
-                                <h2>12+</h2>
-                            </div>
-                            <div class="icon-box"><i class="flaticon-factory"></i></div>
+                     
+                           
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -79,7 +75,7 @@
                                     <div class="text">
                                         <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
                                         <p>Righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, trouble that are bound to ensue  obligations of business it will frequently occur that pleasures.</p>
-                                        <a href="#" class="theme-btn btn-two"><span>More Details</span></a>
+                                        <a href="<?= base_url()?>about" class="theme-btn btn-two"><span>More Details</span></a>
                                     </div>
                                 </div>
                               
@@ -248,74 +244,54 @@ $i++;
                 </div>
             </div>
         </section>
-      <section class="service-details bg-color-1">
+        <section class="news-style-two bg-color-2 border-top border-bottom">
             <div class="auto-container">
                 <div class="row clearfix">
-                    
-                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
-                        <div class="service-details-content">
-                           
-                            
-                            <div class="content-three">
-                                <div class="upper-box">
-                                <div class="sec-title">
-                    <span class="sub-title">News</span>
-                    <div class="row">
-                        <div class="col-lg-9">
-                        <h2>Latest & Updated News</h2>
-                        </div>
-                        <div class="col-lg-3">
-                                    
-                    <a href="<?= base_url()?>news" class="theme-btn btn-two"><span> View all </span></a>
+                    <div class="col-lg-4 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="sec-title">
+                                <span class="sub-title">News & Updates</span>
+                                <h2>Find the Latest News</h2>
+                                <div class="link"><a href="<?= base_url()?>news"><span>View All News</span></a></div>
+                            </div>
+                          
                         </div>
                     </div>
-      
-                </div>
-                                </div>
-                                <div class="tabs-box">
-                                    <div class="tab-btn-box">
-                                        <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/service/service-14.jpg);"></div>
-                                        <ul class="tab-btns tab-buttons clearfix">
-                                        <?php
-                                        $i=0; if ($news) {
-                        foreach ($news as $news_info) {
-$i++;
-                            ?>
-                                            <li class="tab-btn <?= ($i == '1' ) ? 'active-btn' : '' ?>" data-tab="#news-<?= $news_info['id']?>"><?= $news_info['heading']?><i class="flaticon-diagonal-arrow"></i></li>
-<?php } } ?>
-                                 
+                    <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+                        <div class="inner-content">
+                            <div class="bxslider">
+                           <?php foreach ($news as $news_info) {
 
-                                        </ul>
-                                    </div>
-                                    <div class="tabs-content">
-                                    <?php
-                                        $i=0; if ($news) {
-                        foreach ($news as $news_info) {
-$i++;
                             ?>
-                                        <div class="tab <?= ($i == '1' ) ? 'active-tab' : '' ?>" id="news-<?= $news_info['id']?>">
-                                            <div class="inner-box">
-                                                <div class="title-box">
-                                                    <h6>Date :- <?= date('d-m-Y', strtotime($news_info['date'])) ?></h6>
-                                                    <h3><?= $news_info['heading']?></h3>
-                                                </div>
-                                                <div class="text">
-                                                    <p><?= strip_tags(substr($news_info['description'], 0, 100)); ?>...</p>
-                                                 
-
+                                <div class="slider-content">
+                                    <div class="news-block-two">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><a href="<?= base_url('newsdetail/'.encryptId($news_info['id'])) ?>"><img src="<?= base_url() ?>uploads/news/<?= $news_info['image'] ?>" alt=""></a></figure>
+                                               
+                                            </div>
+                                            <div class="content-box">
+                                                <ul class="post-info clearfix">
+                                                    <li><i class="fa-regular fa-calendar"></i><?= date('d-m-Y', strtotime($news_info['date'])) ?></li>
+                                                  
+                                                </ul>
+                                                <h3><a href="<?= base_url('newsdetail/'.encryptId($news_info['id'])) ?>"><?= $news_info['heading']?></a></h3>
+                                                <div class="link">
+                                                    <a href="<?= base_url('newsdetail/'.encryptId($news_info['id'])) ?>"><span>Read More</span></a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } } ?>
-                                       
                                     </div>
                                 </div>
+                                <?php } ?>
+                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+   
         <section class="industry-section">
             <div class="industry-tab">
             <section class="news-section pt-5">

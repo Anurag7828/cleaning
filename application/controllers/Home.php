@@ -13,12 +13,14 @@ class Home extends CI_Controller {
     
 		$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','3', 'id', 'DESC');
 
-		$data['news'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
+
 
 		$data['categorylimit'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','15', 'id', 'ASC');
 
 		$data['product'] = $this->CommonModal->getAllRowsInOrder('product', 'id', 'DESC');
 		$data['indusrty'] = $this->CommonModal->getAllRowsInOrder('industry', 'id', 'DESC');
+		$data['news'] = $this->CommonModal->getAllRowsInOrder('news', 'id', 'DESC');
+
 
 
 

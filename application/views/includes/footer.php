@@ -4,7 +4,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="logo-widget footer-widget">
-                                <figure class="footer-logo"><a href="<?= base_url()?>"><img src="assets/img/logo.png" alt=""></a></figure>
+                                <figure class="footer-logo back-logo"><a href="<?= base_url()?>"><img src="assets/img/logo.png" alt=""></a></figure>
                                 <ul class="info-list clearfix">
                                     <li>
                                         <div class="icon-box"><i class="flaticon-pin"></i></div>

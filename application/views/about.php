@@ -255,7 +255,7 @@
                                                     <li><i class="flaticon-star"></i></li>
                                                     <li><i class="flaticon-star"></i></li>
                                                 </ul>
-                                                <p style="text-align: justify;"><?= $testimonial_info['feedback'] ?></p>
+                                                <p style="text-align: justify;"><?= strip_tags(substr($testimonial_info['feedback'], 0, 300)); ?>..</p>
                                                 <h3><?= $testimonial_info['name'] ?></h3>
                                                 <span class="designation"><?= $testimonial_info['designation'] ?></span>
                                             </div>

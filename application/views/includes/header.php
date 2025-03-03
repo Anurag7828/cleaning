@@ -48,7 +48,7 @@
 <div id="search-popup" class="search-popup">
     <div class="popup-inner">
         <div class="upper-box clearfix">
-            <figure class="logo-box pull-left"><a href="<?= base_url() ?>"><img src="assets/img/logo.png" alt="" style="height:55px"></a>
+            <figure class="logo-box pull-left"><a href="<?= base_url() ?>"><img src="<?= base_url()?>assets/img/logo.png" alt="" style="height:55px"></a>
             </figure>
             <div class="close-search pull-right"><i class="fa-solid fa-xmark"></i></div>
         </div>
@@ -188,7 +188,7 @@
         <div class="outer-container">
             <div class="outer-box">
                 <div class="menu-left-content">
-                    <figure class="logo-box"><a href="<?= base_url() ?>"><img src="assets/img/logo.png" alt="" style="height:55px"></a>
+                    <figure class="logo-box"><a href="<?= base_url() ?>"><img src="<?= base_url()?>assets/img/logo.png" alt="" style="height:55px"></a>
                     </figure>
 
                 </div>
@@ -269,7 +269,7 @@
         <div class="outer-container">
             <div class="outer-box">
                 <div class="menu-left-content">
-                    <figure class="logo-box"><a href="<?= base_url() ?>"><img src="assets/img/logo.png" alt="" style="height:55px"></a>
+                    <figure class="logo-box"><a href="<?= base_url() ?>"><img src="<?= base_url()?>assets/img/logo.png" alt="" style="height:55px"></a>
                     </figure>
 
                 </div>
@@ -298,7 +298,7 @@
     <div class="close-btn"><i class="fas fa-times"></i></div>
 
     <nav class="menu-box">
-        <div class="nav-logo"><a href="<?= base_url() ?>"><img src="assets/img/logo.png" alt="" title="" style="height:55px"></a></div>
+        <div class="nav-logo back-logo"><a href="<?= base_url() ?>"><img src="<?= base_url()?>assets/img/logo.png" alt="" title="" style="height:55px"></a></div>
         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
         <div class="contact-info">
             <h4>Contact Info</h4>
