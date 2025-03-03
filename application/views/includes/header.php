@@ -204,6 +204,21 @@
                             <ul class="navigation clearfix">
                                 <li class=""><a href="<?= base_url() ?>">Home</a> </li>
                                 <li class=""><a href="<?= base_url() ?>about">About</a> </li>
+                               
+                                <li class="dropdown"><a href="<?= base_url() ?>">Service</a>
+                                    <ul>
+                                        <?php  
+        $dservice = $this->CommonModal->getAllRows('service');
+
+                                        foreach ($dservice as $ser) { ?>
+                                            <li >
+                                                <a
+                                                    href="<?= base_url('service/'.encryptId($ser['id'])) ?>"><?= $ser['heading'] ?></a>
+                                               
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </li>
 
                                 <li class="dropdown"><a href="<?= base_url() ?>">Products</a>
                                     <ul>
@@ -228,7 +243,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a href="<?= base_url() ?>video">Video Gallery</a></li>
+                                <li><a href="<?= base_url() ?>video">Video</a></li>
 
                                 <li><a href="<?= base_url() ?>blog">Blog</a></li>
 

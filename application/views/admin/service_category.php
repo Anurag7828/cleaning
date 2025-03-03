@@ -23,7 +23,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">View Services</h4>
+                                    <h4 class="page-title">View Service Category</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-
+                     
                         <div class="card ">
                             <div class="card-header">
                                 <div class="row align-items-center">
@@ -69,96 +69,74 @@
                                                 </div>
                                             </div>
 
-                                            <a href="<?= base_url('admin_Dashboard/add_service') ?>" class="btn btn-primary"><i
-                                                    class="ti ti-square-rounded-plus me-2"></i>Add Services</a>
-                                        </div>
+                                           </div>
                                     </div>
                                 </div>
                                 <!-- /Search -->
                             </div>
                             <div class="card-body">
-                                <?php if ($msg = sessionId('msg')) :
+                            <?php if ($msg = sessionId('msg')) :
 
-                                    $msg_class = sessionId('msg_class') ?>
+$msg_class = sessionId('msg_class') ?>
 
-                                    <div class="row">
+<div class="row">
 
-                                        <div class="col-lg-12">
+    <div class="col-lg-12">
 
-                                            <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
+        <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
 
-                                        </div>
+    </div>
 
-                                    </div>
+</div>
 
-                                <?php
+<?php
 
-                                    $this->session->unset_userdata('msg');
+$this->session->unset_userdata('msg');
 
-                                endif; ?>
+endif; ?>
 
                                 <!-- Contact List -->
                                 <div class="table-responsive custom-table" id="dataList">
                                     <table class="table datatable">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th class="no-sort">S No.</th>
-                                             
-                                                <th>Heading</th>
-                                                <th>Description</th>   
-                                                <th>Add Category</th>   
-
+                                                <th class="no-sort">S No.</th>                            
+                                           
+                                                <th>Category</th>
+                                              
+                                                
                                                 <th>Delete</th>
                                                 <th>Update</th>
                                             </tr>
                                         </thead>
                                         <tbody id="customerTable">
-                                            <?php
+                                            <?php if (!empty($service_category) ): ?>
+                                                <?php $i = 1;
+                                                foreach ($service_category as $row) : ?>
+                                                    <tr>
+                                                        <td><?= $i++; ?></td>
+                                                      
+                                                       
+                                                        <td><a href="#" class="title-name"> 
+        <?php $cate = $this->CommonModal->getRowById('category', 'id', $row['category_id']);?>
+        <?= $cate[0]['name'];  ?></a></td>
+                                                      
+                                                        <td>
 
-                                            $i = 1;
+                                                        <a href="<?php echo base_url() . 'admin_Dashboard/service_category?BdID=' . encryptId($row['id']).'&BID='. encryptId($row['service_id']) ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
 
-                                            if ($service) {
-
-                                                foreach ($service as $row) {
-
-                                            ?>
-                                                    <td><?= $i++; ?></td>
-                                                 
-
-                                                    <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
-                                                    <td><?= strip_tags(substr($row['description'], 0, 100)); ?>...</a></td>
-                                                    <td>
-                                                        <a href="<?php echo base_url() . 'admin_Dashboard/add_service_category?BdID=' . encryptId($row['id']); ?>"
-                                                            class="btn btn-success">Add category</a>
-                                                        <br>
-                                                        <br>
-                                                        <a href="<?php echo base_url() . 'admin_Dashboard/service_category?BID=' . encryptId($row['id']); ?>"
-                                                            class="btn btn-success">View category</a>
 
                                                         </td>
-                                                    <td>
 
+                                                        <td>
 
-                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_service?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
-                                                                    onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                    <i class="ti ti-trash text-danger"></i> Delete
-                                                                </a>
+                                                            <a class="dropdown-item" href=" <?= base_url('admin_Dashboard/update_service_category/' . encryptId($row['id'])); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
 
-                                                    </td>
-
-                                                    <td>
-
-                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_service/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
-
-                                                    </td>
+                                                        </td>
                                                     </tr>
-                                            <?php
+                                                <?php endforeach; ?>
 
-                                                    $i++;
-                                                }
-                                            }
-
-                                            ?>
+                                            <?php endif; ?>
                                         </tbody>
                                     </table>
 

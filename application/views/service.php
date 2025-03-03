@@ -23,7 +23,7 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1><?= $sub_categoryy[0]['sub_category']?></h1>
+                    <h1></h1>
                    
                 </div>
             </div>
@@ -31,61 +31,21 @@
         <section class="service-details industries-details">
             <div class="auto-container">
                 <div class="row clearfix">
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-                        <div class="service-details-content">
-                            <div class="content-one">
-                                <h2><?= $sub_categoryy[0]['heading']?></h2>
-                              
-                                <div class="text">
-                                
-                                    <p><?= $sub_categoryy[0]['description']?></p>
-                                </div>
-                            </div>
-                            <div class="content-two">
-                                <h3>Products</h3>
-                                <div class="row clearfix">
-                                <?php  
-                                	$product = $this->CommonModal->getRowById('product', 'sub_category',$sub_categoryy[0]['id']);
-                                        foreach ($product as $product_row) { ?> 
-                                <div class="col-lg-6 col-md-6 col-sm-12 shop-block">
-                                    <div class="shop-block-one">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                               
-                                                <figure class="image"><img src="<?= base_url() ?>uploads/product/<?= $product_row['image'] ?>" alt="" style="height: 265px;"></figure>
-                                                <h5>Rs <?= $product_row['price'] ?></h5>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h4><a href="<?= base_url('product/'.encryptId($product_row['id'])) ?>"><?= $product_row['name'] ?></a></h4>
-                                             
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                             
-                                </div>
-                               
-                            </div>
-                         
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="service-sidebar">
                             <div class="category-widget">
                                 <div class="widget-title">
-                                    <h3>Other Sub Category</h3>
+                                    <h3>Other Services</h3>
                                 </div>
                                 <div class="widget-content">
-                                    <ul class="category-list clearfix"> 
+                                    <ul class="category-list clearfix">
                                     <?php  
                                         foreach ($other as $othercate) { ?> 
-                                        <li><a href="<?= base_url() ?>sub_category/<?= encryptId($othercate['id']) ?>" ><?= $othercate['sub_category']?><i class="flaticon-right-chevron"></i></a></li>
+                                        <li><a href="<?= base_url('service/'.encryptId($othercate['id'])) ?>"><?= $othercate['heading']?><i class="flaticon-right-chevron"></i></a></li>
                                        <?php } ?>
                                     </ul>
                                 </div>
                             </div>
-                          
                             <div class="contact-widget">
                                 <div class="widget-title">
                                     <h3>For Enquiry</h3>
@@ -114,6 +74,56 @@
                                     </div>
                                 </div>
                             </div>
+                      
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        <div class="service-details-content">
+                            <div class="content-one">
+                                
+                                <div class="text">
+                                    <h4><?= $service[0]['heading']?></h4>
+                                    <p><?= $service[0]['description']?></p>
+                                  
+                                </div>
+                            </div>
+                           
+                        </div>
+                   
+                        <div class="service-details-content">
+                          
+                            <div class="content-two">
+                               
+                                <div class="row clearfix">
+                                <?php  
+        $serice_category= $this->CommonModal->getRowById('service_category', 'service_id',$service[0]['id'] );
+        $sub_category= $this->CommonModal->getRowById('sub_category', 'category',$serice_category[0]['category_id'] );
+
+
+                                        foreach ($sub_category as $sub_category_row) { ?> 
+                                    <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                                        <div class="service-block-two">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><img src="<?= base_url() ?>uploads/sub_cat/<?= $sub_category_row['image'] ?>" alt="" style="height: 250px;"></figure>
+                                                    <h3><a href="<?= base_url()?>sub_category"><?= $sub_category_row['sub_category'] ?></a></h3>
+                                                    
+                                                </div>
+                                                <div class="lower-content">
+                                                    <p><?= substr($sub_category_row['description'], 0, 30) . (strlen($sub_category_row['description']) > 30 ? '...' : ''); ?></p>
+                                                    <div class="btn-box">
+                                                        <a href="<?= base_url() ?>sub_category/<?= encryptId($sub_category_row['id']) ?>"><span>More Details</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    
+                                </div>
+                              
+                            </div>
+                        
                         </div>
                     </div>
                 </div>

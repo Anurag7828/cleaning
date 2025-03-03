@@ -101,7 +101,7 @@
 									</ul>
 								</li>
 								
-								<!-- <li class="submenu">
+								<li class="submenu">
 									<a href="#">
 										<i class="ti ti-user-star"></i><span>Services</span>
 										<span class="menu-arrow"></span>
@@ -110,7 +110,7 @@
 										<li><a href="<?= base_url('Admin_Dashboard/add_service')?>">Add Service</a></li>
 										<li><a href="<?= base_url('Admin_Dashboard/view_service')?>">View Service</a></li>
 									</ul>
-								</li> -->
+								</li>
 								
 								<li class="submenu">
 									<a href="#">

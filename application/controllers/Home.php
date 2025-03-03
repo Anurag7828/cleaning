@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 	{
 		$data['title']='Home';
         $data['category'] = $this->CommonModal->getAllRows('category');
+
     
 		$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','3', 'id', 'DESC');
 		$data['categorylimit'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','15', 'id', 'ASC');
@@ -70,6 +71,7 @@ class Home extends CI_Controller {
 		$this->load->view('newsdetail' , $data);
 
 	}
+	
 	public function career()
 	{
 		// $data['careers'] = $this->CommonModal->getAllRows('bc_career');
@@ -191,6 +193,18 @@ class Home extends CI_Controller {
             redirect(base_url('thankyou'));
         } 
     }
+	public function service($id)
+	{
+		$tid = decryptId($id);
+		$data['title']='service';
+		$data['category'] = $this->CommonModal->getAllRows('category');
+    
+		$data['service'] = $this->CommonModal->getRowById('service', 'id',  $tid);
+		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('service','5', 'id', 'DESC');
+
+		$this->load->view('service' , $data);
+
+	}
 	public function category($id)
 	{
 		$tid = decryptId($id);
@@ -199,7 +213,7 @@ class Home extends CI_Controller {
 		$data['category'] = $this->CommonModal->getAllRows('category');
         $data['categoryById'] = $this->CommonModal->getRowById('category','id', $tid);
 		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','5', 'id', 'DESC');
-		$data['sub_category'] = $this->CommonModal->getAllRowsInOrder('sub_category', 'id', 'DESC');
+		
     
 		$this->load->view('category' , $data);
 
@@ -224,7 +238,7 @@ class Home extends CI_Controller {
 		$data['category'] = $this->CommonModal->getAllRows('category');
 		$data['sub_categoryy'] = $this->CommonModal->getRowById('sub_category','id', $tid);
 		$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('sub_category','5', 'id', 'DESC');
-		$data['product'] = $this->CommonModal->getAllRowsInOrder('product', 'id', 'DESC');
+		
 		$this->load->view('sub_category' , $data);
 
 	}

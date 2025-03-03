@@ -21,6 +21,9 @@ $route['apply/(:any)'] = 'Home/apply/$1';
 $route['product/(:any)'] = 'Home/product/$1';
 $route['thankyou'] = 'Home/thankyou';
 $route['video'] = 'Home/video';
+// $route['service'] = 'Home/service';
+$route['service/(:any)'] = 'Home/service/$1';
+
 
 
 $route['category/(:any)'] = 'Home/category/$1';

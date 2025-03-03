@@ -121,7 +121,7 @@ endif; ?>
                                                       
                                                         <td>
 
-                                                        <a href="<?php echo base_url() . 'admin_Dashboard/specification?BdID=' . encryptId($row['id']) . '&img=' . $row['image'] ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
+                                                        <a href="<?php echo base_url() . 'admin_Dashboard/specification?BdID=' . encryptId($row['id']).'&BID='. encryptId($row['product_id']) ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
 
 
                                                         </td>

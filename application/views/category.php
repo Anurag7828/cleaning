@@ -69,6 +69,7 @@
                                
                                 <div class="row clearfix">
                                 <?php  
+                                	$sub_category = $this->CommonModal->getRowById('sub_category', 'category',$categoryById[0]['id'] );
                                         foreach ($sub_category as $sub_category_row) { ?> 
                                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                                         <div class="service-block-two">

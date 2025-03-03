@@ -725,7 +725,7 @@ class Admin_Dashboard extends CI_Controller
         if ($BdID) {
             $this->CommonModal->deleteRowById('specification', array('id' => decryptId($BdID)));
            
-            redirect('admin_Dashboard/specification?BID=' . decryptId($BID));
+            redirect('admin_Dashboard/specification?BID=' . $BID);
         }
         $data['specification'] = $this->CommonModal->getRowById('specification', 'product_id',  decryptId($BID) );
         $this->load->view('admin/specification', $data);
@@ -808,6 +808,104 @@ class Admin_Dashboard extends CI_Controller
         } else {
 
             $this->load->view('admin/add_specification', $data);
+
+        }
+
+    }
+    public function service_category()
+    {
+        $data['title'] = "Our Service Category";
+        $BdID = $this->input->get('BdID');
+        $BID = $this->input->get('BID');
+
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('service_category', array('id' => decryptId($BdID)));
+           
+            redirect('admin_Dashboard/service_category?BID=' . $BID);
+        }
+        $data['service_category'] = $this->CommonModal->getRowById('service_category', 'service_id',  decryptId($BID) );
+        $this->load->view('admin/service_category', $data);
+    }
+
+    public function add_service_category()
+    {
+
+        $data['title'] = "Add Service Category";
+
+
+
+        $data['tag'] = "add";
+        $BdID = $this->input->get('BdID');
+		$data['category'] = $this->CommonModal->getAllRows('category');
+
+        $data['service'] = $this->CommonModal->getRowById('service', 'id',  decryptId($BdID) );
+
+
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+
+
+            $savedata = $this->CommonModal->insertRowReturnId('service_category', $post);
+
+            if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Add Successfully</div>');
+
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Add Successfully</div>');
+
+            }
+
+            redirect(base_url('admin_Dashboard/service_category?BID=' . $BdID)); // Remove decryptId call within redirect
+
+
+        } else {
+
+            $this->load->view('admin/add_service_category', $data);
+
+        }
+
+    }
+    public function update_service_category($id)
+    {
+
+        $data['title'] = 'Update service_category';
+
+        $data['tag'] = 'edit';
+
+        $tid =  decryptId($id);
+		$data['category'] = $this->CommonModal->getAllRows('category');
+
+        $data['service_category'] = $this->CommonModal->getRowById('service_category', 'id', $tid);
+        $spe = $this->CommonModal->getRowById('service_category', 'id', $tid);
+
+
+
+        if (count($_POST) > 0) {
+
+            $post = $this->input->post();
+
+
+            $category_id = $this->CommonModal->updateRowById('service_category', 'id', $tid, $post);
+
+            if ($category_id) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Updated successfully</div>');
+
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success"> Updated successfully</div>');
+
+            }
+
+            redirect(base_url('admin_Dashboard/service_category?BID=' . encryptId($spe[0]['service_id'])));
+
+        } else {
+
+            $this->load->view('admin/add_service_category', $data);
 
         }
 
