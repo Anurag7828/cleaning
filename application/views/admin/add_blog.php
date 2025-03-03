@@ -58,11 +58,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Add By</label>
-<<<<<<< HEAD
                                                 <input type="text" id="title" class="form-control" name="add_by"  readonly value="<?= ($tag == 'edit' && isset($row[0]['add_by'])) ? htmlspecialchars($row[0]['add_by']) : 'Admin' ?>" required>
-=======
-                                                <input type="text" id="title" class="form-control" name="add_by" value="admin" readonly>
->>>>>>> megha
                                             </div>
                                         </div>
                                     </div>
