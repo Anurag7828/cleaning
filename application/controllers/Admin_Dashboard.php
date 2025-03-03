@@ -31,15 +31,21 @@ class Admin_Dashboard extends CI_Controller
 
         $data['product'] = $this->CommonModal->getNumRow('product');
 
-        $data['sub_category'] = $this->CommonModal->getNumRow('sub_category'); //use for sub-services
+        $data['sub_categories'] = $this->CommonModal->getNumRow('sub_category'); 
+        $data['categories'] = $this->CommonModal->getNumRow('category');
 
-        $data['category'] = $this->CommonModal->getNumRow('category');
-
-        // $data['testimonial'] = $this->CommonModal->getNumRow('testimonials');
+        $data['applications'] = $this->CommonModal->getNumRow('application');
+        $data['post_job'] = $this->CommonModal->getNumRow('career');
 
         $data['blog'] = $this->CommonModal->getNumRow('blog');
-  
-  
+        $data['video_gallery'] = $this->CommonModal->getNumRow('video');
+        $data['services'] = $this->CommonModal->getNumRow('service');
+
+        $data['products'] = $this->CommonModal->getAllRowsWithLimit('product', '5', 'id');
+        $data['application'] = $this->CommonModal->getAllRowsWithLimit('application','5', 'id');
+     
+        $data['category'] = $this->CommonModal->getAllRows('category');
+        $data['sub_category'] = $this->CommonModal->getAllRows('sub_category');
 
         $this->load->view('admin/index', $data);
     }
