@@ -975,6 +975,175 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_testimonials', $data);
         }
     }
+
+    public function view_news()
+    {
+        $data['title'] = "Our News";
+
+        $BdID = $this->input->get('BdID');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('news', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/news/' . $img);
+            }
+            redirect('admin_Dashboard/view_news');
+        }
+        $data['news'] = $this->CommonModal->getAllRowsInOrder('news', 'id', 'DESC');
+     
+        $this->load->view('admin/view_news', $data);
+    }
+
+
+    public function add_news()
+    {
+         $data['title'] = "Add News";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/news/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('news', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">News Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">News Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_news'));
+           } else {
+           
+            $this->load->view('admin/add_news', $data);
+        }
+    }
+
+    public function edit_news($id)
+    {
+        $data['title'] = 'Update News';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('news', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/news/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/news/' . $existing_image1);
+                }
+            }
+    
+            
+            $update_result = $this->CommonModal->updateRowById('news', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">News updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update News.</div>');
+            } 
+          
+            redirect(base_url('admin_Dashboard/view_news'));
+        } else {
+            
+    
+            $this->load->view('admin/add_news', $data);
+        }
+    }
+
+
+    public function view_client()
+    {
+        $data['title'] = "Our Client";
+
+        $BdID = $this->input->get('BdID');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('client', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/client/' . $img);
+            }
+            redirect('admin_Dashboard/view_client');
+        }
+        $data['client'] = $this->CommonModal->getAllRowsInOrder('client', 'id', 'DESC');
+     
+        $this->load->view('admin/view_client', $data);
+    }
+
+
+    public function add_client()
+    {
+         $data['title'] = "Add Client";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/client/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('client', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Client Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Client Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_client'));
+           } else {
+           
+            $this->load->view('admin/add_client', $data);
+        }
+    }
+
+    public function edit_client($id)
+    {
+        $data['title'] = 'Update Client';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('client', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/client/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/client/' . $existing_image1);
+                }
+            }
+    
+            
+            $update_result = $this->CommonModal->updateRowById('client', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Client updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update Client.</div>');
+            } 
+          
+            redirect(base_url('admin_Dashboard/view_client'));
+        } else {
+            
+    
+            $this->load->view('admin/add_client', $data);
+        }
+    }
   public function logout()
 
     {

@@ -20,12 +20,10 @@
 
                 <div class="row">
                     <div class="col-md-12">
-
-                        <!-- Page Header -->
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">Contact Query</h4>
+                                    <h4 class="page-title">View Blogs</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -38,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                     
+
                         <div class="card ">
                             <div class="card-header">
                                 <div class="row align-items-center">
@@ -71,14 +69,33 @@
                                                 </div>
                                             </div>
 
-                                          
+                                            <a href="<?= base_url('admin_Dashboard/add_news') ?>" class="btn btn-primary"><i
+                                                    class="ti ti-square-rounded-plus me-2"></i>Add News</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /Search -->
                             </div>
                             <div class="card-body">
+                                <?php if ($msg = sessionId('msg')) :
 
+                                    $msg_class = sessionId('msg_class') ?>
+
+                                    <div class="row">
+
+                                        <div class="col-lg-12">
+
+                                            <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php
+
+                                    $this->session->unset_userdata('msg');
+
+                                endif; ?>
 
                                 <!-- Contact List -->
                                 <div class="table-responsive custom-table" id="dataList">
@@ -86,48 +103,54 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th class="no-sort">S No.</th>
-                                              
-                                                <th>Name</th>
-                                                <th>Contact</th>
-                                                <th>Email</th>
-                                                <th>Address</th>
-                                                <th>Customer Type</th>
-                                                <th>Customer Segment</th>
-
-
-                                                <th>message</th>
+                                                <th>Heading</th>
+                                                <th>image</th>
+                                         
+                                                <th>Description</th>        
                                                 <th>Delete</th>
-                                            
+                                                <th>Update</th>
                                             </tr>
                                         </thead>
                                         <tbody id="customerTable">
-                                            <?php if (!empty($contact)) : ?>
-                                                <?php $i = 1;
-                                                foreach ($contact as $row) : ?>
-                                                    <tr>
-                                                        <td><?= $i++; ?></td>
-                                                      
-                                                        <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['contact']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['email']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['city']; ?>,<?= $row['pincode']; ?><br><?= $row['country']; ?>
-                                                    </a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['customer_type']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['customer_segment']; ?></a></td>
+                                            <?php
 
-                                                        <td><a href="#" class="title-name"> <td><?php echo strip_tags(substr($row['message'] , 0 , 250)); ?>...</a></td>
+                                            $i = 1;
 
-                                                        <td>
-                                                            <a class="dropdown-item" href="<?= base_url('admin_Dashboard/contact?BdID=' . $row['id']); ?>"
-                                                                onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                <i class="ti ti-trash text-danger"></i> Delete
-                                                            </a>
-                                                        </td>
-   
+                                            if ($news) {
+
+                                                foreach ($news as $row) {
+
+                                            ?>
+                                                    <td><?= $i++; ?></td>
+                                                  
+                                                    <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                    <td><img src="<?= base_url() ?>uploads/news/<?= $row['image'] ?>" width="60"></td>
+
+                              
+                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 250)); ?>...</a></td>
+                                                    <td>
+
+
+                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_news?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
+                                                                    onclick="return confirm('Are you sure you want to delete this lead?');">
+                                                                    <i class="ti ti-trash text-danger"></i> Delete
+                                                                </a>
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_news/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+
+                                                    </td>
                                                     </tr>
-                                                <?php endforeach; ?>
+                                            <?php
 
-                                            <?php endif; ?>
+                                                    $i++;
+                                                }
+                                            }
+
+                                            ?>
                                         </tbody>
                                     </table>
 

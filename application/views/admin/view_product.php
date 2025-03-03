@@ -93,10 +93,8 @@
                                                 <th>3rd Image</th>
                                                 <th>brochure_pdf</th>
                                                 <th>Description</th>
-
                                                 <th>Category</th>
                                                 <th>Sub Category</th>
-
                                                 <th>Add Specification</th>
                                                 <th>Action</th>
 

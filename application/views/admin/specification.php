@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                     
+
                         <div class="card ">
                             <div class="card-header">
                                 <div class="row align-items-center">
@@ -69,42 +69,42 @@
                                                 </div>
                                             </div>
 
-                                           </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /Search -->
                             </div>
                             <div class="card-body">
-                            <?php if ($msg = sessionId('msg')) :
+                                <?php if ($msg = sessionId('msg')) :
 
-$msg_class = sessionId('msg_class') ?>
+                                    $msg_class = sessionId('msg_class') ?>
 
-<div class="row">
+                                    <div class="row">
 
-    <div class="col-lg-12">
+                                        <div class="col-lg-12">
 
-        <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
+                                            <div class="alert  <?= $msg_class; ?>"><?= $msg; ?></div>
 
-    </div>
+                                        </div>
 
-</div>
+                                    </div>
 
-<?php
+                                <?php
 
-$this->session->unset_userdata('msg');
+                                    $this->session->unset_userdata('msg');
 
-endif; ?>
+                                endif; ?>
 
                                 <!-- Contact List -->
                                 <div class="table-responsive custom-table" id="dataList">
                                     <table class="table datatable">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th class="no-sort">S No.</th>                            
+                                                <th class="no-sort">S No.</th>
                                                 <th>Title</th>
                                                 <th>Specification</th>
-                                              
-                                                
+
+
                                                 <th>Delete</th>
                                                 <th>Update</th>
                                             </tr>
@@ -115,13 +115,17 @@ endif; ?>
                                                 foreach ($specification as $row) : ?>
                                                     <tr>
                                                         <td><?= $i++; ?></td>
-                                                      
+
                                                         <td><a href="#" class="title-name"> <?= $row['title'];  ?></a></td>
                                                         <td><a href="#" class="title-name"> <?= $row['spec'];  ?></a></td>
-                                                      
+
                                                         <td>
 
+<<<<<<< HEAD
                                                         <a href="<?php echo base_url() . 'admin_Dashboard/specification?BdID=' . encryptId($row['id']).'&BID='. encryptId($row['product_id']) ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
+=======
+                                                            <a href="<?php echo base_url() . 'admin_Dashboard/specification?BdID=' . encryptId($row['id']) . '&img=' . $row['image'] ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
+>>>>>>> megha
 
 
                                                         </td>
