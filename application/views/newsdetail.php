@@ -16,7 +16,7 @@
     <?php include('includes/header.php') ?>
   
     <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+            <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/background/page-title.jpg);"></div>
             <div class="line-box">
                 <div class="line-1"></div>
                 <div class="line-2"></div>
@@ -43,16 +43,16 @@
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 title-column">
                             <div class="title-text">
-                                <h2>Sheet Metal Bending</h2>
+                                <h2><?= $news[0]['heading']?></h2>
                                 <br>
-                                <h4>Date :- 11/02/2025</h4>
+                                <h4>Date :- <?= date('d-m-Y', strtotime($news[0]['date'])) ?></h4>
 <br>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 text-column">
                       
                    
-                   <img src="assets/images/project/project-19.jpg" alt="">
+                   <img src="<?= base_url() ?>uploads/news/<?= $news[0]['image'] ?>" alt="" style="height: 350px; width:100%;object-fit:cover;">
                   
                 
           
@@ -61,8 +61,8 @@
                     </div>
                 </div>
                 <div class="text">
-                                <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtainsome advantage from it but who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.</p>
-                                <p>Ever undertakes laborious physical exercise except to obtain advantage from it but who has any right to find fault.</p>
+                                <p><?= $news[0]['description']?></p>
+                               
                             </div>
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -73,12 +73,10 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="category-list clearfix"> 
-                                        <li><a href="#">All Post<span>30</span></a></li>
-                                        <li><a href="#">Innovations<span>03</span></a></li>
-                                        <li><a href="#">Manufacturing<span>05</span></a></li>
-                                        <li><a href="#">Materials<span>10</span></a></li>
-                                        <li><a href="#">Smart Factory<span>08</span></a></li>
-                                        <li><a href="#">Technology<span>04</span></a></li>
+                                        <?php  foreach ($other as $other_news) { ?>
+                                        <li><a href="<?= base_url('newsdetail/'.encryptId($other_news['id'])) ?>"><?= $other_news['heading']?></a></li>
+                                        <?php } ?>
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -87,21 +85,14 @@
                                     <h3>Latest Blog Post</h3>
                                 </div>
                                 <div class="post-inner">
+                                <?php  foreach ($blog as $other_blog) { ?>
                                     <div class="post">
-                                        <h6>Industries</h6>
-                                        <h4><a href="#">Best for any Indutrial and Business Solution.</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>06.09.2022</h5>
+                                       
+                                        <h4><a href="<?= base_url('blogdetail/'.encryptId($other_blog['id'])) ?>"><?= $other_blog['heading']?></a></h4>
+                                        <h5><i class="fa-regular fa-calendar"></i><?= $other_blog['date']?></h5>
                                     </div>
-                                    <div class="post">
-                                        <h6>Technology</h6>
-                                        <h4><a href="#">Won Best Factory Award of the Year 2016 & 17.</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>05.09.2022</h5>
-                                    </div>
-                                    <div class="post">
-                                        <h6>Innovation</h6>
-                                        <h4><a href="#">Building Back a Sustainable Manufacturing Sector</a></h4>
-                                        <h5><i class="fa-regular fa-calendar"></i>26.08.2022</h5>
-                                    </div>
+                                    <?php } ?>
+                                   
                                 </div>
                             </div>
                             

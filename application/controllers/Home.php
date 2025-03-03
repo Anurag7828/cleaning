@@ -8,12 +8,18 @@ class Home extends CI_Controller {
 	{
 		$data['title']='Home';
         $data['category'] = $this->CommonModal->getAllRows('category');
+        $data['client'] = $this->CommonModal->getAllRows('client');
 
     
 		$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','3', 'id', 'DESC');
+
+		$data['news'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
+
 		$data['categorylimit'] = $this->CommonModal->getAllRowsInOrderWithLimit('category','15', 'id', 'ASC');
 
 		$data['product'] = $this->CommonModal->getAllRowsInOrder('product', 'id', 'DESC');
+		$data['indusrty'] = $this->CommonModal->getAllRowsInOrder('industry', 'id', 'DESC');
+
 
 
 		$this->load->view('index', $data);
@@ -55,19 +61,25 @@ class Home extends CI_Controller {
 	}
 	public function news()
 	{
-		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
+	
 		$data['title']='news';
 		$data['category'] = $this->CommonModal->getAllRows('category');
+		$data['news'] = $this->CommonModal->getAllRowsInOrder('news', 'id', 'DESC');
     
 		$this->load->view('news' , $data);
 
 	}
-	public function newsdetail()
+	public function newsdetail($id)
 	{
-		// $data['newss'] = $this->CommonModal->getAllRows('bc_news');
+		$tid = decryptId($id);
+
 		$data['title']='news';
 		$data['category'] = $this->CommonModal->getAllRows('category');
-    
+    	$data['other'] = $this->CommonModal->getAllRowsInOrderWithLimit('news','5', 'id', 'DESC');
+    	$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','5', 'id', 'DESC');
+
+
+        $data['news'] = $this->CommonModal->getRowById('news', 'id', $tid);
 		$this->load->view('newsdetail' , $data);
 
 	}

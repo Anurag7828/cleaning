@@ -325,6 +325,92 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_blog', $data);
         }
     }
+    public function view_industry()
+    {
+        $data['title'] = "Our industry";
+
+        $BdID = $this->input->get('BdID');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('industry', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/blog/' . $img);
+            }
+            redirect('admin_Dashboard/view_industry');
+        }
+        $data['industry'] = $this->CommonModal->getAllRowsInOrder('industry', 'id', 'DESC');
+     
+        $this->load->view('admin/view_industry', $data);
+    }
+
+
+    public function add_industry()
+    {
+         $data['title'] = "Add industry";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/blog/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('industry', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">industry Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">industry Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_industry'));
+           } else {
+           
+            $this->load->view('admin/add_industry', $data);
+        }
+    }
+
+    public function edit_industry($id)
+    {
+        $data['title'] = 'Update industry';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        // Fetching the current product data
+        $data['row'] = $this->CommonModal->getRowById('industry', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/blog/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/industry/' . $existing_image1);
+                }
+            }
+    
+            
+            // Update the product with the new data
+            $update_result = $this->CommonModal->updateRowById('industry', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">industrys updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update industrys.</div>');
+            } 
+          
+            // Redirect after the update
+            redirect(base_url('admin_Dashboard/view_industry'));
+        } else {
+            
+    
+            // Load the edit product view if no POST data
+            $this->load->view('admin/add_industry', $data);
+        }
+    }
     public function view_application()
     {
         $data['title'] = "Our Applications";

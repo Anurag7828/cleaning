@@ -266,7 +266,7 @@ $i++;
                         </div>
                         <div class="col-lg-3">
                                     
-                    <a href="#" class="theme-btn btn-two"><span> View all </span></a>
+                    <a href="<?= base_url()?>news" class="theme-btn btn-two"><span> View all </span></a>
                         </div>
                     </div>
       
@@ -274,77 +274,40 @@ $i++;
                                 </div>
                                 <div class="tabs-box">
                                     <div class="tab-btn-box">
-                                        <div class="bg-layer" style="background-image: url(assets/images/service/service-14.jpg);"></div>
+                                        <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/service/service-14.jpg);"></div>
                                         <ul class="tab-btns tab-buttons clearfix">
-                                            <li class="tab-btn active-btn" data-tab="#tab-11">Short Loading Time<i class="flaticon-diagonal-arrow"></i></li>
-                                            <li class="tab-btn" data-tab="#tab-12">Large Quantities<i class="flaticon-diagonal-arrow"></i></li>
-                                            <li class="tab-btn" data-tab="#tab-13">Longer Yield<i class="flaticon-diagonal-arrow"></i></li>
-                                            <li class="tab-btn" data-tab="#tab-14">Longer Yield<i class="flaticon-diagonal-arrow"></i></li>
-                                            <li class="tab-btn" data-tab="#tab-15">Longer Yield<i class="flaticon-diagonal-arrow"></i></li>
+                                        <?php
+                                        $i=0; if ($news) {
+                        foreach ($news as $news_info) {
+$i++;
+                            ?>
+                                            <li class="tab-btn <?= ($i == '1' ) ? 'active-btn' : '' ?>" data-tab="#news-<?= $news_info['id']?>"><?= $news_info['heading']?><i class="flaticon-diagonal-arrow"></i></li>
+<?php } } ?>
+                                 
 
                                         </ul>
                                     </div>
                                     <div class="tabs-content">
-                                        <div class="tab active-tab" id="tab-11">
+                                    <?php
+                                        $i=0; if ($news) {
+                        foreach ($news as $news_info) {
+$i++;
+                            ?>
+                                        <div class="tab <?= ($i == '1' ) ? 'active-tab' : '' ?>" id="news-<?= $news_info['id']?>">
                                             <div class="inner-box">
                                                 <div class="title-box">
-                                                    <h6>Benefit 01</h6>
-                                                    <h3>Loading Time can be Minimized</h3>
+                                                    <h6>Date :- <?= date('d-m-Y', strtotime($news_info['date'])) ?></h6>
+                                                    <h3><?= $news_info['heading']?></h3>
                                                 </div>
                                                 <div class="text">
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
+                                                    <p><?= strip_tags(substr($news_info['description'], 0, 100)); ?>...</p>
+                                                 
 
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab" id="tab-12">
-                                            <div class="inner-box">
-                                                <div class="title-box">
-                                                    <h6>Benefit 02</h6>
-                                                    <h3>Large Quantities can be Minimized</h3>
-                                                </div>
-                                                <div class="text">
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab" id="tab-13">
-                                            <div class="inner-box">
-                                                <div class="title-box">
-                                                    <h6>Benefit 03</h6>
-                                                    <h3>Longer Yield can be Minimized</h3>
-                                                </div>
-                                                <div class="text">
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab" id="tab-14">
-                                            <div class="inner-box">
-                                                <div class="title-box">
-                                                    <h6>Benefit 03</h6>
-                                                    <h3>Longer Yield can be Minimized</h3>
-                                                </div>
-                                                <div class="text">
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab" id="tab-15">
-                                            <div class="inner-box">
-                                                <div class="title-box">
-                                                    <h6>Benefit 03</h6>
-                                                    <h3>Longer Yield can be Minimized</h3>
-                                                </div>
-                                                <div class="text">
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder else  endures pains to avoid worse pains.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } } ?>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -366,9 +329,7 @@ $i++;
                             <h2>Industries We Serve</h2>
                         </div>
                             </ul>
-                            <div class="btn-box">
-                                <a href="#"><span>View All Post</span></a>
-                            </div>
+                           
                         </div>
                         </div>
                         </div>
@@ -380,84 +341,38 @@ $i++;
                     <div class="p-tabs-content">
                         <div class="p-tab active-tab" >
                             <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
+                            <?php
+                                      
+                                      foreach ($indusrty as $industry_info) {
+              
+                                          ?>
                                 <div class="content-inner">
                                     <div class="row clearfix">
+                                 
                                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                                             <div class="content-box">
                                                 <div class="sec-title">
                                                     <span class="sub-title">Industry</span>
-                                                    <h2>Construction Sector</h2>
+                                                    <h2><?= $industry_info['name']?></h2>
                                                 </div>
                                                 <div class="inner-box">
-                                                    <ul class="list-style-one clearfix">
-                                                        <li>Mechanized Bridge Construction</li>
-                                                        <li>Movable Scaffolding Systems</li>
-                                                    </ul>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
+                                                  
+                                                    <p><?= $industry_info['desc']?></p>
                                                    
                                                    
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                                             <div class="image-box">
-                                                <figure class="image"><img src="assets/img/ind-1.png" alt=""></figure>
+                                                <figure class="image"><img src="<?= base_url() ?>uploads/blog/<?= $industry_info['image'] ?>" alt=""></figure>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content-inner">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                            <div class="content-box">
-                                                <div class="sec-title">
-                                                    <span class="sub-title">Industry</span>
-                                                    <h2>Construction Sector</h2>
-                                                </div>
-                                                <div class="inner-box">
-                                                    <ul class="list-style-one clearfix">
-                                                        <li>Mechanized Bridge Construction</li>
-                                                        <li>Movable Scaffolding Systems</li>
-                                                    </ul>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
-                                                   
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                            <div class="image-box">
-                                                <figure class="image"><img src="assets/img/ind-2.png" alt=""></figure>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content-inner">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                            <div class="content-box">
-                                                <div class="sec-title">
-                                                    <span class="sub-title">Industry</span>
-                                                    <h2>Construction Sector</h2>
-                                                </div>
-                                                <div class="inner-box">
-                                                    <ul class="list-style-one clearfix">
-                                                        <li>Mechanized Bridge Construction</li>
-                                                        <li>Movable Scaffolding Systems</li>
-                                                    </ul>
-                                                    <p>Lookout flogging bilge rat main shet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code off conduct.</p>
-                                                   
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                            <div class="image-box">
-                                                <figure class="image"><img src="assets/img/ind-1.png" alt=""></figure>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
+                               
                             </div>
                         </div>
                        
@@ -472,11 +387,13 @@ $i++;
         <section class="clients-section bg-color-1">
             <div class="auto-container">
                 <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                    <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-1.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-2.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-3.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-4.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-5.png" alt=""></a></figure>
+                <?php if ($client) {
+                        foreach ($client as $client_info) {
+
+                            ?>
+                    <figure class="clients-logo"><a href="<?= $client_info['link']?>" target="_blank"><img src="<?= base_url() ?>uploads/client/<?= $client_info['image'] ?>" style="height:90px" ></a></figure>
+                    <?php } } ?>
+                 
                 </div>
             </div>
         </section>

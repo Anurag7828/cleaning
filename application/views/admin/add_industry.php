@@ -22,23 +22,22 @@
                 <div class="row  mb-3">
                     <div class="col-md-12">
                         <div class="offcanvas-header mb-3">
-                            <h5 class="fw-semibold">Add New Blog</h5>
+                            <h5 class="fw-semibold">Add New Industry Service Area</h5>
 
                         </div>
                         <div class="offcanvas-body">
                             <form action="" method="post" enctype="multipart/form-data">
                                 <div>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label class="col-form-label">Heading</label>
-                                                <input class="form-control" name="heading" type="text" value="<?= ($tag == 'edit' && isset($row[0]['heading'])) ? htmlspecialchars($row[0]['heading']) : '' ?>" required>
+                                                <label class="col-form-label">Industry Name</label>
+                                                <input class="form-control" name="name" type="text" value="<?= ($tag == 'edit' && isset($row[0]['name'])) ? htmlspecialchars($row[0]['name']) : '' ?>" required>
                                             </div>
                                         </div>
                                         
 
-                                    </div>
-                                    <div class="row">
+                                    
 
                                         <!-- Image Input -->
 
@@ -55,17 +54,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="col-form-label">Add By</label>
-                                                <input type="text" id="title" class="form-control" name="add_by"  readonly value="<?= ($tag == 'edit' && isset($row[0]['add_by'])) ? htmlspecialchars($row[0]['add_by']) : 'Admin' ?>" required>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="col-form-label">Description<span class="text-danger"> *</span></label>
-                                            <textarea class="form-control editor" name="description" rows="5"><?= ($tag == 'edit' && isset($row[0]['description'])) ? htmlspecialchars($row[0]['description']) : '' ?></textarea>
+                                            <textarea class="form-control editor" name="desc" rows="5"><?= ($tag == 'edit' && isset($row[0]['desc'])) ? htmlspecialchars($row[0]['desc']) : '' ?></textarea>
                                         </div>
                                     </div>
                                 </div>

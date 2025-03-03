@@ -4,7 +4,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="logo-widget footer-widget">
-                                <figure class="footer-logo"><a href="<?= base_url()?>"><img src="assets/imges/logo-6.png" alt=""></a></figure>
+                                <figure class="footer-logo"><a href="<?= base_url()?>"><img src="assets/img/logo.png" alt=""></a></figure>
                                 <ul class="info-list clearfix">
                                     <li>
                                         <div class="icon-box"><i class="flaticon-pin"></i></div>
@@ -31,12 +31,12 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="<?= base_url()?>">About</a></li>
-                                        <li><a href="<?= base_url()?>">Carrer</a></li>
-                                        <li><a href="<?= base_url()?>">Delarship Registration</a></li>
-                                        <li><a href="<?= base_url()?>">News</a></li>
-                                        <li><a href="<?= base_url()?>">Blog</a></li>
-                                        <li><a href="<?= base_url()?>">Contact</a></li>
+                                        <li><a href="<?= base_url()?>about">About</a></li>
+                                        <li><a href="<?= base_url()?>career">Career</a></li>
+                                        <li><a href="<?= base_url()?>delarship">Delarship Registration</a></li>
+                                        <li><a href="<?= base_url()?>news">News</a></li>
+                                        <li><a href="<?= base_url()?>blog">Blog</a></li>
+                                        <li><a href="<?= base_url()?>contact">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -44,16 +44,15 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="links-widget footer-widget">
                                 <div class="widget-title">
-                                    <h3>Our Product</h3>
+                                    <h3>Our Category</h3>
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="<?= base_url()?>">product name</a></li>
-                                        <li><a href="<?= base_url()?>">product name</a></li>
-                                        <li><a href="<?= base_url()?>">product name</a></li>
-                                        <li><a href="<?= base_url()?>">product name</a></li>
-                                        <li><a href="<?= base_url()?>">product name</a></li>
-                                        <li><a href="<?= base_url()?>">product name</a></li>
+                                        <?php
+		$category_footer = $this->CommonModal->getAllRowsInOrderWithLimit('category','6', 'id', 'DESC');
+                  foreach ($category_footer as $c_f) { ?>
+                                        <li><a  href="<?= base_url('category/'.encryptId($c_f['id'])) ?>"><?= $c_f['name'] ?></a></li>
+                                       <?php } ?>
 
                                       
                                     </ul>

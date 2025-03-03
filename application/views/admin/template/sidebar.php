@@ -110,6 +110,17 @@
 								</li>
 								<li class="submenu">
 									<a href="#">
+										<i class="ti ti-user-star"></i><span>Our Industries</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    <li><a href="<?= base_url('Admin_Dashboard/view_industry')?>">View Industry</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/add_industry')?>">Add Industry</a></li>
+							
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
 										<i class="ti ti-user-star"></i><span>Video Gallery</span>
 										<span class="menu-arrow"></span>
 									</a>

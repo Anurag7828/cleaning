@@ -23,7 +23,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">View Services</h4>
+                                    <h4 class="page-title">View Blogs</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -69,8 +69,8 @@
                                                 </div>
                                             </div>
 
-                                            <a href="<?= base_url('admin_Dashboard/add_service') ?>" class="btn btn-primary"><i
-                                                    class="ti ti-square-rounded-plus me-2"></i>Add Services</a>
+                                            <a href="<?= base_url('admin_Dashboard/add_industry') ?>" class="btn btn-primary"><i
+                                                    class="ti ti-square-rounded-plus me-2"></i>Add industry</a>
                                         </div>
                                     </div>
                                 </div>
@@ -103,11 +103,12 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th class="no-sort">S No.</th>
-                                             
-                                                <th>Heading</th>
-                                                <th>Description</th>   
-                                                <th>Add Category</th>   
-
+                                                
+                                              
+                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                               
                                                 <th>Delete</th>
                                                 <th>Update</th>
                                             </tr>
@@ -117,29 +118,22 @@
 
                                             $i = 1;
 
-                                            if ($service) {
+                                            if ($industry) {
 
-                                                foreach ($service as $row) {
+                                                foreach ($industry as $row) {
 
                                             ?>
                                                     <td><?= $i++; ?></td>
-                                                 
+                                                  
 
-                                                    <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
-                                                    <td><?= strip_tags(substr($row['description'], 0, 50)); ?>...</a></td>
-                                                    <td>
-                                                        <a href="<?php echo base_url() . 'admin_Dashboard/add_service_category?BdID=' . encryptId($row['id']); ?>"
-                                                            class="btn btn-success">Add category</a>
-                                                        <br>
-                                                        <br>
-                                                        <a href="<?php echo base_url() . 'admin_Dashboard/service_category?BID=' . encryptId($row['id']); ?>"
-                                                            class="btn btn-success">View category</a>
+                                                    <td><img src="<?= base_url() ?>uploads/blog/<?= $row['image'] ?>" width="60"></td>
 
-                                                        </td>
+                                                    <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
+                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['desc'] , 0 , 50)); ?>...</a></td>
                                                     <td>
 
 
-                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_service?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
+                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_industry?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
                                                                     onclick="return confirm('Are you sure you want to delete this lead?');">
                                                                     <i class="ti ti-trash text-danger"></i> Delete
                                                                 </a>
@@ -148,7 +142,7 @@
 
                                                     <td>
 
-                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_service/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_industry/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
 
                                                     </td>
                                                     </tr>
