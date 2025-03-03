@@ -128,7 +128,7 @@
                                                     <td><img src="<?= base_url() ?>uploads/services/<?= $row['image'] ?>" width="60"></td>
 
                                                     <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
-                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 250)); ?>...</a></td>
+                                                    <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>
                                                     <td>
 
 
