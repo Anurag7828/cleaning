@@ -23,7 +23,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">View Specifications of Product</h4>
+                                    <h4 class="page-title">View Blogs</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -69,6 +69,8 @@
                                                 </div>
                                             </div>
 
+                                            <a href="<?= base_url('admin_Dashboard/add_client') ?>" class="btn btn-primary"><i
+                                                    class="ti ti-square-rounded-plus me-2"></i>Add Client</a>
                                         </div>
                                     </div>
                                 </div>
@@ -101,40 +103,52 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th class="no-sort">S No.</th>
-                                                <th>Title</th>
-                                                <th>Specification</th>
-
-
+                                                <th>Link</th>
+                                                <th>image</th>
+                                              
                                                 <th>Delete</th>
                                                 <th>Update</th>
                                             </tr>
                                         </thead>
                                         <tbody id="customerTable">
-                                            <?php if (!empty($specification)) : ?>
-                                                <?php $i = 1;
-                                                foreach ($specification as $row) : ?>
-                                                    <tr>
-                                                        <td><?= $i++; ?></td>
+                                            <?php
 
-                                                        <td><a href="#" class="title-name"> <?= $row['title'];  ?></a></td>
-                                                        <td><a href="#" class="title-name"> <?= $row['spec'];  ?></a></td>
+                                            $i = 1;
 
-                                                        <td>
+                                            if ($client) {
 
-                                                            <a href="<?php echo base_url() . 'admin_Dashboard/specification?BdID=' . encryptId($row['id']) . '&img=' . $row['image'] ?>" class="btn btn-danger" onclick="return confirm('Continue to delete ?')"><i class="fas fa-trash-alt"></i></a>
+                                                foreach ($client as $row) {
+
+                                            ?>
+                                                    <td><?= $i++; ?></td>
+                                                  
+                                                    <td><a href="#" class="title-name"><?= $row['link']; ?></a></td>
+                                                    <td><img src="<?= base_url() ?>uploads/client/<?= $row['image'] ?>" width="60"></td>
+
+                              
+                                                   <td>
 
 
-                                                        </td>
+                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_client?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
+                                                                    onclick="return confirm('Are you sure you want to delete this lead?');">
+                                                                    <i class="ti ti-trash text-danger"></i> Delete
+                                                                </a>
 
-                                                        <td>
+                                                    </td>
 
-                                                            <a class="dropdown-item" href=" <?= base_url('admin_Dashboard/update_specification/' . encryptId($row['id'])); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+                                                    <td>
 
-                                                        </td>
+                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_client/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+
+                                                    </td>
                                                     </tr>
-                                                <?php endforeach; ?>
+                                            <?php
 
-                                            <?php endif; ?>
+                                                    $i++;
+                                                }
+                                            }
+
+                                            ?>
                                         </tbody>
                                     </table>
 

@@ -115,7 +115,7 @@
                                                         <td><a href="#" class="title-name"><?= $row['customer_type']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['customer_segment']; ?></a></td>
 
-                                                        <td><a href="#" class="title-name"><?= $row['message']; ?></a></td>
+                                                        <td><a href="#" class="title-name"> <td><?php echo strip_tags(substr($row['message'] , 0 , 250)); ?>...</a></td>
 
                                                         <td>
                                                             <a class="dropdown-item" href="<?= base_url('admin_Dashboard/contact?BdID=' . $row['id']); ?>"

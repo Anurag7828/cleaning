@@ -103,7 +103,7 @@
                                                         <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
                                                         <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
                                                       
-                                                        <td><a href="#" class="title-name"><?= $row['description']; ?></a></td>
+                                                        <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>
                                                         <td>
 
                                                             <a class="dropdown-item" href="<?= base_url('admin_Dashboard/view_category?BdID=' . $row['id']); ?>"

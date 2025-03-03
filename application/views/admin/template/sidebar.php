@@ -72,10 +72,7 @@
 									    	<li><a href="<?= base_url('Admin_Dashboard/add_job')?>">Add Jobs</a></li>
 									<li><a href="<?= base_url('Admin_Dashboard/view_job')?>">View Jobs</a></li>
 									<li><a href="<?= base_url('Admin_Dashboard/view_application')?>">View Jobs Application</a></li>
-
-								
-									
-							
+		
 									</ul>
 								</li>
 								<li class="submenu">
@@ -86,6 +83,28 @@
 									<ul>
 									    <li><a href="<?= base_url('Admin_Dashboard/view_blog')?>">View Blogs</a></li>
 										<li><a href="<?= base_url('Admin_Dashboard/add_blog')?>">Add Blogs</a></li>
+							
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Latest News</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    <li><a href="<?= base_url('Admin_Dashboard/view_news')?>">View News</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/add_news')?>">Add News</a></li>
+							
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Our Client</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+									    <li><a href="<?= base_url('Admin_Dashboard/view_client')?>">View Client</a></li>
+										<li><a href="<?= base_url('Admin_Dashboard/add_client')?>">Add Client</a></li>
 							
 									</ul>
 								</li>

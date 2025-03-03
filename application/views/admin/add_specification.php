@@ -4,7 +4,6 @@
 <head>
     <?php include('template/header-links.php') ?>
 </head>
-
 <body>
 
     <div class="main-wrapper">
@@ -45,7 +44,6 @@
 
             </div>
         </div>
-
     </div>
 
     <?php include('template/footer.php') ?>
