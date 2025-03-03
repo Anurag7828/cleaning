@@ -63,7 +63,7 @@
 
 				<div class="row">
 
-					<!-- Total Lead -->
+
 					<div class="col-xl-3 col-sm-6 d-flex">
 						<div class="card flex-fill">
 							<div class="card-body">
@@ -72,12 +72,12 @@
 										<i class="ti ti-building fs-16"></i>
 									</span>
 									<span class="badge bg-success fw-normal mb-3">
-										<?= $category ?>
+										<?= $categories ?>
 									</span>
 								</div>
 								<div class="d-flex align-items-center justify-content-between">
 									<div>
-										<h2 class="mb-1"><?= $category ?></h2>
+										<h2 class="mb-1"><?= $categories ?></h2>
 										<p class="fs-13">Total Category</p>
 									</div>
 
@@ -85,11 +85,11 @@
 							</div>
 						</div>
 					</div>
-					<!-- /Total lead -->
 
-					<!-- Active Close lead-->
-				<div class="col-xl-3 col-sm-6 d-flex">
-			
+
+
+					<div class="col-xl-3 col-sm-6 d-flex">
+
 						<div class="card flex-fill">
 							<div class="card-body">
 								<div class="d-flex align-items-center justify-content-between">
@@ -97,22 +97,20 @@
 										<i class="ti ti-carousel-vertical fs-16"></i>
 									</span>
 									<span class="badge bg-danger fw-normal mb-3">
-										<?= $sub_category ?>
+										<?= $sub_categories ?>
 									</span>
 								</div>
 								<div class="d-flex align-items-center justify-content-between">
 									<div>
-										<h2 class="mb-1"> <?= $sub_category ?></h2>
-									<p class="fs-13">Sub Category</p>
+										<h2 class="mb-1"> <?= $sub_categories ?></h2>
+										<p class="fs-13">Sub Category</p>
 									</div>
 
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- /Active Close lead -->
 
-					<!-- Total Earnings -->
 					<div class="col-xl-3 col-sm-6 d-flex">
 						<div class="card flex-fill">
 							<div class="card-body">
@@ -157,14 +155,109 @@
 					</div>
 
 				</div>
+				<div class="row">
 
-				<!-- <div class="row">
+
+					<div class="col-xl-3 col-sm-6 d-flex">
+						<div class="card flex-fill">
+							<div class="card-body">
+								<div class="d-flex align-items-center justify-content-between">
+									<span class="avatar avatar-md rounded bg-dark mb-3">
+										<i class="ti ti-building fs-16"></i>
+									</span>
+									<span class="badge bg-success fw-normal mb-3">
+										<?= $post_job ?>
+									</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div>
+										<h2 class="mb-1"><?= $post_job ?></h2>
+										<p class="fs-13">Total Posted Jobs</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="col-xl-3 col-sm-6 d-flex">
+
+						<div class="card flex-fill">
+							<div class="card-body">
+								<div class="d-flex align-items-center justify-content-between">
+									<span class="avatar avatar-md rounded bg-dark mb-3">
+										<i class="ti ti-carousel-vertical fs-16"></i>
+									</span>
+									<span class="badge bg-danger fw-normal mb-3">
+										<?= $applications ?>
+									</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div>
+										<h2 class="mb-1"> <?= $applications  ?></h2>
+										<p class="fs-13">Total Job Applications</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-3 col-sm-6 d-flex">
+						<div class="card flex-fill">
+							<div class="card-body">
+								<div class="d-flex align-items-center justify-content-between">
+									<span class="avatar avatar-md rounded bg-dark mb-3">
+										<i class="ti ti-businessplan fs-16"></i>
+									</span>
+									<span class="badge bg-danger fw-normal mb-3">
+										<?= $services ?>
+									</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div>
+										<h2 class="mb-1"><?= $services ?></h2>
+										<p class="fs-13">Total Services </p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-sm-6 d-flex">
+						<div class="card flex-fill">
+							<div class="card-body">
+								<div class="d-flex align-items-center justify-content-between">
+									<span class="avatar avatar-md rounded bg-dark mb-3">
+										<i class="ti ti-chalkboard-off fs-16"></i>
+									</span>
+									<span class="badge bg-success fw-normal mb-3">
+										<?= $blog ?>
+									</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div>
+										<h2 class="mb-1"><?= $blog ?></h2>
+										<p class="fs-13">Total Blogs </p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="row">
 					<div class="col-md-7">
 						<div class="card">
 							<div class="card-header border-0 pb-0">
 								<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
 									<h4><i class="ti ti-grip-vertical me-1"></i>Recent Added Product</h4>
-									<a href="<?= base_url() ?>view_product" class="btn btn-light btn-md mb-2">View All</a>
+									<a href="<?= base_url() ?>admin_dashboard/view_product" class="btn btn-light btn-md mb-2">View All</a>
 
 								</div>
 							</div>
@@ -176,46 +269,65 @@
 											<tr>
 												<th class="no-sort">S No.</th>
 												<th>Name</th>
-												<th>Company Name</th>
-
-												<th>Status</th>
-												<th>Contact No.</th>
+												<th>Image</th>
+                                                 <th>Price</th>
+												<th>Category</th>
+												<th>Sub Category</th>
+												<th>Action</th>
 
 											</tr>
 										</thead>
-										<tbody>
-											<?php if (!empty($leads)) : ?>
-												<?php
-												$i = 1;
-												// Sort leads array in descending order by 'id'
-												usort($leads, function ($a, $b) {
-													return $b['id'] - $a['id'];
-												});
+										<tbody id="customerTable">
+                                            <?php
+                                            $i = 1;
+                                            if (!empty($products)) {
+                                                foreach ($products as $row) {
+                                                    $category_name = '';
+                                                    $sub_category_name = '';
 
-												// Get last 7 leads after sorting in descending order
-												$last_seven_leads = array_slice($leads, 0, 7);
+                                                    foreach ($category as $category_info) {
+                                                        if ($category_info['id'] == $row['category']) {
+                                                            $category_name = $category_info['name'];
+                                                            break;
+                                                        }
+                                                    }
 
-												foreach ($last_seven_leads as $row) :
-												?>
-													<tr>
-														<td><?= $i++; ?></td>
-														<td><a href="<?= base_url('lead/' . encryptId($row['id'])); ?>" class="title-name"><?= $row['name']; ?></a></td>
-														<td><a href="#" class="title-name"><?= $row['company_name']; ?></a></td>
-														<td>
-															<span class="badge badge-pill badge-status 
-					<?= ($row['lead_status'] === 'close')
-														? 'bg-success'
-														: (($row['lead_status'] === 'open')
-															? 'bg-pending'
-															: 'bg-danger'); ?>">
-																<?= ucfirst($row['lead_status']); ?>
-															</span>
-														</td>
-														<td><?= $row['contact']; ?></td>
-													</tr>
-												<?php endforeach; ?>
-											<?php endif; ?>
-										</tbody>
+                                                    foreach ($sub_category as $sub) {
+                                                        if ($sub['id'] == $row['sub_category']) {
+                                                            $sub_category_name = $sub['sub_category'];
+                                                            break;
+                                                        }
+                                                    }
+                                            ?>
+                                                    <tr>
+                                                        <td><?= $i; ?></td>
+                                                        <td><?= $row['name']; ?></td>
+													
+                                                        <td><img src="<?= setImage($row['image'], 'uploads/product/') ?>" width="50" height="50"></td>
+                                                       
+														<td><?= $row['price']; ?></td>
+                                                         <td><?= $category_name; ?></td>
+                                                        <td><?= $sub_category_name; ?></td>
+
+                                                        <td>
+
+														<a href="<?= base_url('admin_Dashboard/edit_product/' . $row['id']); ?>" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                                                            <br><br> <a href="<?= base_url('admin_Dashboard/product?BdID=' . $row['id'] . '&img1=' . $row['image'] . '&img2=' . $row['image1'] . '&img3=' . $row['image2']); ?>" class="btn btn-danger" onclick="return confirm('Continue to delete?')">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+
+															</td>
+                                                       
+
+                                                    </tr>
+                                            <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                echo "<tr><td colspan='13'>No data available</td></tr>";
+                                            }
+                                            ?>
+                                        </tbody>
 
 
 									</table>
@@ -225,128 +337,76 @@
 						</div>
 					</div>
 					<div class="col-md-5 d-flex">
-						<div class="card w-100">
+					<div class="card">
 							<div class="card-header border-0 pb-0">
 								<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-									<h4><i class="ti ti-grip-vertical me-1"></i>Leads By Stage</h4>
+									<h4><i class="ti ti-grip-vertical me-1"></i>Recent Job Applications</h4>
+									<a href="<?= base_url() ?>admin_dashboard/view_application" class="btn btn-light btn-md mb-2">View All</a>
 
 								</div>
 							</div>
 							<div class="card-body">
 
-								<div id="leadpiechart"></div>
-							</div>
-						</div>
-					</div>
-				</div> -->
-				<!-- <div class="row">
-
-
-					<div class="col-xxl-6 col-xl-6 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap">
-								<h5 class="mb-2">Today meetings</h5>
-								<a href="<?= base_url() ?>view_meeting" class="btn btn-light btn-md mb-2">View All</a>
-							</div>
-							<div class="card-body pb-2">
 								<div class="table-responsive custom-table">
 									<table class="table">
 										<thead class="thead-light">
 											<tr>
-												<th>S No.</th>
-
+												<th class="no-sort">S No.</th>
 												<th>Name</th>
-												<th>Contact No.</th>
-												<th>Time</th>
-												<th>Topic</th>
-												<th>Mode</th>
-
-											</tr>
+												<th>Email</th>
+                                                 <th>Contact</th>
+												<th>Application For</th>
+													<th>Action</th>							</tr>
 										</thead>
-										<tbody>
-											<?php if (!empty($meeting)) : ?>
-												<?php
-												$i = 1;
-												foreach ($meeting as $row) :
-												?>
-													<tr>
-														<td><?= $i++; ?></td>
-														<td><?= $row['name']; ?></a></td>
-														<td><?= $row['contact']; ?></>
-														</td>
+										<tbody id="customerTable">
+                                            <?php
 
-														<td><?= $row['time']; ?></td>
-														<td><?= $row['topic']; ?></td>
-														<td><?= $row['mode']; ?></td>
-													</tr>
-												<?php $i++;
-												endforeach; ?>
-											<?php endif; ?>
-										</tbody>
+                                            $i = 1;
+
+                                            if ($application) {
+
+                                                foreach ($application as $row) {
+
+                                            ?>
+                                                    <td><?= $i++; ?></td>
+                                                    <td><?= $row['prefix']; ?> <?= $row['name']; ?></td>
+                                                    <td><?= $row['email']; ?></td>
+                                                  
+                                                    <td><?= $row['country_code']; ?> <?= $row['phone']; ?></td>
+                                                    <td>
+                                                    <?php $job = $this->CommonModal->getRowById('career', 'id', $row['job_id']);?><?= $job[0]['title']; ?></td>
+                                                  
+													<td>
+
+<a  href="<?= base_url('admin_Dashboard/application/' . encryptId($row['id'])); ?>"><i class="ti ti-eye text-blue"></i></a>
+
+
+	<a  href="<?php echo base_url() . 'admin_Dashboard/view_application?BdID=' . $row['id']?>"
+				onclick="return confirm('Are you sure you want to delete this Application?');">
+				<i class="ti ti-trash text-danger"></i>
+			</a>
+
+
+</td>
+                                                    </tr>
+                                            <?php
+
+                                                    $i++;
+                                                }
+                                            }
+
+                                            ?>
+                                        </tbody>
+
 
 									</table>
+
 								</div>
 							</div>
 						</div>
 					</div>
-				
-					<div class="col-xxl-6 col-xl-6 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap">
-								<h5 class="mb-2">Recent Pending Leads</h5>
-								<a href="<?= base_url() ?>open_lead" class="btn btn-light btn-md mb-2">View All</a>
+				</div>
 
-							</div>
-							<div class="card-body pb-2">
-								<div>
-									<div>
-										<?php if (!empty($p_lead)) : ?>
-											<?php
-											// Sort leads array in descending order by 'id'
-											usort($p_lead, function ($a, $b) {
-												return $b['id'] - $a['id'];
-											});
-
-											// Get the latest 5 leads after sorting in descending order
-											$last_five_leads = array_slice($p_lead, 0, 5);
-
-											foreach ($last_five_leads as $row) : ?>
-												<div class="d-sm-flex justify-content-between flex-wrap mb-3">
-													<div class="d-flex align-items-center mb-2">
-														<a href="javascript:void(0);" class="avatar avatar-sm border flex-shrink-0">
-															<img src="<?= base_url() ?>assets/admin/img/icons/company-icon-01.svg" class="img-fluid w-auto h-auto" alt="img">
-														</a>
-														<div class="ms-2 flex-fill">
-															<h6 class="fs-medium text-truncate mb-1">
-																<a href="<?= base_url('lead/' . encryptId($row['id'])); ?>"><?= $row['name']; ?></a>
-															</h6>
-															<p class="fs-13"><?= $row['company_name']; ?></p>
-														</div>
-													</div>
-													<div class="text-sm-end mb-2">
-														<a href="javascript:void(0);" class="link-info text-decoration-underline d-block mb-1">
-															<span class="badge badge-pill badge-status 
-                                    <?= ($row['lead_status'] === 'close')
-													? 'bg-success'
-													: (($row['lead_status'] === 'open')
-														? 'bg-pending'
-														: 'bg-danger'); ?>">
-																<?= ucfirst($row['lead_status']); ?>
-															</span>
-														</a>
-														<p class="fs-13"><?= date('d-M-Y', strtotime($row['date'])); ?></p>
-													</div>
-												</div>
-											<?php endforeach; ?>
-										<?php else : ?>
-											<div class="text-center">No leads available.</div>
-										<?php endif; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div>

@@ -91,6 +91,7 @@
                                                 <th>1st Image</th>
                                                 <th>2nd Image</th>
                                                 <th>3rd Image</th>
+                                                <th>price</th>
                                                 <th>brochure_pdf</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
@@ -128,6 +129,7 @@
                                                         <td><img src="<?= setImage($row['image'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image1'], 'uploads/product/') ?>" width="50" height="50"></td>
                                                         <td><img src="<?= setImage($row['image2'], 'uploads/product/') ?>" width="50" height="50"></td>
+                                                      <td><?= $row['price']; ?></td>
                                                         <td>
 
                                                             <a href="<?= base_url('uploads/brochures/' . $row[0]['brochure_pdf']) ?>" target="_blank">
