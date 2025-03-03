@@ -35,16 +35,17 @@
                                                 <input class="form-control" name="name" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['name'])) ? htmlspecialchars($testimonials[0]['name']) : '' ?>" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="col-form-label">Contact</label>
-                                                <input class="form-control" name="contact" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['contact'])) ? htmlspecialchars($testimonials[0]['contact']) : '' ?>" required>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Email</label>
                                                 <input class="form-control" name="email" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['email'])) ? htmlspecialchars($testimonials[0]['email']) : '' ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="col-form-label">Designation</label>
+                                                <input class="form-control" name="designation" type="text" value="<?= ($tag == 'edit' && isset($testimonials[0]['designation'])) ? htmlspecialchars($testimonials[0]['designation']) : '' ?>" required>
                                             </div>
                                         </div>
                                     </div>

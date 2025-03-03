@@ -34,7 +34,7 @@
                                            value="<?= ($tag == 'edit' && isset($specification[0]['spec'])) ? htmlspecialchars($specification[0]['spec']) : '' ?>" required>
                                 </div>
 
-                                <input type="hidden" name="product_id" value="<?= $product['0']['id'] ?>">
+                                <input type="hidden" name="product_id" value="<?= ($tag == 'edit' && isset($specification[0]['product_id'])) ? htmlspecialchars($specification[0]['product_id']) : $product['0']['id'] ?>">
 
                                 <button type="submit" class="btn btn-primary mt-2">Create</button>
                             </form>

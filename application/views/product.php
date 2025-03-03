@@ -87,8 +87,13 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
                             <h3>RS <?= $product[0]['price']?></h3>
-                                <h6>Category :- <?= $product[0]['category']?></h6>
-                                <h6>Sub Category :- <?= $product[0]['sub_category']?></h6>
+                           <?php
+                            $c = $this->CommonModal->getRowById('category','id',$product[0]['category']);
+                            $s_c = $this->CommonModal->getRowById('sub_category','id',$product[0]['sub_category']);
+
+                           ?>
+                                <h6>Category :- <?= $c[0]['name']?></h6>
+                                <h6>Sub Category :- <?= $s_c[0]['sub_category']?></h6>
                                 <p><?= $product[0]['description']?></p>
                                 <section class="downloads-section">
             <div class="auto-container">
@@ -118,7 +123,7 @@
                                         <button type="button" class="theme-btn btn-two">Whatapps</button>
                                     </div>
                                     <div class="cart-box">
-                                        <button type="button" class="theme-btn btn-two">Request A Quotes</button>
+                                        <button type="button" class="theme-btn btn-two search-box-outer search-toggler">Request A Quotes</button>
                                     </div>
                                    
                                 </div>
@@ -134,76 +139,25 @@
         <section class="service-style-three service-page-2 bg-color-2 border-bottom sec-pad">
             <div class="auto-container">
             <div class="sec-title centred">
-                    <!-- <span class="sub-title">S</span> -->
+                    
                     <h2>Specification</h2>
                 </div>
                 <div class="row clearfix">
+               <?php
+                $spec = $this->CommonModal->getRowById('specification','product_id',$product[0]['id']);
+                foreach ($spec as $spec_info) {
+                ?>
                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                         <div class="service-block-three wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <h6>Grinding</h6>
-                                <div class="icon-box"><i class="flaticon-machinery"></i></div>
-                                <h3><a href="service-details.html">Centerless Grinding</a></h3>
-                                <p>Relief pitcher grass umpire dest forkball bullpen suicide squeeze club endures pains.</p>
+                             
+                                <h3><a href="#"><?= $spec_info['title']?></a></h3>
+                                <p><?= $spec_info['spec']?></p>
                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-three wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <h6>Cutting</h6>
-                                <div class="icon-box"><i class="flaticon-laser"></i></div>
-                                <h3><a href="service-details.html">Laser & Plasma</a></h3>
-                                <p>A faith in simple dream an great insistence of defining moments take a trivial example.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-three wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <h6>Welding</h6>
-                                <div class="icon-box"><i class="flaticon-tube-bending"></i></div>
-                                <h3><a href="service-details.html">Metal & Tungsten</a></h3>
-                                <p>Expound the actual teachings of the great explorers of the truth the master-builder.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-three wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <h6>Bending</h6>
-                                <div class="icon-box"><i class="flaticon-tube-bending"></i></div>
-                                <h3><a href="service-details.html">Three-Point Bending</a></h3>
-                                <p>Expound the actual teachings of the great explorers of the truth the master-builder.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-three wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <h6>Assembly</h6>
-                                <div class="icon-box"><i class="flaticon-picker"></i></div>
-                                <h3><a href="service-details.html">Spot Weld Assembly</a></h3>
-                                <p>Relief pitcher grass umpire dest forkball bullpen suicide squeeze club endures pains.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-three wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <h6>Production</h6>
-                                <div class="icon-box"><i class="flaticon-industry"></i></div>
-                                <h3><a href="service-details.html">Mass Production</a></h3>
-                                <p>A faith in simple dream an great insistence of defining moments take a trivial example.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
+                  <?php } ?>
                 </div>
             </div>
         </section>
@@ -216,174 +170,24 @@
             </div>
             <div class="outer-container border-top">
                 <div class="case-carousel owl-carousel owl-theme">
+                <?php
+                $pro = $this->CommonModal->getRowById('product','category',$product[0]['category']);
+                foreach ($pro as $pro_info) {
+                ?>
                     <div class="case-block-one">
                         <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
-                            </div>
+                          
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="<?= base_url() ?>uploads/product/<?= $pro_info['image'] ?>" alt="" style="height:300px"></figure>
+                                <div class="view-btn"><a href="<?= base_url() ?>uploads/product/<?= $pro_info['image'] ?>" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
+                                <h3><a href="<?= base_url('product/'.encryptId($pro_info['id'])) ?>"><?= $pro_info['name'] ?></a></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=" "></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-1.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-2.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-3.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/case/case-4.jpg" alt=""></figure>
-                                <div class="view-btn"><a href="assets/images/case/case-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
+                   
                 </div>
             </div>
         </section>

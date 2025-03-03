@@ -154,6 +154,7 @@
                 </div>
             </div>
         </section>
+
         <section class=" video-section team-section">
         <div class="bg-layer" style="background-image: url(assets/images/background/video-bg.jpg);"></div>
             <div class="auto-container">
@@ -163,17 +164,25 @@
                         <div class="col-lg-3 col-md-12 col-sm-12 btn-column">
                             <div class="tab-btn-box">
                                 <ul class="tab-btns tab-buttons clearfix">
-                                    <li class="tab-btn active-btn" data-tab="#tab-1">Ride On Scrubber Dryer</li>
-                                    <li class="tab-btn" data-tab="#tab-2">Vacuum Cleaner</li>
-                                    <li class="tab-btn" data-tab="#tab-3">Scrubber Drier</li>
-                                    <li class="tab-btn" data-tab="#tab-4">Vacuum Cleaner</li>
-                                    <li class="tab-btn" data-tab="#tab-5">Scrubber Drier</li>
+                                <?php $i=0;
+                                 if ($categorylimit) {
+                        foreach ($categorylimit as $c_info) {
+$i++;
+                            ?>
+                                    <li class="tab-btn <?= ($i == '1' ) ? 'active-btn' : '' ?>" data-tab="#tab-<?= $c_info['id']?>"><?= $c_info['name']?></li>
+                                    <?php } } ?>
+                                    
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-12 col-sm-12 content-column">
                             <div class="tabs-content">
-                                <div class="tab active-tab" id="tab-1">
+                            <?php $i=0;
+                                 if ($categorylimit) {
+                        foreach ($categorylimit as $c_info) {
+$i++;
+                            ?>
+                                <div class="tab <?= ($i == '1' ) ? 'active-tab' : '' ?>" id="tab-<?= $c_info['id']?>">
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-6 col-sm-12 team-block">
                                         <div class="service-details-content">
@@ -181,9 +190,13 @@
                                
                                 <div class="image-box">
                                     <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
-                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier 2</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
-                                        <figure class="image"> <h2>Charnock Battery Operated <br>Micro  Scrubber Drier 3</h2><img src="assets/img/product.png" alt="" style="height: 400px;"></figure>
+	
+        <?php 
+        	$sub_caat = $this->CommonModal->getRowById('sub_category','category', $c_info['id']);
+            foreach ($sub_caat as $sc_info) {?>
+                                        <figure class="image"> <h2><?= $sc_info['sub_category'] ?></h2><img src="<?= base_url() ?>uploads/sub_cat/<?= $sc_info['image'] ?>" alt="" style="height: 400px;"></figure>
+                                        <?php }?>
+                                     
                                         
                                     </div>
                                 </div>
@@ -193,83 +206,8 @@
                                         
                                     </div>
                                 </div>
-                                <div class="tab" id="tab-2">
-                                    <div class="row clearfix">
-                                    <div class="col-lg-12 col-md-6 col-sm-12 team-block">
-                                        <div class="service-details-content">
-                            <div class="content-one">
+                                <?php } } ?>
                                
-                                <div class="image-box">
-                                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
-                                        
-                                    </div>
-                                </div>
-                               
-                            </div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab" id="tab-3">
-                                <div class="row clearfix">
-                                    <div class="col-lg-12 col-md-6 col-sm-12 team-block">
-                                        <div class="service-details-content">
-                            <div class="content-one">
-                               
-                                <div class="image-box">
-                                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
-                                        
-                                    </div>
-                                </div>
-                               
-                            </div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab" id="tab-4">
-                                <div class="row clearfix">
-                                    <div class="col-lg-12 col-md-6 col-sm-12 team-block">
-                                        <div class="service-details-content">
-                            <div class="content-one">
-                               
-                                <div class="image-box">
-                                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
-                                        
-                                    </div>
-                                </div>
-                               
-                            </div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab" id="tab-5">
-                                <div class="row clearfix">
-                                    <div class="col-lg-12 col-md-6 col-sm-12 team-block">
-                                        <div class="service-details-content">
-                            <div class="content-one">
-                               
-                                <div class="image-box">
-                                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                        <figure class="image"> <h2>Centerless Grinding</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 2</h2><img src="assets/img/product.png" alt=""></figure>
-                                        <figure class="image"> <h2>Centerless Grinding 3</h2><img src="assets/img/product.png" alt=""></figure>
-                                        
-                                    </div>
-                                </div>
-                               
-                            </div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,174 +223,28 @@
             </div>
             <div class="outer-container border-top">
                 <div class="case-carousel owl-carousel owl-theme">
+                <?php if ($product) {
+                        foreach ($product as $prod_info) {
+
+                            ?>
                     <div class="case-block-one">
                         <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
+                        <div class="upper-content">
+                        <h5>
+                                    <?php       $c = $this->CommonModal->getRowById('category','id',$prod_info['category']);?>
+                                    <?= $c[0]['name']?></h5>
                             </div>
                             <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
+                                <figure class="image"><img src="<?= base_url() ?>uploads/product/<?= $prod_info['image'] ?>" alt="" style="height:300px"></figure>
+                                <div class="view-btn"><a href="<?= base_url() ?>uploads/product/<?= $prod_info['image'] ?>"  class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
                             </div>
                             <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
+                                <h3><a href="<?= base_url('product/'.encryptId($prod_info['id'])) ?>"><?= $prod_info['name'] ?></a></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=" "></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Construction & Engineering</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Pipeline System</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Technology</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Sheet Metal Bending</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Van Drilling Service</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case-block-one">
-                        <div class="inner-box">
-                            <div class="upper-content">
-                                <h5>Material, Mechanical</h5>
-                            </div>
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                            </div>
-                            <div class="lower-content centred">
-                                <h3><a href="#">Steel Springs</a></h3>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } }?>
+                    
                 </div>
             </div>
         </section>
@@ -711,60 +503,36 @@
                     <div class="auto-container">
                         <div class="tab active-tab" >
                             <div class="row clearfix">
-                                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                                    <div class="news-block-one">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                                <figure class="image"><img src="assets/img/p1.png" alt=""></figure>
-                                                <div class="category"><a href="#">Manufacturing</a></div>
-                                                <div class="view-btn"><a href="assets/img/p1.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                            </div>
-                                            <div class="lower-content">
-                                                <ul class="post-info clearfix">
-                                                    <li><i class="fa-regular fa-calendar"></i>14.10.2022</li>
-                                                    <li><i class="fa-regular fa-user"></i><a href="#">Lillian Grace</a></li>
-                                                </ul>
-                                                <h3><a href="#">Industry’s Imperatives For Sustainability in...</a></h3>
-                                            </div>
+                           <?php if ($blog) {
+                        foreach ($blog as $row) {
+
+                            ?>
+                            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                                <div class="news-block-one">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <figure class="image"><img src="<?= base_url() ?>uploads/blog/<?= $row['image'] ?>"
+                                                    alt="" style="height: 325px;"></figure>
+
+                                            <div class="view-btn"><a href="<?= base_url() ?>uploads/blog/<?= $row['image'] ?>"
+                                                    class="lightbox-image" data-fancybox="gallery"><i
+                                                        class="flaticon-zoom-in"></i></a></div>
+                                        </div>
+                                        <div class="lower-content">
+                                            <ul class="post-info clearfix">
+                                                <li><i class="fa-regular fa-calendar"></i>
+                                                    <?= date("d M Y", strtotime($row['date'])) ?></li>
+                                                <li><i class="fa-regular fa-user"></i><a
+                                                        href="<?= base_url('blogdetail/'.encryptId($row['id'])) ?>"><?= $row['add_by'] ?></a></li>
+                                            </ul>
+                                            <h3><a href="<?= base_url('blogdetail/'.encryptId($row['id'])) ?>"><?= $row['heading'] ?></a></h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                                    <div class="news-block-one">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                                <div class="category"><a href="#">Smart Factory</a></div>
-                                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                            </div>
-                                            <div class="lower-content">
-                                                <ul class="post-info clearfix">
-                                                    <li><i class="fa-regular fa-calendar"></i>28.09.2022</li>
-                                                    <li><i class="fa-regular fa-user"></i><a href="#">Oliver Jack</a></li>
-                                                </ul>
-                                                <h3><a href="#">Digital Manufacturing Week 2020 – Leading the Way</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                                    <div class="news-block-one">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                                <figure class="image"><img src="assets/img/p2.png" alt=""></figure>
-                                                <div class="category"><a href="#">Innovation</a></div>
-                                                <div class="view-btn"><a href="assets/img/p2.png" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                            </div>
-                                            <div class="lower-content">
-                                                <ul class="post-info clearfix">
-                                                    <li><i class="fa-regular fa-calendar"></i>06.09.2022</li>
-                                                    <li><i class="fa-regular fa-user"></i><a href="#">Jacob Harry</a></li>
-                                                </ul>
-                                                <h3><a href="#">Building Back a Sustainable Manufacturing Sector</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                        <?php }
+                    } ?>
+                                
                             </div>
                         </div>
                        
