@@ -314,6 +314,18 @@ class Home extends CI_Controller {
 
 	}
 	
+	public function view_terms()
+    {
+        $data['title'] = "Our Terms";
+
+        $this->load->view('view_terms', $data);
+    }
 	
+	public function privacy_policy()
+    {
+        $data['title'] = "Privacy-policy";
+
+        $this->load->view('privacy_policy', $data);
+    }
 
 }

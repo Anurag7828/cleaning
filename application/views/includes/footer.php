@@ -68,8 +68,8 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="<?= base_url()?>">Term & Condition</a></li>
-                                        <li><a href="<?= base_url()?>">Privacy policy</a></li>
+                                        <li><a href="<?= base_url()?>view_terms">Term & Condition</a></li>
+                                        <li><a href="<?= base_url()?>privacy_policy">Privacy policy</a></li>
                                         <li><a href="javascript:void(0);" class="search-box-outer search-toggler">Get A Quote</a></li>
                                       
                                     </ul>

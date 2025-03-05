@@ -1251,6 +1251,9 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_client', $data);
         }
     }
+
+  
+
   public function logout()
 
     {

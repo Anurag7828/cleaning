@@ -20,7 +20,8 @@ $route['apply/(:any)'] = 'Home/apply/$1';
 $route['product/(:any)'] = 'Home/product/$1';
 $route['thankyou'] = 'Home/thankyou';
 $route['video'] = 'Home/video';
-
+$route['view_terms'] = 'Home/view_terms';
+$route['privacy_policy'] = 'Home/privacy_policy';
 $route['service/(:any)'] = 'Home/service/$1';
 
 
