@@ -54,18 +54,13 @@
                                 <span class="sub-title">Welcome To</span>
                                 <h2>Continental Cleaning </h2>
                             </div>
-                            <div class="text">
-                                <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
+                            <div class="text" style="text-align:justify">
+                                <p>Continental Cleaning and Safety Solutions is a trusted retail trader specializing in high-quality cleaning equipment, including ride-on scrubber dryers, scrubber driers, and walk-behind scrubber dryers. Established in 2020 in Bhopal, Madhya Pradesh, the company is committed to providing efficient and advanced cleaning solutions for commercial and industrial spaces. With a focus on durability and performance, their products help maintain hygiene and safety in various environments. Continental Cleaning and Safety Solutions ensures customer satisfaction by offering reliable equipment from top brands, catering to businesses looking for effective and hassle-free cleaning solutions in Madhya Pradesh and beyond.</p>
                             </div>
-                            <div class="text">
-                                <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
+                            <div class="text" style="text-align:justify">
+                                <p>Continental Cleaning and Safety Solutions is a trusted provider of high-quality scrubber dryers, including ride-on and walk-behind models. Serving industries, malls, and hospitals, they focus on quality, innovation, and durability. Their customer-centric approach, competitive pricing, and after-sales support make them a preferred choice in Bhopal and Madhya Pradesh.</p>
                             </div>
-                            <div class="text">
-                                <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
-                            </div>
-                            <div class="text">
-                                <p>Continental Cleaning And Safety Solutions - Retail Trader Of Ride On Scrubber Dryer, Scrubber Drier And Walk Behind Scrubber Dryer Since 2020 In Bhopal, Madhya Pradesh.</p>
-                            </div>
+                           
                             <!-- <div class="inner-box">
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">

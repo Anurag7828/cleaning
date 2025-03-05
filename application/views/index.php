@@ -190,7 +190,7 @@ $i++;
         <?php 
         	$sub_caat = $this->CommonModal->getRowById('sub_category','category', $c_info['id']);
             foreach ($sub_caat as $sc_info) {?>
-                                        <figure class="image"> <h2><?= $sc_info['sub_category'] ?></h2><img src="<?= base_url() ?>uploads/sub_cat/<?= $sc_info['image'] ?>" alt="" style="height: 400px;"></figure>
+                                        <figure class="image"> <h2><?= $sc_info['sub_category'] ?></h2><img src="<?= base_url() ?>uploads/sub_cat/<?= $sc_info['image'] ?>" alt="" style="height: 400px; object-fit: contain;"></figure>
                                         <?php }?>
                                      
                                         
