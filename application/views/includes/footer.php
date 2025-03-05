@@ -95,7 +95,7 @@
                             <li><a href="<?= base_url()?>admin" target="_blank">© <?= date('Y') ?> - Continental Cleaning & Safety Solutions - All Rights Reserved</a></li>
                             <li><a href="https://namami.co.in/" target="_blank">Developed By - Namami Software</a></li>
                         </ul>
-                        <button class="scroll-top-two scroll-to-target" data-target="html">Back to Top <img src="assets/images/icons/icon-9.png" alt=""></button>
+                        <button class="scroll-top-two scroll-to-target" data-target="html">Back to Top <img src="<?= base_url()?>assets/images/icons/icon-9.png" alt=""></button>
                     </div>
                 </div>
             </div>

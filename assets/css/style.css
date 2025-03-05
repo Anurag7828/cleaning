@@ -647,7 +647,7 @@ img {
   left: 0;
   top: 0px;
   width: 100%;
-  height: 100%;
+  height: 120%;
   z-index: 99999;
   visibility: hidden;
   opacity: 0;
@@ -1713,7 +1713,7 @@ div#mCSB_1_container{
   
 .banner-carousel .slide-item{
   position: relative;
-  padding: 101px 0px 120px 0px;
+  padding: 120px 0px 150px 0px;
 }
   
 .banner-carousel .slide-item:before{
@@ -1777,8 +1777,8 @@ div#mCSB_1_container{
 .banner-carousel .content-box h2{
   position: relative;
   display: block;
-  font-size: 100px;
-  line-height: 110px;
+  font-size: 70px;
+  line-height: 80px;
   font-weight: 700;
   color: #fff;
   margin-bottom: 32px;
@@ -2253,8 +2253,8 @@ div#mCSB_1_container{
 .funfact-block-one .inner-box .icon-box{
   position: relative;
   display: inline-block;
-  width: 90px;
-  height: 90px;
+  width: 73px;
+  height: 73px;
   line-height: 96px;
   font-size: 50px;
   color: #fff;
@@ -2265,7 +2265,7 @@ div#mCSB_1_container{
 
 .funfact-block-one .inner-box .count-outer{
   position: relative;
-  font-size: 80px;
+  font-size: 65px;
   line-height: 80px;
   font-family: 'Monda', sans-serif;
   font-weight: 700;
@@ -2837,7 +2837,7 @@ div#mCSB_1_container{
 .industry-section .content-column{
   position: relative;
   border-right: 1px solid #e2e2e2;
-  padding-top: 111px;
+  padding-top: 50px;
   padding-bottom: 120px;
 }
 
@@ -2931,7 +2931,7 @@ div#mCSB_1_container{
 .industry-section .image-box{
   position: relative;
   display: block;
-  padding: 120px 0px 120px 100px;
+  padding: 50px 0px 50px 100px;
 }
 
 .industry-section .image-box .image{
@@ -5637,6 +5637,7 @@ div#mCSB_1_container{
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-top: -29px;
 
 }
 
@@ -8684,7 +8685,7 @@ div#mCSB_1_container{
 }
 
 .news-style-two .bx-viewport{
-  min-height: 711px !important;
+  min-height: 456px !important;
   padding-left: 100px;
 }
 
