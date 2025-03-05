@@ -14776,9 +14776,44 @@ div#mCSB_1_container{
 }
 
 
+/* Custom  design */
+ /* Base styles */
+ .case-style-two {
+  padding: 20px;
+}
 
+/* Table styles */
+.table-outer {
+  overflow-x: auto; /* Enables horizontal scrolling for small screens */
+}
 
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Ensures table doesn't shrink too much */
+}
 
+.cart-header th {
+
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.cart-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  .table-outer {
+      overflow-x: auto; /* Enables scrolling */
+  }
+
+  .cart-table {
+      min-width: 600px; /* Ensures table stays structured */
+  }
+}
 
 
 

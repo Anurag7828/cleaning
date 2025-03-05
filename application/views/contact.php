@@ -104,9 +104,9 @@
                         </div>
                       
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 form-column">
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-column" >
                         <div class="form-inner">
-                            <form method="post" action="">
+                            <form method="post" action="" style="margin-top:50px;">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Your Name" required>
                                 </div>
