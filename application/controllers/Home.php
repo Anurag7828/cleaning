@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 		$data['title']='Home';
         $data['category'] = $this->CommonModal->getAllRows('category');
         $data['client'] = $this->CommonModal->getAllRows('client');
-
+		$data['slider'] = $this->CommonModal->getAllRows('slider');
     
 		$data['blog'] = $this->CommonModal->getAllRowsInOrderWithLimit('blog','3', 'id', 'DESC');
 

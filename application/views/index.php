@@ -17,37 +17,29 @@
 
         <!-- banner-section -->
         <section class="banner-section">
-            <div class="line-box">
-                <div class="line-1"></div>
-                <div class="line-2"></div>
-            </div>
-            <div class="banner-carousel owl-theme owl-carousel">
+    <div class="line-box">
+        <div class="line-1"></div>
+        <div class="line-2"></div>
+    </div>
+    <div class="banner-carousel owl-theme owl-carousel">
+        <?php if (!empty($slider)) : ?>
+            <?php foreach ($slider as $slide) : ?>
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/img/banner-1.png)"></div>
+                    <div class="image-layer" style="background-image:url(<?= base_url('uploads/slider/' . $slide['image']) ?>)"></div>
                     <div class="auto-container">
                         <div class="content-box">
-                          
-                            <h2><span>Welcome To</span> <br /><span>Continental Cleaning</span> <br /><span>And Safety Solutions</span></h2>
-                            <!-- <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p> -->
-                           
+                            <h2>
+                                <span><?= $slide['heading'] ?></span>
+                               
+                            </h2>
                         </div> 
                     </div>
                 </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/img/banner-2.png)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                        
-                            <h2><span>Delivering </span> <br /><span>Complete Range</span> <br /><span> OF Cleaning Solution...</span></h2>
-                            <!-- <p>Favor the more eloquent presidential days of yesteryear give ipsum a whirl & <br />get some engaging every pleasure is to be welcomed.</p> -->
-                           
-                        </div> 
-                    </div>
-                </div>
-                
-            </div>
-       
-        </section>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</section>
+
         <!-- banner-section end -->
 
 
