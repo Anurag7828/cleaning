@@ -118,15 +118,10 @@
                                                 foreach ($slider as $row) {
 
                                             ?>
-                                                    <td><?= $i++; ?></td>
-                                                 
-
+                                                    <td><?= $i++; ?></td>                                              
                                                     <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
                                                     <td><img src="<?= base_url() ?>uploads/slider/<?= $row['image'] ?>" width="60"></td>
-
-                              
-                                                   
-                                                  
+                                                
 
                                                     <td>
 
