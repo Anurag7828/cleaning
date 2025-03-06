@@ -86,7 +86,7 @@
                                             <tr>
                                                 <th class="no-sort">S No.</th>                            
                                                 <th>Name</th>
-                                                <th>Heading</th>
+                                               
                                               
                                                 <th>Description</th>
                                                 <th>Delete</th>
@@ -101,7 +101,7 @@
                                                         <td><?= $i++; ?></td>
                                                       
                                                         <td><a href="#" class="title-name"><?= $row['name']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                       
                                                       
                                                         <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>
                                                         <td>

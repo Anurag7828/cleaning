@@ -23,7 +23,6 @@
 
         h1, h2 {
             color: #333;
-       
             padding:15px;
 
         }
@@ -57,7 +56,7 @@
         <div class="auto-container">
             <h1>Terms & Conditions</h1>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="<?= base_url()?>">Home</a></li>
                 <li>Terms & Conditions</li>
             </ul>
         </div>

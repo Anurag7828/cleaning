@@ -1,4 +1,4 @@
-<footer class="footer-style-three" style="background-image: url(assets/images/background/footer-bg.jpg);">
+<footer class="footer-style-three" style="background-image: url(<?= base_url()?>assets/images/background/footer-bg.jpg);">
             <div class="auto-container">
                 <div class="widget-section">
                     <div class="row clearfix">
@@ -14,12 +14,12 @@
                                     <li>
                                         <div class="icon-box"><i class="flaticon-dial-pad"></i></div>
                                         <h5>Phone</h5>
-                                        <p><a href="tel:6132456789">(+91) 91797 03389</a></p>
+                                        <p><a href="tel:91797 03389">(+91) 91797 03389</a></p>
                                     </li>
                                     <li>
                                         <div class="icon-box"><i class="flaticon-mail"></i></div>
                                         <h5>Email</h5>
-                                        <p><a href="mailto:enquiry@example.com">info@example.com</a></p>
+                                        <p><a href="mailto:sales@continentalcleaning.in">sales@continentalcleaning.in</a></p>
                                     </li>
                                 </ul>
                             </div>
@@ -81,8 +81,8 @@
                                     <ul class="social-links clearfix">
                                         <li><a href="<?= base_url()?>"><i class="fa-brands fa-facebook"></i></a></li>
                                         <li><a href="<?= base_url()?>"><i class="fa-brands fa-instagram"></i></a></li>
-                                        <li><a href="<?= base_url()?>"><i class="fa-solid fa-basketball"></i></a></li>
                                         <li><a href="<?= base_url()?>"><i class="fa-brands fa-youtube"></i></a></li>
+                                        <li><a href="<?= base_url()?>"><i class="fa-brands fa-x-twitter"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -100,3 +100,8 @@
                 </div>
             </div>
         </footer>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<a href="https://api.whatsapp.com/send?phone=91797 03389&text=I have a query." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>

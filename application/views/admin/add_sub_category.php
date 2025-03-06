@@ -29,13 +29,8 @@
                             <form action="" method="post"  enctype="multipart/form-data">
                                 <div>
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="col-form-label">Heading</label>
-                                                <input class="form-control" name="heading" type="text" value="<?= ($tag == 'edit' && isset($sub_category[0]['heading'])) ? htmlspecialchars($sub_category[0]['heading']) : '' ?>" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
+                                        
+                                        <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label class="col-form-label">Sub Category</label>
                                                 <input class="form-control" name="sub_category" type="text" value="<?= ($tag == 'edit' && isset($sub_category[0]['heading'])) ? htmlspecialchars($sub_category[0]['heading']) : '' ?>" required>
@@ -80,7 +75,7 @@
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="col-form-label">Description<span class="text-danger"> *</span></label>
-                                        <textarea class="form-control" name="description" rows="5"><?= ($tag == 'edit' && isset($sub_category[0]['description'])) ? htmlspecialchars($sub_category[0]['description']) : '' ?></textarea>
+                                        <textarea class="form-control editor" name="description" rows="5"><?= ($tag == 'edit' && isset($sub_category[0]['description'])) ? htmlspecialchars($sub_category[0]['description']) : '' ?></textarea>
                                     </div>
                                 </div>
                            </div>

@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/cleaning/';
-// $config['base_url'] = 'https://venusglamor.com/cleaning/';
+// $config['base_url'] = 'https://sadevcreation.prakrutishala.org/Continental/';
 
 
 /*

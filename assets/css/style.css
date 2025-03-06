@@ -2220,7 +2220,7 @@ div#mCSB_1_container{
 
 .funfact-section{
   position: relative;
-  padding: 50px 0px;
+  padding: 20px 0px;
 }
 
 .funfact-section .big-text{
@@ -2253,29 +2253,31 @@ div#mCSB_1_container{
 .funfact-block-one .inner-box .icon-box{
   position: relative;
   display: inline-block;
-  width: 73px;
-  height: 73px;
+  width: 65px;
+  height: 65px;
   line-height: 96px;
   font-size: 50px;
   color: #fff;
   text-align: center;
   border-radius: 50%;
-  margin-right: 30px;
+  /*margin-right: 30px;*/
 }
-
+.funfact-block-one {
+    text-align:center;
+}
 .funfact-block-one .inner-box .count-outer{
   position: relative;
-  font-size: 65px;
+  font-size: 40px;
   line-height: 80px;
   font-family: 'Monda', sans-serif;
   font-weight: 700;
   color: #1c1c1c;
-  margin-right: 30px;
+  /*margin-right: 30px;*/
 }
 
 .funfact-block-one .inner-box .text h3{
   display: block;
-  font-size: 24px;
+  font-size: 12px;
   line-height: 34px;
   font-weight: 700;
   margin-bottom: 5px;
@@ -2471,7 +2473,7 @@ div#mCSB_1_container{
 
 .clients-section{
   position: relative;
-  padding: 80px 0px;
+  padding: 20px 0px;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -5443,7 +5445,7 @@ div#mCSB_1_container{
 
 .team-section{
   position: relative;
-  padding: 114px 0px 78px 0px;
+  padding: 65px 0px 65px 0px;
 }
 
 .team-section .sec-title .theme-btn{
@@ -12967,7 +12969,7 @@ div#mCSB_1_container{
 .service-details-content h2{
   position: relative;
   display: block;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 58px;
   font-weight: 700;
   margin-bottom: 39px;
@@ -14699,7 +14701,39 @@ div#mCSB_1_container{
   display: inline-block;
   color: #827e7d;
 }
+.float {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:70px;
+	right:35px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
 
+.wfloat{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:70px;
+	left:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
 .info-block-one .inner-box p a:hover{
 
 }
@@ -14814,6 +14848,7 @@ div#mCSB_1_container{
   .cart-table {
       min-width: 600px; /* Ensures table stays structured */
   }
+  
 }
 
 

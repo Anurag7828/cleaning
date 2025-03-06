@@ -87,7 +87,6 @@
                                                 <th>Category</th>
                                                 <th>Sub Category</th>
 
-                                                <th>Heading</th>
                                                 <th>image</th>
                                                 <th>Description</th>
                                                 <th>Delete</th>
@@ -113,7 +112,7 @@
                                                             ?>
                                                         </td>
                                                         <td><a href="#" class="title-name"><?= $row['sub_category']; ?></a></td>
-                                                        <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                       
                                                         <td><img src="<?= base_url() ?>uploads/sub_cat/<?= $row['image'] ?>" width="60"></td>
 
                                                         <td><a href="#" class="title-name"><?php echo strip_tags(substr($row['description'] , 0 , 50)); ?>...</a></td>

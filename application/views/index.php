@@ -88,19 +88,19 @@
         <!-- about-section end -->
 
         <section class="funfact-section bg-color-1">
-            <span class="big-text">Numbers</span>
+            <span class="big-text">CCASS</span>
             <div class="outer-container">
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
                         <div class="funfact-block-one">
                             <div class="inner-box">
-                                <div class="icon-box"><i class="flaticon-factory"></i></div>
+                                <div class="icon-box"><i class="flaticon-engineer"></i></div>
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="1500" data-stop="3500">0</span><span>+</span>
                                 </div>
                                 <div class="text">
                                     <h3>Satisfied customers</h3>
-                                    <p>across India and Global markets</p>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -108,13 +108,13 @@
                     <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
                         <div class="funfact-block-one">
                             <div class="inner-box">
-                                <div class="icon-box"><i class="flaticon-gas"></i></div>
+                                <div class="icon-box"><i class="flaticon-engineer"></i></div>
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="1500" data-stop="32">0</span><span>+</span>
                                 </div>
                                 <div class="text">
                                     <h3>Serving countries</h3>
-                                    <p>across 6 continents</p>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@ $i++;
         <?php 
         	$sub_caat = $this->CommonModal->getRowById('sub_category','category', $c_info['id']);
             foreach ($sub_caat as $sc_info) {?>
-                                        <figure class="image"> <h2><?= $sc_info['sub_category'] ?></h2><img src="<?= base_url() ?>uploads/sub_cat/<?= $sc_info['image'] ?>" alt="" style="height: 400px; object-fit: contain;"></figure>
+                                        <figure class="image"> <h2><?= $sc_info['sub_category'] ?></h2><img src="<?= base_url() ?>uploads/sub_cat/<?= $sc_info['image'] ?>" alt="" style="height: 350px; object-fit: contain;"></figure>
                                         <?php }?>
                                      
                                         

@@ -33,7 +33,7 @@
                 <div class="content-box">
                     <h1>Delarship Regestration</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="<?= base_url()?>">Home</a></li>
                         <li>Delarship Regestration</li>
                         
                     </ul>
