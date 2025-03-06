@@ -152,3 +152,51 @@
     </div>
 
     <?php include('template/footer.php') ?>
+    <!-- Include jsPDF and SheetJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Export to PDF
+    document.getElementById("exportPdf").addEventListener("click", function () {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Title
+        doc.text("category", 14, 15);
+
+        // Get table data
+        doc.autoTable({
+            html: ".datatable",
+            startY: 20,
+            theme: "grid",
+            headStyles: { fillColor: [52, 152, 219] }, // Blue Header
+            styles: { fontSize: 10 },
+        });
+
+        doc.save("category.pdf");
+    });
+
+    // Export to Excel
+    document.getElementById("exportExcel").addEventListener("click", function () {
+        let table = document.querySelector(".datatable");
+        let wb = XLSX.utils.table_to_book(table, { sheet: "All Category" });
+
+        // Save as Excel file
+        XLSX.writeFile(wb, "category.xlsx");
+    });
+});
+</script>
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#customerTable tr");
+
+        rows.forEach(function(row) {
+            let text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? "table-row" : "none";
+        });
+    });
+</script>

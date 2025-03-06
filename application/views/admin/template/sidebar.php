@@ -23,6 +23,12 @@
 										<i class="ti ti-layout-navbar"></i><span>Dashboard</span>
 									</a>
 								</li>
+								<li>
+									<a href="<?= base_url('Admin_Dashboard/view_slider')?>">
+										<i class="ti ti-layout-navbar"></i><span>Slider</span>
+									</a>
+								</li>
+								
 								<li class="submenu">
 									<a href="#">
 										<i class="ti ti-user-star"></i><span>Category</span>

@@ -1251,6 +1251,88 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/add_client', $data);
         }
     }
+ 
+    public function view_slider()
+    {
+        $data['title'] = "Our Slider";
+
+        $BdID = $this->input->get('BdID');
+        $img = $this->input->get('img');
+        if ($BdID) {
+            $this->CommonModal->deleteRowById('slider', array('id' => $BdID));
+            if ($img) {
+                unlink('uploads/slider/' . $img);
+            }
+            redirect('admin_Dashboard/view_slider');
+        }
+        $data['slider'] = $this->CommonModal->getAllRowsInOrder('slider', 'id', 'DESC');
+     
+        $this->load->view('admin/view_slider', $data);
+    }
+    public function add_slider()
+    {
+         $data['title'] = "Add Slider";
+         $data['tag'] = "add";
+        if (count($_POST) > 0) {
+            
+            $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/slider/');
+       
+           $savedata = $this->CommonModal->insertRowReturnId('slider', $post);
+                if ($savedata) {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Slider Add Successfully</div>');
+            } else {
+
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Slider Add Successfully</div>');
+            }
+
+            redirect(base_url('admin_Dashboard/view_slider'));
+           } else {
+           
+            $this->load->view('admin/add_slider', $data);
+        }
+    }
+
+    public function edit_slider($id)
+    {
+        $data['title'] = 'Update Slider';
+        $data['tag'] = 'edit';
+        $tid = $id;
+        
+        $data['row'] = $this->CommonModal->getRowById('slider', 'id', $tid);
+    
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            
+          
+            $existing_image1 = $post['image']; 
+           
+            if ($_FILES['image']['name'] != '') {
+                $img1 = imageUpload('image', 'uploads/slider/');
+                $post['image'] = $img1;
+                if ($existing_image1 != "") {
+                    unlink('uploads/slider/' . $existing_image1);
+                }
+            }
+    
+            
+            $update_result = $this->CommonModal->updateRowById('slider', 'id', $tid, $post);
+    
+            if ($update_result) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Slider updated successfully.</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Failed to update Slider.</div>');
+            } 
+          
+            redirect(base_url('admin_Dashboard/view_slider'));
+        } else {
+            
+    
+            $this->load->view('admin/add_slider', $data);
+        }
+    }
+
 
   
 

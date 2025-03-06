@@ -23,7 +23,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">View Clients</h4>
+                                    <h4 class="page-title">View Slider</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">
@@ -69,9 +69,7 @@
                                                 </div>
                                             </div>
 
-                                            <a href="<?= base_url('admin_Dashboard/add_client') ?>" class="btn btn-primary"><i
-                                                    class="ti ti-square-rounded-plus me-2"></i>Add Client</a>
-                                        </div>
+                                           </div>
                                     </div>
                                 </div>
                                 <!-- /Search -->
@@ -103,10 +101,10 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th class="no-sort">S No.</th>
-                                                <th>Link</th>
-                                                <th>image</th>
-                                              
-                                                <th>Delete</th>
+                                             
+                                                <th>Heading</th>
+                                            <th>image</th>
+
                                                 <th>Update</th>
                                             </tr>
                                         </thead>
@@ -115,30 +113,24 @@
 
                                             $i = 1;
 
-                                            if ($client) {
+                                            if ($slider) {
 
-                                                foreach ($client as $row) {
+                                                foreach ($slider as $row) {
 
                                             ?>
                                                     <td><?= $i++; ?></td>
-                                                  
-                                                    <td><a href="#" class="title-name"><?= $row['link']; ?></a></td>
-                                                    <td><img src="<?= base_url() ?>uploads/client/<?= $row['image'] ?>" width="60"></td>
+                                                 
+
+                                                    <td><a href="#" class="title-name"><?= $row['heading']; ?></a></td>
+                                                    <td><img src="<?= base_url() ?>uploads/slider/<?= $row['image'] ?>" width="60"></td>
 
                               
-                                                   <td>
-
-
-                                                        <a class="dropdown-item" href="<?php echo base_url() . 'admin_Dashboard/view_client?BdID=' . $row['id'] . '&img=' . $row['image'] ?>"
-                                                                    onclick="return confirm('Are you sure you want to delete this lead?');">
-                                                                    <i class="ti ti-trash text-danger"></i> Delete
-                                                                </a>
-
-                                                    </td>
+                                                   
+                                                  
 
                                                     <td>
 
-                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_client/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
+                                                        <a class="dropdown-item" href="<?= base_url('admin_Dashboard/edit_slider/' . $row['id']); ?>"><i class="ti ti-edit text-blue"></i> Edit</a>
 
                                                     </td>
                                                     </tr>
@@ -173,8 +165,7 @@
         </div>
     </div>
 
-    <?php include('template/footer.php') ?>
-    <!-- Include jsPDF and SheetJS -->
+    <?php include('template/footer.php') ?><!-- Include jsPDF and SheetJS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -198,16 +189,16 @@ document.addEventListener("DOMContentLoaded", function () {
             styles: { fontSize: 10 },
         });
 
-        doc.save("sub_category.pdf");
+        doc.save("services.pdf");
     });
 
     // Export to Excel
     document.getElementById("exportExcel").addEventListener("click", function () {
         let table = document.querySelector(".datatable");
-        let wb = XLSX.utils.table_to_book(table, { sheet: "All Sub Category" });
+        let wb = XLSX.utils.table_to_book(table, { sheet: "All services" });
 
         // Save as Excel file
-        XLSX.writeFile(wb, "sub_category.xlsx");
+        XLSX.writeFile(wb, "services.xlsx");
     });
 });
 </script>
