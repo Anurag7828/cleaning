@@ -31,52 +31,7 @@
         <section class="service-details industries-details">
             <div class="auto-container">
                 <div class="row clearfix">
-                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="service-sidebar">
-                            <div class="category-widget">
-                                <div class="widget-title">
-                                    <h3>Other Services</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="category-list clearfix">
-                                    <?php  
-                                        foreach ($other as $othercate) { ?> 
-                                        <li><a href="<?= base_url('service/'.encryptId($othercate['id'])) ?>"><?= $othercate['heading']?><i class="flaticon-right-chevron"></i></a></li>
-                                       <?php } ?>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="contact-widget">
-                                <div class="widget-title">
-                                    <h3>For Enquiry</h3>
-                                </div>
-                                <div class="widget-content">
-                                   
-                                    <ul class="info-box clearfix">
-                                    <li>
-                                            <div class="icon-box"><i class="flaticon-dial-pad"></i></div>
-                                            <h5>Address</h5>
-                                            <p><a href="">F-6, Vansh Tower-1, Natraj Society, Ratanpur</a></p>
-                                        </li>
-                                        <li>
-                                            <div class="icon-box"><i class="flaticon-dial-pad"></i></div>
-                                            <h5>Phone</h5>
-                                            <p><a href="tel:8048269152">(+91) 8048269152</a></p>
-                                        </li>
-                                        <li>
-                                            <div class="icon-box"><i class="flaticon-mail"></i></div>
-                                            <h5>Email</h5>
-                                            <p><a href="mailto:lunahennah@example.com">info@example.com</a></p>
-                                        </li>
-                                    </ul>
-                                    <div class="btn-box">
-                                        <a  href="javascript:void(0);" class="search-box-outer search-toggler theme-btn btn-one"><span>Request A Quote</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                      
-                        </div>
-                    </div>
+              
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="service-details-content">
                             <div class="content-one">
@@ -124,6 +79,52 @@
                               
                             </div>
                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        <div class="service-sidebar">
+                            <div class="category-widget">
+                                <div class="widget-title">
+                                    <h3>Other Services</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                    <?php  
+                                        foreach ($other as $othercate) { ?> 
+                                        <li><a href="<?= base_url('service/'.encryptId($othercate['id'])) ?>"><?= $othercate['heading']?><i class="flaticon-right-chevron"></i></a></li>
+                                       <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="contact-widget">
+                                <div class="widget-title">
+                                    <h3>For Enquiry</h3>
+                                </div>
+                                <div class="widget-content">
+                                   
+                                    <ul class="info-box clearfix">
+                                    <li>
+                                            <div class="icon-box"><i class="flaticon-dial-pad"></i></div>
+                                            <h5>Address</h5>
+                                            <p><a href="">F-6, Vansh Tower-1, Natraj Society, Ratanpur</a></p>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="flaticon-dial-pad"></i></div>
+                                            <h5>Phone</h5>
+                                            <p><a href="tel:8048269152">(+91) 8048269152</a></p>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="flaticon-mail"></i></div>
+                                            <h5>Email</h5>
+                                            <p><a href="mailto:lunahennah@example.com">info@example.com</a></p>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a  href="javascript:void(0);" class="search-box-outer search-toggler theme-btn btn-one"><span>Request A Quote</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                      
                         </div>
                     </div>
                 </div>

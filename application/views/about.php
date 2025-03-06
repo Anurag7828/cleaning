@@ -25,7 +25,7 @@
                 <div class="content-box">
                     <h1>About Us</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="<?= base_url()?>">Home</a></li>
                         <li>About</li>
                         
                     </ul>
@@ -303,7 +303,7 @@
                                                     <div class="col-lg-6 col-md-6 col-sm-12 text-column">
                                                         <div class="text">
                                                             <p>E-mail</p>
-                                                            <p><a href="mailto:enquiry@example.com">enquiry@example.com</a></p>
+                                                            <p><a href="mailto:sales@continentalcleaning.in">sales@continentalcleaning.in</a></p>
                                                         </div>
                                                     </div>
                                                 </div>

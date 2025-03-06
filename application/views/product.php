@@ -94,7 +94,7 @@
                            ?>
                                 <h6>Category :- <?= $c[0]['name']?></h6>
                                 <h6>Sub Category :- <?= $s_c[0]['sub_category']?></h6>
-                                <p><?= $product[0]['description']?></p>
+                                <p><?= strip_tags(substr($product[0]['description'], 0, 820))?></p>
                                 <section class="downloads-section">
             <div class="auto-container">
                 <div class="row align-items-center">
@@ -120,7 +120,13 @@
                                    
                                    
                                     <div class="cart-box">
-                                        <button type="button" class="theme-btn btn-two">Whatapps</button>
+                                    <?php
+$phone = '+919179703389';
+$productUrl = base_url() . 'product/' . encryptId($product[0]['id']);
+$message = urlencode("I have a query related to " . $productUrl); // Combine text and URL before encoding
+$whatsappUrl = "https://api.whatsapp.com/send?phone=$phone&text=$message";
+?>
+<a href="<?= $whatsappUrl ?>" target="_blank" class="theme-btn btn-two">WhatsApp</a>
                                     </div>
                                     <div class="cart-box">
                                         <button type="button" class="theme-btn btn-two search-box-outer search-toggler">Request A Quotes</button>

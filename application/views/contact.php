@@ -23,7 +23,7 @@
     }
   </style>
     <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+            <div class="bg-layer" style="background-image: url(<?= base_url()?>assets/images/background/page-title.jpg);"></div>
             <div class="line-box">
                 <div class="line-1"></div>
                 <div class="line-2"></div>
@@ -32,7 +32,7 @@
                 <div class="content-box">
                     <h1>Contact Us</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="<?= base_url()?>">Home</a></li>
                         <li>Contact</li>
                         
                     </ul>
@@ -46,7 +46,7 @@
                 <div class="title-box">
                     <div class="icon-box"><i class="flaticon-headphones"></i></div>
                     <h2>Need Support? Talk with Team</h2>
-                    <h3>Toll Free: <a href="tel:6132456789">(+91) 8048269152</a></h3>
+                    <h3>Toll Free: <a href="tel:6132456789">(+91) 91797 03389</a></h3>
                 </div>
                 <div class="inner-container">
                     <div class="row clearfix">
@@ -65,7 +65,7 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="flaticon-mail"></i></div>
                                     <h3>Customer support</h3>
-                                    <p><span>Call Us :</span> <a href="mailto:8048269152">8048269152</a><br /><span>Mail Us:</span> <a href="mailto:support@example.com">support@example.com</a></p>
+                                    <p><span>Call Us :</span> <a href="mailto:91797 03389">91797 03389</a><br /><span>Mail Us:</span> <a href="mailto:sales@continentalcleaning.in">sales@continentalcleaning.in</a></p>
                                   
                                 </div>
                             </div>

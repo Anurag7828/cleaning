@@ -23,7 +23,7 @@
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h4 class="page-title">View Applications</h4>
+                                    <h4 class="page-title">View Delarship Query</h4>
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="head-icons">

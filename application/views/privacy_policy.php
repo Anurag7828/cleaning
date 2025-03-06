@@ -60,7 +60,7 @@
         <div class="auto-container">
             <h1>Privacy Policy</h1>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="<?= base_url()?>">Home</a></li>
                 <li>Privacy Policy</li>
             </ul>
         </div>
